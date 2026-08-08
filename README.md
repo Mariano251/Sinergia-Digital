@@ -1,4 +1,4 @@
-# TechNova — Sistema Inteligente de Recuperación de Ventas
+# TechNova — Sistema Inteligente de Detección, Scoring y Notificación de Carritos Abandonados
 
 **Trabajo Final Integrador — Tecnicatura Universitaria en Programación**  
 Universidad Tecnológica Nacional — Facultad Regional Mendoza  
@@ -11,7 +11,7 @@ Universidad Tecnológica Nacional — Facultad Regional Mendoza
 
 ## Descripción
 
-TechNova es una plataforma de e-commerce funcional integrada con un sistema automatizado de recuperación de carritos abandonados. El sistema utiliza Agentes de Inteligencia Artificial basados en Claude (Anthropic), un algoritmo de scoring multidimensional y orquestación omnicanal con n8n para identificar, clasificar y recuperar ventas perdidas en tiempo real.
+TechNova es una plataforma de e-commerce funcional integrada con un sistema automatizado de detección, scoring y notificación de carritos abandonados. El sistema utiliza Agentes de Inteligencia Artificial basados en Claude (Anthropic), un algoritmo de scoring multidimensional y orquestación omnicanal con n8n para identificar, clasificar y notificar sobre estos abandonos en tiempo real.
 
 ---
 
@@ -40,7 +40,7 @@ Sinergia-Digital-/
 
 ---
 
-## Flujo de recuperación
+## Flujo de detección y notificación
 
 1. El usuario agrega productos al carrito y abandona la sesión
 2. Un hook en el frontend o un job automático del backend detecta el abandono
@@ -135,4 +135,4 @@ El archivo JSON del workflow está en `n8n-workflows/`. Para importarlo:
 
 ## Repositorio
 
-[github.com/Mariano251/Sinergia-Digital-](https://github.com/Mariano251/Sinergia-Digital-)
+[github.com/Mariano251/Sinergia-Digital-](https://github.com/Mariano251/Sinergia-Digital)
