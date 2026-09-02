@@ -10,11 +10,11 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        -2800,
-        112
+        -640,
+        2608
       ],
-      "id": "7df12acc-dc12-417b-acc8-1bbb54b13123",
-      "name": "Webhook - Carrito Abandonado1",
+      "id": "2513f80f-27aa-4f68-83f2-0cc3b813478c",
+      "name": "Webhook - Carrito Abandonado",
       "webhookId": "ea771c6f-4142-446f-bcfb-d8c79b2ef096"
     },
     {
@@ -65,24 +65,24 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        -2560,
-        112
+        -400,
+        2608
       ],
-      "id": "297fec8c-1f95-452a-978f-8aab341fab89",
-      "name": "Validar Datos1"
+      "id": "013f4b95-62d5-48dd-ad2a-efe4f80ddf47",
+      "name": "Validar Datos"
     },
     {
       "parameters": {
-        "jsCode": "const raw = $input.first().json;\nconst body = { ...raw.body, ...raw };\n// Constantes de normalización (Anexo A)\nconst CART_VALUE_MAX  = 200000; // ARS — precio máx. catálogo × 1,1\nconst ABANDONMENT_MAX = 5;      // umbral de abandono recurrente\n// Pesos (Anexo A)\nconst W_VALUE      = 0.50;\nconst W_ABANDONMENT = 0.30;\nconst W_STAGE      = 0.20;\n// Valores discretos por etapa (Anexo A)\nconst STAGE_SCORES = {\n  browsing:          0.25,\n  cart:              0.50,\n  checkout_started:  0.75,\n  payment_page:      1.00,\n};\nconst cartValue        = parseFloat(body.cart_value) || 0;\nconst abandonmentCount = parseInt(body.previous_abandonment_count) || parseInt(raw.body?.previous_abandonment_count) || 0;\nconst cartStage        = body.cart_stage || raw.body?.cart_stage || 'cart';\nconst pValor    = Math.min(cartValue        / CART_VALUE_MAX,  1);\nconst pAbandono = Math.min(abandonmentCount / ABANDONMENT_MAX, 1);\nconst pEtapa    = STAGE_SCORES[cartStage] ?? 0.25;\nconst puntuacion = (pValor * W_VALUE + pAbandono * W_ABANDONMENT + pEtapa * W_STAGE) * 100;\nlet prioridad;\nif (puntuacion >= 70) {\n  prioridad = 'ALTA';\n} else if (puntuacion >= 40) {\n  prioridad = 'MEDIA';\n} else {\n  prioridad = 'BAJA';\n}\nconst items        = body.items || body.cart?.items || raw.body?.cart?.items || [];\nconst itemsResumen = items.map(i => `${i.name} (x${i.quantity}) - $${i.price}`).join(', ');\nreturn [{\n  json: {\n    customer_id:                body.customer_id   || 'sin-id',\n    name:                       body.name          || 'Cliente',\n    email:                      body.email         || '',\n    telegram_chat_id:           body.telegram_chat_id || '',\n    cart_value:                 cartValue,\n    cart_stage:                 cartStage,\n    previous_abandonment_count: abandonmentCount,\n    checkout_url:               body.checkout_url || body.cart?.checkout_url || 'https://technova.com.ar/checkout',\n    items_resumen:              itemsResumen      || 'productos seleccionados',\n    puntuacion:                 Math.round(puntuacion * 10) / 10,\n    prioridad:                  prioridad,\n    timestamp_evento:           body.timestamp    || new Date().toISOString(),\n    timestamp_procesado:        new Date().toISOString()\n  }\n}];"
+        "jsCode": "// ═══════════════════════════════════════════════════════════════\n// SCORING MULTIDIMENSIONAL — Fórmula del Anexo A\n// Score = 50·(valor_norm) + 30·(abandonos_norm) + 20·(etapa_score)\n//   valor_norm    = min(cart_value / 200000, 1)\n//   abandonos_norm= min(previous_abandonment_count / 5, 1)\n//   etapa_score   = browsing 0.25 | cart 0.50 | checkout_started 0.75 | payment_page 1.00\n// Umbrales: ALTA ≥ 70 | MEDIA ≥ 40 | BAJA < 40\n// ═══════════════════════════════════════════════════════════════\nconst body = $input.first().json.body;\n\n// --- Entradas ---\nconst cartValue = parseFloat(body.cart_value) || 0;\nconst abandonos = parseInt(body.previous_abandonment_count) || 0;\nconst cartStage = (body.cart_stage || 'browsing').toString().toLowerCase();\n\n// --- Normalizaciones (constantes del Anexo A) ---\nconst CART_VALUE_MAX  = 200000;\nconst ABANDONMENT_MAX = 5;\nconst STAGE_SCORES = {\n  browsing:         0.25,\n  cart:             0.50,\n  checkout_started: 0.75,\n  payment_page:     1.00\n};\n\nconst valorNorm    = Math.min(cartValue / CART_VALUE_MAX, 1);\nconst abandonoNorm = Math.min(abandonos / ABANDONMENT_MAX, 1);\nconst etapaScore   = STAGE_SCORES[cartStage] !== undefined ? STAGE_SCORES[cartStage] : 0.25;\n\n// --- Puntuación ponderada (0–100) ---\nconst puntuacion = Math.round(\n  (50 * valorNorm + 30 * abandonoNorm + 20 * etapaScore) * 100\n) / 100;\n\n// --- Clasificación por umbrales ---\nlet prioridad;\nif (puntuacion >= 70) {\n  prioridad = 'ALTA';\n} else if (puntuacion >= 40) {\n  prioridad = 'MEDIA';\n} else {\n  prioridad = 'BAJA';\n}\n\n// --- Resumen de items ---\nconst items = body.cart?.items || [];\nconst itemsResumen = items.map(i => `${i.name} (x${i.quantity}) - $${i.price}`).join(', ');\n\n// --- Timestamps para latencia ---\n// timestamp_evento: cuándo el backend detectó el abandono (viene en el payload)\n// timestamp_procesado: cuándo n8n procesa el scoring (ahora)\nconst tsEvento = body.timestamp || body.detected_at || new Date().toISOString();\nconst tsProcesado = new Date().toISOString();\n\nreturn [{\n  json: {\n    customer_id:              body.customer_id           || body.customer?.customer_id || 'sin-id',\n    name:                     body.name                  || body.customer?.name        || 'Cliente',\n    email:                    body.email                 || body.customer?.email       || '',\n    phone:                    body.phone                 || body.customer?.phone       || '',\n    telegram_chat_id:         body.telegram_chat_id      || '',\n    cart_value:               cartValue,\n    cart_id:                  body.cart?.cart_id         || body.cart_id               || '',\n    checkout_url:             body.cart?.checkout_url    || body.checkout_url          || '',\n    items_resumen:            itemsResumen               || body.producto              || 'productos seleccionados',\n    is_returning:             body.customer?.is_returning_customer || false,\n    // --- campos del scoring multidimensional (Anexo A) ---\n    cart_stage:               cartStage,\n    previous_abandonment_count: abandonos,\n    puntuacion:               puntuacion,\n    prioridad:                prioridad,\n    // --- timestamps ---\n    timestamp_evento:         tsEvento,\n    timestamp_procesado:      tsProcesado\n  }\n}];\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -2320,
-        112
+        -160,
+        2608
       ],
-      "id": "64e63c19-8803-490d-a26d-3ecc31591483",
-      "name": "Scoring - Clasificar Lead1"
+      "id": "46bc8eb7-9fa3-4e45-bd7c-11a0b1c2f2f6",
+      "name": "Scoring - Clasificar Lead"
     },
     {
       "parameters": {
@@ -145,11 +145,11 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -2080,
-        112
+        80,
+        2608
       ],
-      "id": "5deff8c1-5530-40fb-af35-cbc676f3a12d",
-      "name": "Switch - Prioridad1"
+      "id": "27cef133-222e-4dbb-8c0f-68d07c3823d8",
+      "name": "Switch - Prioridad"
     },
     {
       "parameters": {
@@ -159,47 +159,47 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        -1616,
-        -304
+        544,
+        2208
       ],
-      "id": "268a6674-9585-4670-903c-4c3abe1dfce9",
-      "name": "Memoria - Alta1"
+      "id": "c1beeb7a-153f-4205-aa7e-a8221e60de8a",
+      "name": "Memoria - Alta"
     },
     {
       "parameters": {
         "promptType": "define",
         "text": "=={{ \"Hola, soy \" + $json.name + \". Dejé productos en mi carrito: \" + $json.items_resumen + \". El valor total es $\" + $json.cart_value + \" ARS.\" }}",
         "options": {
-          "systemMessage": "=Eres un asesor de ventas experto de TechNova, una tienda de tecnología argentina que ofrece productos de calidad con envío gratuito para compras superiores a $50.000 ARS, hasta 12 cuotas sin interés, garantía oficial de 12 meses y política de devolución de 30 días sin preguntas.\n\nTu objetivo es ayudar al cliente a completar su compra de manera amigable, empática y profesional. Nunca seas invasivo ni presiones al cliente.\n\nCuando inicies la conversación, siempre:\n1. Saluda al cliente por su nombre.\n2. Menciona específicamente los productos que tiene en su carrito (nombre y cantidad).\n3. Ofrece información relevante sobre ventajas de TechNova que apliquen a su situación.\n4. Incluye un enlace directo al checkout: https://technova.com.ar/checkout\n5. Invita al cliente a hacer preguntas sobre envío, formas de pago, stock o garantía.\n\nSi el cliente responde con dudas u objeciones, respóndelas usando la siguiente base de conocimientos:\n- Envío: Gratuito para compras mayores a $50.000 ARS. Para montos menores, el costo es de $3.500 ARS a todo el país, con entrega en 3 a 5 días hábiles.\n- Formas de pago: Tarjeta de crédito hasta 12 cuotas sin interés, tarjeta de débito, transferencia bancaria con 5% de descuento adicional, y MercadoPago.\n- Stock: Todos los productos mostrados en la tienda tienen stock disponible al momento de la consulta.\n- Garantía: 12 meses de garantía oficial del fabricante en todos los productos.\n- Devoluciones: 30 días para devoluciones sin preguntas, con flete de retiro gratuito.\n- Seguridad: La tienda opera con certificado SSL y pasarela de pago segura homologada.\n\nMantén siempre un tono cordial, conciso y orientado a resolver la duda específica del cliente. No inventes información que no esté en esta base de conocimientos. Si no sabés la respuesta, invita al cliente a contactar al soporte en soporte@technova.com.ar.\n\nNo uses markdown, asteriscos ni formato especial. Solo texto plano."
+          "systemMessage": "=Eres un asistente de ventas experto de \"TechNova\" por Telegram. Recuperá el carrito abandonado.\n\nCliente: {{ $json.name }}\nProductos: {{ $json.items_resumen }}\nValor: ${{ $json.cart_value }} ARS\nLink: {{ $json.checkout_url }}\n\nBASE DE CONOCIMIENTOS:\n• Envíos: 48hs a todo el país. Gratis en compras +$30.000.\n• Pagos: 3 cuotas sin interés en compras +$500. Hasta 12 cuotas con interés.\n• Garantía: 12 meses oficial.\n• Devoluciones: 30 días sin preguntas.\n• Descuentos: Hasta 5% si lo pide. Nunca superar el 10%.\n\nSaludá por nombre, mencioná los productos, respondé dudas y pedile que finalice la compra. Sé breve y cálido.\nRESTRICCIÓN: Solo temas de TechNova.\n\nNo uses markdown, asteriscos ni formato especial. Solo texto plano."
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        -1744,
-        -144
+        416,
+        2368
       ],
-      "id": "cb2d3202-f320-49af-a2de-74b6b68b6cf0",
-      "name": "AI Agent - Alta Prioridad1"
+      "id": "29873b1c-576a-42e2-a41b-c7005c541760",
+      "name": "AI Agent - Alta Prioridad"
     },
     {
       "parameters": {
-        "chatId": "={{ $('Scoring - Clasificar Lead1').item.json.telegram_chat_id }}",
+        "chatId": "=7195598269",
         "text": "=={{ $json.output.replace(/\\*\\*/g, '').replace(/\\*/g, '') }}",
         "additionalFields": {}
       },
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        -1392,
-        -176
+        768,
+        2336
       ],
-      "id": "42e6e18c-0dc8-4d1d-91a2-4429f5e3e0aa",
-      "name": "Telegram - Enviar Mensaje1",
+      "id": "a260869a-e420-4467-a45e-cf3e861b888d",
+      "name": "Telegram - Enviar Mensaje",
       "webhookId": "2b94516f-0207-4287-8eed-718755cdcb55",
       "credentials": {
         "telegramApi": {
-          "id": "6IDSgwWmY5YqS9E4",
+          "id": "P105T4TWMe5kN7QE",
           "name": "Telegram account"
         }
       }
@@ -212,32 +212,32 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        -1600,
-        320
+        560,
+        2816
       ],
-      "id": "8926db32-3811-4295-9893-149f3370a324",
-      "name": "Memoria - Media1"
+      "id": "0c9338ec-6b13-4456-a7c0-91f808e1968b",
+      "name": "Memoria - Media"
     },
     {
       "parameters": {
         "promptType": "define",
         "text": "=={{ \"Hola, soy \" + $json.name + \". Dejé productos en mi carrito: \" + $json.items_resumen + \". El valor total es $\" + $json.cart_value + \" ARS.\" }}",
         "options": {
-          "systemMessage": "=Eres un asesor de ventas experto de TechNova, una tienda de tecnología argentina que ofrece productos de calidad con envío gratuito para compras superiores a $50.000 ARS, hasta 12 cuotas sin interés, garantía oficial de 12 meses y política de devolución de 30 días sin preguntas.\n\nRedactá un email de recuperación de carrito para el cliente.\n\nAl redactar el email:\n1. Saluda al cliente por su nombre.\n2. Menciona específicamente los productos que tiene en su carrito.\n3. Destacá 2 beneficios de TechNova relevantes para su situación.\n4. Incluye el enlace al checkout: https://technova.com.ar/checkout\n5. Invitá al cliente a responder si tiene preguntas sobre envío, formas de pago, stock o garantía.\n\nBase de conocimientos:\n- Envío: Gratuito para compras mayores a $50.000 ARS. Para montos menores, el costo es de $3.500 ARS a todo el país, con entrega en 3 a 5 días hábiles.\n- Formas de pago: Tarjeta de crédito hasta 12 cuotas sin interés, tarjeta de débito, transferencia bancaria con 5% de descuento adicional, y MercadoPago.\n- Stock: Todos los productos mostrados en la tienda tienen stock disponible al momento de la consulta.\n- Garantía: 12 meses de garantía oficial del fabricante en todos los productos.\n- Devoluciones: 30 días para devoluciones sin preguntas, con flete de retiro gratuito.\n- Seguridad: La tienda opera con certificado SSL y pasarela de pago segura homologada.\n\nTono cordial y profesional. No inventes información que no esté en esta base. Si no sabés la respuesta, invitá al cliente a contactar soporte@technova.com.ar.\n\nNo uses markdown, asteriscos ni formato especial. Solo texto plano."
+          "systemMessage": "=Eres un asistente de ventas de \"TechNova\". Redactá un email de recuperación de carrito.\n\nCliente: {{ $json.name }}\nProductos: {{ $json.items_resumen }}\nValor: ${{ $json.cart_value }} ARS\nLink: {{ $json.checkout_url }}\n\nBASE DE CONOCIMIENTOS:\n• Envíos: 48hs a todo el país.\n• Pagos: 3 cuotas sin interés en compras +$500.\n• Garantía: 12 meses oficial.\n• Devoluciones: 30 días sin preguntas.\n\nRedactá un email profesional: saludá por nombre, recordá los productos, destacá 2 beneficios e invitá a finalizar con el link. Solo texto plano.\n\nNo uses markdown, asteriscos ni formato especial. Solo texto plano."
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        -1744,
-        112
+        416,
+        2608
       ],
-      "id": "6a3ab820-2d08-4380-a0f2-0f7325cd3f57",
-      "name": "AI Agent - Media Prioridad1"
+      "id": "905aab67-fde8-4e6b-91b3-5a6b7322b725",
+      "name": "AI Agent - Media Prioridad"
     },
     {
       "parameters": {
-        "sendTo": "={{ $('Scoring - Clasificar Lead1').item.json.email }}",
+        "sendTo": "={{ $('Scoring - Clasificar Lead').item.json.email }}",
         "subject": "¡Tu carrito en TechNova te espera! 🛒",
         "message": "={{ $json.output }}",
         "options": {}
@@ -245,15 +245,15 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.2,
       "position": [
-        -1488,
-        112
+        672,
+        2608
       ],
-      "id": "fd13b17d-7c04-4444-b310-bea26dd29bc4",
-      "name": "Gmail - Media Prioridad1",
+      "id": "93f3467d-5521-407f-b492-7acb07dac865",
+      "name": "Gmail - Media Prioridad",
       "webhookId": "ed5a6d87-528e-4460-bb13-0a8e5ba2a45e",
       "credentials": {
         "gmailOAuth2": {
-          "id": "z7kIkxtv1iT9PG2w",
+          "id": "v5KEiit9BYHnBRLD",
           "name": "Gmail account"
         }
       }
@@ -266,32 +266,32 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        -1648,
-        688
+        512,
+        3184
       ],
-      "id": "617f2328-65a1-485a-b8c0-4bf1efeb1184",
-      "name": "Memoria - Baja1"
+      "id": "938dfc5e-f119-45c0-b67a-3e6f70cc8c15",
+      "name": "Memoria - Baja"
     },
     {
       "parameters": {
         "promptType": "define",
         "text": "=={{ \"Hola, soy \" + $json.name + \". Dejé productos en mi carrito: \" + $json.items_resumen + \". El valor total es $\" + $json.cart_value + \" ARS.\" }}",
         "options": {
-          "systemMessage": "=Eres un asesor de ventas de TechNova, una tienda de tecnología argentina con envío gratuito para compras superiores a $50.000 ARS, hasta 12 cuotas sin interés, garantía oficial de 12 meses y 30 días de devolución sin preguntas.\n\nRedactá un email breve de recuperación de carrito.\n\nAl redactar el email:\n1. Saluda al cliente por su nombre.\n2. Recordá los productos que tiene en su carrito.\n3. Incluí el enlace al checkout: https://technova.com.ar/checkout\n4. Invitá al cliente a contactar soporte@technova.com.ar si tiene dudas.\n\nTono cordial. Máximo 5 líneas. No uses markdown, asteriscos ni formato especial. Solo texto plano."
+          "systemMessage": "=Eres un asistente de ventas de \"TechNova\". Redactá un email breve de recuperación de carrito.\n\nCliente: {{ $json.name }}\nProductos: {{ $json.items_resumen }}\nValor: ${{ $json.cart_value }} ARS\nLink: {{ $json.checkout_url }}\n\nEmail corto (máx 5 líneas): recordá el carrito e invitá a finalizar la compra. Solo texto plano.\n\nNo uses markdown, asteriscos ni formato especial. Solo texto plano."
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        -1760,
-        496
+        400,
+        2992
       ],
-      "id": "6befe55f-95a0-4164-8abc-76a1a5f8e936",
-      "name": "AI Agent - Baja Prioridad1"
+      "id": "d5df5c9d-dd9e-47af-9916-d4471b358930",
+      "name": "AI Agent - Baja Prioridad"
     },
     {
       "parameters": {
-        "sendTo": "={{ $('Scoring - Clasificar Lead1').item.json.email }}",
+        "sendTo": "={{ $('Scoring - Clasificar Lead').item.json.email }}",
         "subject": "¡No olvides tu carrito en TechNova! 🛒",
         "message": "={{ $json.output }}",
         "options": {}
@@ -299,15 +299,15 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.2,
       "position": [
-        -1424,
-        528
+        736,
+        3024
       ],
-      "id": "94415c5d-30ca-450d-9ed3-8fbe95acdbad",
-      "name": "Gmail - Baja Prioridad1",
+      "id": "d81d9293-8a49-40e2-8838-1435ea30cbfa",
+      "name": "Gmail - Baja Prioridad",
       "webhookId": "1c92ac83-dd92-4cf2-bbe9-6c9905517141",
       "credentials": {
         "gmailOAuth2": {
-          "id": "z7kIkxtv1iT9PG2w",
+          "id": "v5KEiit9BYHnBRLD",
           "name": "Gmail account"
         }
       }
@@ -328,20 +328,21 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "Timestamp": "={{ $('Scoring - Clasificar Lead1').item.json.timestamp_procesado }}",
-            "Customer ID": "={{ $('Scoring - Clasificar Lead1').item.json.customer_id }}",
-            "Nombre": "={{ $('Scoring - Clasificar Lead1').item.json.name }}",
-            "Email": "={{ $('Scoring - Clasificar Lead1').item.json.email }}",
-            "Cart Value": "={{ $('Scoring - Clasificar Lead1').item.json.cart_value }}",
-            "Scoring": "={{ $('Scoring - Clasificar Lead1').item.json.prioridad }}",
-            "Canal": "={{ $('Scoring - Clasificar Lead1').item.json.prioridad === 'ALTA' ? 'Telegram' : 'Email' }}",
+            "Timestamp": "={{ $('Scoring - Clasificar Lead').item.json.timestamp_procesado }}",
+            "Customer ID": "={{ $('Scoring - Clasificar Lead').item.json.customer_id }}",
+            "Nombre": "={{ $('Scoring - Clasificar Lead').item.json.name }}",
+            "Email": "={{ $('Scoring - Clasificar Lead').item.json.email }}",
+            "Cart Value": "={{ $('Scoring - Clasificar Lead').item.json.cart_value }}",
+            "Scoring": "={{ $('Scoring - Clasificar Lead').item.json.prioridad }}",
+            "Canal": "={{ $('Scoring - Clasificar Lead').item.json.prioridad === 'ALTA' ? 'Telegram' : 'Email' }}",
             "Status": "Enviado",
             "Conversión Proxy": "Pendiente",
-            "Checkout URL": "={{ $('Scoring - Clasificar Lead1').item.json.checkout_url }}",
-            "Puntuacion": "={{ $('Scoring - Clasificar Lead1').item.json.puntuacion }}",
-            "Cart Stage": "={{ $('Scoring - Clasificar Lead1').item.json.cart_stage }}",
-            "Abandonos Previos": "={{ $('Scoring - Clasificar Lead1').item.json.previous_abandonment_count }}",
-            "Mensaje IA": "={{ $json.output }}"
+            "Checkout URL": "={{ $('Scoring - Clasificar Lead').item.json.checkout_url }}",
+            "Puntuacion": "={{ $('Scoring - Clasificar Lead').item.json.puntuacion }}",
+            "Cart Stage": "={{ $('Scoring - Clasificar Lead').item.json.cart_stage }}",
+            "Abandonos Previos": "={{ $('Scoring - Clasificar Lead').item.json.previous_abandonment_count }}",
+            "Mensaje IA": "={{ $json.output || $json.text || '' }}",
+            "Latencia (ms)": "={{ Date.now() - new Date($('Scoring - Clasificar Lead').item.json.timestamp_evento).getTime() }}"
           },
           "matchingColumns": [],
           "schema": [
@@ -470,6 +471,16 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true
+            },
+            {
+              "id": "Latencia (ms)",
+              "displayName": "Latencia (ms)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -480,14 +491,14 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        -1200,
-        112
+        960,
+        2608
       ],
-      "id": "24613a29-1aac-4ef2-9720-0d8c94c6d738",
-      "name": "Google Sheets - Auditoría1",
+      "id": "2ecd68a7-8b04-48b3-a6be-8d868e75eb4b",
+      "name": "Google Sheets - Auditoría",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "R5o1sSJvINqMO7Ia",
+          "id": "GFB2D2qOVgNhHXYq",
           "name": "Google Sheets account"
         }
       }
@@ -501,11 +512,11 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        -2800,
-        1008
+        -640,
+        3504
       ],
-      "id": "17cce9c4-dd82-4af8-8af6-ab60bdb8eca5",
-      "name": "Webhook - Respuesta Telegram1",
+      "id": "03296d41-5970-4009-95d1-f1f933f342d4",
+      "name": "Webhook - Respuesta Telegram",
       "webhookId": "bb882c1f-5b48-4c7b-9df2-d7c91a0b3f12"
     },
     {
@@ -516,28 +527,28 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        -2336,
-        784
+        -176,
+        3280
       ],
-      "id": "683a73e9-6ece-47bc-9848-26c1e5b19e46",
-      "name": "Memoria - Objeciones1"
+      "id": "522586d2-7341-44c8-a8e5-3c4399b3aa10",
+      "name": "Memoria - Objeciones"
     },
     {
       "parameters": {
         "promptType": "define",
-        "text": "={{ $json.body.message.text }}",
+        "text": "=={{ \"Hola, soy \" + $json.name + \". Dejé productos en mi carrito: \" + $json.items_resumen + \". El valor total es $\" + $json.cart_value + \" ARS.\" }}",
         "options": {
-          "systemMessage": "Eres un asesor de ventas experto de TechNova gestionando respuestas a consultas y objeciones por Telegram.\n\nBase de conocimientos:\n- Envío: Gratuito para compras mayores a $50.000 ARS. Para montos menores, el costo es de $3.500 ARS a todo el país, con entrega en 3 a 5 días hábiles.\n- Formas de pago: Tarjeta de crédito hasta 12 cuotas sin interés, tarjeta de débito, transferencia bancaria con 5% de descuento adicional, y MercadoPago.\n- Stock: Todos los productos mostrados en la tienda tienen stock disponible al momento de la consulta.\n- Garantía: 12 meses de garantía oficial del fabricante en todos los productos.\n- Devoluciones: 30 días para devoluciones sin preguntas, con flete de retiro gratuito.\n- Seguridad: La tienda opera con certificado SSL y pasarela de pago segura homologada.\n\nRespondé de forma directa y cordial. Máximo 3 párrafos. Al final invitá al cliente a finalizar la compra con el link https://technova.com.ar/checkout. Si no sabés la respuesta, derivá a soporte@technova.com.ar.\n\nNo inventes información que no esté en esta base de conocimientos. No uses markdown, asteriscos ni formato especial. Solo texto plano."
+          "systemMessage": "Eres un asistente de ventas de \"TechNova\" gestionando objeciones por Telegram.\n\nBASE DE CONOCIMIENTOS:\n• Envíos: 48hs a todo el país. Gratis en compras +$30.000.\n• Pagos: 3 cuotas sin interés en compras +$500. Hasta 12 cuotas con interés.\n• Garantía: 12 meses oficial.\n• Devoluciones: 30 días sin preguntas.\n• Descuentos: Hasta 5% si lo pide. Nunca superar el 10%.\n\nRespondé directo y persuasivo. Máximo 3 párrafos. Al final invitá a finalizar la compra.\nRESTRICCIÓN: Solo temas de TechNova.\n\nNo uses markdown, asteriscos ni formato especial. Solo texto plano."
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        -2464,
-        1008
+        -304,
+        3504
       ],
-      "id": "5651321d-a8ca-4904-b949-6db30bb27ef8",
-      "name": "AI Agent - Manejo de Objeciones1"
+      "id": "f7eaf58e-ddab-4292-923a-eacb1cc756c1",
+      "name": "AI Agent - Manejo de Objeciones"
     },
     {
       "parameters": {
@@ -548,15 +559,15 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        -2176,
-        1008
+        -16,
+        3504
       ],
-      "id": "3c8553a5-5bfe-451e-8780-2a3762c3c4bd",
-      "name": "Telegram - Responder Objeción1",
+      "id": "855a4ede-0ee0-447c-8bfb-c40c437c2b99",
+      "name": "Telegram - Responder Objeción",
       "webhookId": "6da83619-5170-4e64-83d0-078bc520009e",
       "credentials": {
         "telegramApi": {
-          "id": "6IDSgwWmY5YqS9E4",
+          "id": "P105T4TWMe5kN7QE",
           "name": "Telegram account"
         }
       }
@@ -574,14 +585,14 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [
-        -1808,
-        688
+        352,
+        3184
       ],
-      "id": "837cc566-0fac-45f5-acbd-475f4b445235",
-      "name": "Anthropic Chat Model4",
+      "id": "7eeafb05-0010-45ed-8124-c7e182beefe8",
+      "name": "Anthropic Chat Model",
       "credentials": {
         "anthropicApi": {
-          "id": "HRLZsOsSlPvEGZGm",
+          "id": "pEaaGpg6WE6OIOa6",
           "name": "Anthropic account"
         }
       }
@@ -599,14 +610,14 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [
-        -1760,
-        -352
+        400,
+        2160
       ],
-      "id": "2b02a68c-32dc-459b-8c84-52aa996da6b5",
-      "name": "Anthropic Chat Model5",
+      "id": "57aee375-c620-4ded-a7f8-6fa86ec2f438",
+      "name": "Anthropic Chat Model1",
       "credentials": {
         "anthropicApi": {
-          "id": "HRLZsOsSlPvEGZGm",
+          "id": "pEaaGpg6WE6OIOa6",
           "name": "Anthropic account"
         }
       }
@@ -624,14 +635,14 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [
-        -1760,
-        288
+        400,
+        2784
       ],
-      "id": "ae0d3fe9-bb29-4bc7-bd8b-023bf23b7d5e",
-      "name": "Anthropic Chat Model6",
+      "id": "0140432b-8311-47a8-8e18-576e3372a986",
+      "name": "Anthropic Chat Model2",
       "credentials": {
         "anthropicApi": {
-          "id": "HRLZsOsSlPvEGZGm",
+          "id": "pEaaGpg6WE6OIOa6",
           "name": "Anthropic account"
         }
       }
@@ -649,231 +660,230 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [
-        -2480,
-        784
+        -320,
+        3280
       ],
-      "id": "df6abb4f-81cf-4f4f-9ab1-9ed5fc1ba099",
-      "name": "Anthropic Chat Model7",
+      "id": "3426c638-c1af-46de-b8f7-26792a592930",
+      "name": "Anthropic Chat Model3",
       "credentials": {
         "anthropicApi": {
-          "id": "HRLZsOsSlPvEGZGm",
+          "id": "pEaaGpg6WE6OIOa6",
           "name": "Anthropic account"
         }
       }
     }
   ],
-  "pinData": {},
   "connections": {
-    "Webhook - Carrito Abandonado1": {
+    "Webhook - Carrito Abandonado": {
       "main": [
         [
           {
-            "node": "Validar Datos1",
+            "node": "Validar Datos",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Validar Datos1": {
+    "Validar Datos": {
       "main": [
         [
           {
-            "node": "Scoring - Clasificar Lead1",
+            "node": "Scoring - Clasificar Lead",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Scoring - Clasificar Lead1": {
+    "Scoring - Clasificar Lead": {
       "main": [
         [
           {
-            "node": "Switch - Prioridad1",
+            "node": "Switch - Prioridad",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Switch - Prioridad1": {
+    "Switch - Prioridad": {
       "main": [
         [
           {
-            "node": "AI Agent - Alta Prioridad1",
+            "node": "AI Agent - Alta Prioridad",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "AI Agent - Media Prioridad1",
+            "node": "AI Agent - Media Prioridad",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "AI Agent - Baja Prioridad1",
+            "node": "AI Agent - Baja Prioridad",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Memoria - Alta1": {
-      "ai_memory": [
-        [
-          {
-            "node": "AI Agent - Alta Prioridad1",
-            "type": "ai_memory",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "AI Agent - Alta Prioridad1": {
+    "AI Agent - Alta Prioridad": {
       "main": [
         [
           {
-            "node": "Telegram - Enviar Mensaje1",
+            "node": "Telegram - Enviar Mensaje",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Google Sheets - Auditoría1",
+            "node": "Google Sheets - Auditoría",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Memoria - Media1": {
-      "ai_memory": [
-        [
-          {
-            "node": "AI Agent - Media Prioridad1",
-            "type": "ai_memory",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "AI Agent - Media Prioridad1": {
+    "AI Agent - Media Prioridad": {
       "main": [
         [
           {
-            "node": "Gmail - Media Prioridad1",
+            "node": "Gmail - Media Prioridad",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Google Sheets - Auditoría1",
+            "node": "Google Sheets - Auditoría",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Memoria - Baja1": {
-      "ai_memory": [
-        [
-          {
-            "node": "AI Agent - Baja Prioridad1",
-            "type": "ai_memory",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "AI Agent - Baja Prioridad1": {
+    "AI Agent - Baja Prioridad": {
       "main": [
         [
           {
-            "node": "Gmail - Baja Prioridad1",
+            "node": "Gmail - Baja Prioridad",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Google Sheets - Auditoría1",
+            "node": "Google Sheets - Auditoría",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Webhook - Respuesta Telegram1": {
+    "Webhook - Respuesta Telegram": {
       "main": [
         [
           {
-            "node": "AI Agent - Manejo de Objeciones1",
+            "node": "AI Agent - Manejo de Objeciones",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Memoria - Objeciones1": {
+    "AI Agent - Manejo de Objeciones": {
+      "main": [
+        [
+          {
+            "node": "Telegram - Responder Objeción",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memoria - Alta": {
       "ai_memory": [
         [
           {
-            "node": "AI Agent - Manejo de Objeciones1",
+            "node": "AI Agent - Alta Prioridad",
             "type": "ai_memory",
             "index": 0
           }
         ]
       ]
     },
-    "AI Agent - Manejo de Objeciones1": {
-      "main": [
+    "Memoria - Media": {
+      "ai_memory": [
         [
           {
-            "node": "Telegram - Responder Objeción1",
-            "type": "main",
+            "node": "AI Agent - Media Prioridad",
+            "type": "ai_memory",
             "index": 0
           }
         ]
       ]
     },
-    "Anthropic Chat Model4": {
+    "Memoria - Baja": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent - Baja Prioridad",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memoria - Objeciones": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent - Manejo de Objeciones",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
       "ai_languageModel": [
         [
           {
-            "node": "AI Agent - Baja Prioridad1",
+            "node": "AI Agent - Baja Prioridad",
             "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     },
-    "Anthropic Chat Model5": {
+    "Anthropic Chat Model1": {
       "ai_languageModel": [
         [
           {
-            "node": "AI Agent - Alta Prioridad1",
+            "node": "AI Agent - Alta Prioridad",
             "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     },
-    "Anthropic Chat Model6": {
+    "Anthropic Chat Model2": {
       "ai_languageModel": [
         [
           {
-            "node": "AI Agent - Media Prioridad1",
+            "node": "AI Agent - Media Prioridad",
             "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     },
-    "Anthropic Chat Model7": {
+    "Anthropic Chat Model3": {
       "ai_languageModel": [
         [
           {
-            "node": "AI Agent - Manejo de Objeciones1",
+            "node": "AI Agent - Manejo de Objeciones",
             "type": "ai_languageModel",
             "index": 0
           }
@@ -881,18 +891,14 @@
       ]
     }
   },
-  "active": true,
+  "pinData": {},
   "settings": {
     "executionOrder": "v1",
-    "binaryMode": "separate",
-    "availableInMCP": false
+    "binaryMode": "separate"
   },
-  "versionId": "9beaef86-48bd-48cb-bac3-9f29deeb765f",
+  "staticData": null,
   "meta": {
-    "templateCredsSetupCompleted": true,
-    "instanceId": "1b6413f447bb004913085ecf2b3a5f35261a9f100b014c486538f8d3718f22d3"
+    "templateCredsSetupCompleted": true
   },
-  "nodeGroups": [],
-  "id": "buChnJdpUmPIT5GC",
   "tags": []
 }

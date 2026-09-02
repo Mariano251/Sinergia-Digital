@@ -37,6 +37,11 @@ const cartAbandoned = async (req, res, next) => {
       return res.status(400).json({ error: 'El carrito está vacío' });
     }
 
+    // Instante en que el sistema DETECTA el abandono (mismo criterio que el job
+    // automático en abandonedCartService.js). n8n lo usa como t0 para calcular
+    // la latencia detección -> envío.
+    const detectedAt = new Date().toISOString();
+
     const cartValue = cartResult.rows.reduce(
       (sum, item) => sum + (parseFloat(item.price) * item.quantity),
       0
@@ -57,6 +62,7 @@ const cartAbandoned = async (req, res, next) => {
       cart_value:                 cartValue,
       cart_stage:                 'cart',
       previous_abandonment_count: user.previous_abandonment_count,
+      detected_at:                detectedAt,
       cart: {
         cart_id:      cartId,
         checkout_url: checkoutUrl,

@@ -38,6 +38,11 @@ const processAbandonedCarts = async () => {
 
         if (cartResult.rows.length === 0) continue;
 
+        // Instante en que el sistema DETECTA el abandono: se toma apenas
+        // confirmamos que este carrito califica y antes de armar el payload.
+        // n8n lo lee como body.detected_at y con el calcula la latencia.
+        const detectedAt = new Date().toISOString();
+
         const cartValue   = cartResult.rows.reduce(
           (sum, item) => sum + (parseFloat(item.price) * item.quantity), 0
         );
@@ -58,6 +63,7 @@ const processAbandonedCarts = async () => {
           cart_value:                  cartValue,
           cart_stage:                  cartStage,
           previous_abandonment_count:  user.previous_abandonment_count,
+          detected_at:                 detectedAt,
           cart: {
             cart_id:      cartId,
             checkout_url: checkoutUrl,
