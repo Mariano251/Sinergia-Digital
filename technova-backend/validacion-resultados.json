@@ -1,0 +1,317 @@
+[
+  {
+    "id": "F-01",
+    "cv": 40000,
+    "ab": 0,
+    "userId": 1,
+    "p": 20,
+    "prio": "BAJA",
+    "ok": true
+  },
+  {
+    "id": "F-02",
+    "cv": 40000,
+    "ab": 1,
+    "userId": 2,
+    "p": 26,
+    "prio": "BAJA",
+    "ok": true
+  },
+  {
+    "id": "F-03",
+    "cv": 40000,
+    "ab": 2,
+    "userId": 3,
+    "p": 32,
+    "prio": "BAJA",
+    "ok": true
+  },
+  {
+    "id": "F-04",
+    "cv": 40000,
+    "ab": 3,
+    "userId": 4,
+    "p": 38,
+    "prio": "BAJA",
+    "ok": true
+  },
+  {
+    "id": "F-05",
+    "cv": 40000,
+    "ab": 5,
+    "userId": 5,
+    "p": 50,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-06",
+    "cv": 80000,
+    "ab": 0,
+    "userId": 6,
+    "p": 30,
+    "prio": "BAJA",
+    "ok": true
+  },
+  {
+    "id": "F-07",
+    "cv": 80000,
+    "ab": 1,
+    "userId": 7,
+    "p": 36,
+    "prio": "BAJA",
+    "ok": true
+  },
+  {
+    "id": "F-08",
+    "cv": 80000,
+    "ab": 2,
+    "userId": 8,
+    "p": 42,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-09",
+    "cv": 80000,
+    "ab": 3,
+    "userId": 9,
+    "p": 48,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-10",
+    "cv": 80000,
+    "ab": 5,
+    "userId": 10,
+    "p": 60,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-11",
+    "cv": 120000,
+    "ab": 0,
+    "userId": 1,
+    "p": 40,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-12",
+    "cv": 120000,
+    "ab": 1,
+    "userId": 2,
+    "p": 46,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-13",
+    "cv": 120000,
+    "ab": 2,
+    "userId": 3,
+    "p": 52,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-14",
+    "cv": 120000,
+    "ab": 3,
+    "userId": 4,
+    "p": 58,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-15",
+    "cv": 120000,
+    "ab": 5,
+    "userId": 5,
+    "p": 70,
+    "prio": "ALTA",
+    "ok": true
+  },
+  {
+    "id": "F-16",
+    "cv": 160000,
+    "ab": 0,
+    "userId": 6,
+    "p": 50,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-17",
+    "cv": 160000,
+    "ab": 1,
+    "userId": 7,
+    "p": 56,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-18",
+    "cv": 160000,
+    "ab": 2,
+    "userId": 8,
+    "p": 62,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-19",
+    "cv": 160000,
+    "ab": 3,
+    "userId": 9,
+    "p": 68,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-20",
+    "cv": 160000,
+    "ab": 5,
+    "userId": 10,
+    "p": 80,
+    "prio": "ALTA",
+    "ok": true
+  },
+  {
+    "id": "F-21",
+    "cv": 200000,
+    "ab": 0,
+    "userId": 1,
+    "p": 60,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-22",
+    "cv": 200000,
+    "ab": 1,
+    "userId": 2,
+    "p": 66,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "F-23",
+    "cv": 200000,
+    "ab": 2,
+    "userId": 3,
+    "p": 72,
+    "prio": "ALTA",
+    "ok": true
+  },
+  {
+    "id": "F-24",
+    "cv": 200000,
+    "ab": 3,
+    "userId": 4,
+    "p": 78,
+    "prio": "ALTA",
+    "ok": true
+  },
+  {
+    "id": "F-25",
+    "cv": 200000,
+    "ab": 5,
+    "userId": 5,
+    "p": 90,
+    "prio": "ALTA",
+    "ok": true
+  },
+  {
+    "id": "B40-01",
+    "cv": 64000,
+    "ab": 2,
+    "userId": 6,
+    "p": 38,
+    "prio": "BAJA",
+    "ok": true
+  },
+  {
+    "id": "B40-02",
+    "cv": 68000,
+    "ab": 2,
+    "userId": 7,
+    "p": 39,
+    "prio": "BAJA",
+    "ok": true
+  },
+  {
+    "id": "B40-03",
+    "cv": 72000,
+    "ab": 2,
+    "userId": 8,
+    "p": 40,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "B40-04",
+    "cv": 76000,
+    "ab": 2,
+    "userId": 9,
+    "p": 41,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "B40-05",
+    "cv": 80000,
+    "ab": 2,
+    "userId": 10,
+    "p": 42,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "B70-01",
+    "cv": 112000,
+    "ab": 5,
+    "userId": 1,
+    "p": 68,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "B70-02",
+    "cv": 116000,
+    "ab": 5,
+    "userId": 2,
+    "p": 69,
+    "prio": "MEDIA",
+    "ok": true
+  },
+  {
+    "id": "B70-03",
+    "cv": 120000,
+    "ab": 5,
+    "userId": 3,
+    "p": 70,
+    "prio": "ALTA",
+    "ok": true
+  },
+  {
+    "id": "B70-04",
+    "cv": 124000,
+    "ab": 5,
+    "userId": 4,
+    "p": 71,
+    "prio": "ALTA",
+    "ok": true
+  },
+  {
+    "id": "B70-05",
+    "cv": 128000,
+    "ab": 5,
+    "userId": 5,
+    "p": 72,
+    "prio": "ALTA",
+    "ok": true
+  }
+]

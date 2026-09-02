@@ -6,7 +6,10 @@ const axios = require('axios');
 // También es llamado por el job automático del backend
 const cartAbandoned = async (req, res, next) => {
   try {
-    const { user_id } = req.body;
+    // `escenario`: etiqueta opcional para identificar la corrida en la
+    // planilla de auditoria (ej: "A-01", "M-05"). Solo se usa en las
+    // tandas de validacion; en produccion viaja como null.
+    const { user_id, escenario } = req.body;
 
     if (!user_id) {
       return res.status(400).json({ error: 'user_id es requerido' });
@@ -63,6 +66,7 @@ const cartAbandoned = async (req, res, next) => {
       cart_stage:                 'cart',
       previous_abandonment_count: user.previous_abandonment_count,
       detected_at:                detectedAt,
+      escenario:                  escenario || null,
       cart: {
         cart_id:      cartId,
         checkout_url: checkoutUrl,
