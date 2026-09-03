@@ -1,27 +1,25 @@
 Mensaje,Valor del carrito (ARS),Productos en el carrito,Mensaje generado,Relevancia (1-5),Precision factual (1-5),Persuasion (1-5),Uso de contexto (1-5),Claridad (1-5),Observaciones
-M-01,160000,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL","Asunto: Cliente 08, completá tu compra en TechNova
+M-01,200000,"1x Monitor 27"" Full HD, 1x Mouse Pad XL","Hola Cliente 05,
 
-Hola Cliente 08,
+Encontramos tu carrito con estos productos que dejaste pendientes:
 
-Te escribimos porque vimos que dejaste algunos productos en tu carrito y nos gustaría ayudarte a completar tu compra.
+Mouse Pad XL (x1) - $20000
+Monitor 27"" Full HD (x1) - $180000
+Total: $200000 ARS
 
-Tenías seleccionados:
-- Teclado Mecánico RGB (x1) - $55000
-- Mouse Pad XL (x1) - $20000
-- SSD 1TB NVMe (x1) - $85000
-Total: $160000 ARS
+No dejes ir esta oportunidad. Con tu compra obtienes:
 
-Queremos recordarte que en TechNova contás con beneficios especiales para tu compra. Primero, podés pagar en 3 cuotas sin interés en una compra de este monto. Además, todos nuestros productos tienen garantía oficial de 12 meses, así que tu inversión está completamente protegida.
+Envío gratis a todo el país en 48 horas
+Hasta 12 cuotas con interés (o 3 cuotas sin interés)
+Garantía oficial de 12 meses
+Devolución sin preguntas en 30 días
 
-Si cambiaras de idea o tuvieras dudas, tenemos política de devolución sin preguntas en los primeros 30 días. También te garantizamos entrega en 48 horas a todo el país.
+Completa tu compra aquí: http://localhost:5173/checkout
 
-Completá tu compra desde aquí:
-http://localhost:5173/checkout
-
-Cualquier duda, estamos disponibles para ayudarte.
+Si tienes alguna duda sobre los productos o los medios de pago, me avisa y te ayudo sin problema.
 
 Saludos,
-Equipo de TechNova",,,,,,
+Equipo TechNova",,,,,,
 M-02,120000,"1x SSD 1TB NVMe, 1x Webcam 1080p","Asunto: Cliente 01, completa tu compra con beneficios exclusivos
 
 Hola Cliente 01,
@@ -42,66 +40,34 @@ Cualquier consulta, estamos para ayudarte.
 
 Saludos,
 Equipo TechNova",,,,,,
-M-03,80000,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p","Asunto: Cliente 08, completá tu compra en TechNova
+M-03,40000,2x Mouse Pad XL,"Asunto: No olvides tu compra en TechNova
 
-Hola Cliente 08,
+Hola Cliente 01,
 
-Te escribimos porque vimos que dejaste algunos productos en tu carrito y nos gustaría ayudarte a completar tu compra.
+Vimos que dejaste en tu carrito 2 Mouse Pad XL por un total de $40000 ARS. No queremos que te pierdas esta oportunidad.
 
-Tenías seleccionados:
-- Auriculares Bluetooth Pro (x1) - $45000
-- Webcam 1080p (x1) - $35000
-Total: $80000 ARS
-
-Queremos recordarte que en TechNova contás con beneficios especiales para tu compra. Primero, podés pagar en 3 cuotas sin interés ya que tu compra supera los $500. Además, todos nuestros productos tienen garantía oficial de 12 meses, así que tu inversión está completamente protegida.
-
-Si cambiaras de idea o tuvieras dudas, tenemos política de devolución sin preguntas en los primeros 30 días. También te garantizamos entrega en 48 horas a todo el país.
-
-Completá tu compra desde aquí:
-http://localhost:5173/checkout
-
-Cualquier duda, estamos disponibles para ayudarte.
+Finaliza tu compra aquí: http://localhost:5173/checkout
 
 Saludos,
-Equipo de TechNova",,,,,,
-M-04,80000,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p","Asunto: Cliente 09, tus productos te esperan en TechNova
+Equipo TechNova",,,,,,
+M-04,140000,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB","Hola Cliente 05! Qué bueno verte de nuevo. Vi que dejaste en el carrito el Teclado Mecánico RGB y el SSD 1TB NVMe, una excelente combinación por $140000.
 
----
+Te cuento que con esta compra podés hacer 3 cuotas sin interés. Además, contás con garantía de 12 meses y devolución sin preguntas en 30 días si lo necesitás.
 
-Hola Cliente 09,
+El envío son 48hs a todo el país sin costo, así que estás listo para finalizar.
 
-Te escribimos porque vimos que dejaste productos en tu carrito en TechNova y queremos ayudarte a completar tu compra.
+Acá está el link para completar: http://localhost:5173/checkout
 
-Recordamos que tenías seleccionados:
-- Auriculares Bluetooth Pro (x1) - $45000
-- Webcam 1080p (x1) - $35000
-Total: $80000 ARS
+¿Hay algo que te frene? Con gusto te ayudo con cualquier duda.",,,,,,
+M-05,120000,"1x SSD 1TB NVMe, 1x Webcam 1080p","Hola Cliente 02,
 
-Nos gustaría destacarte dos razones por las que esta es una excelente compra:
+Vi que dejaste en tu carrito un SSD 1TB NVMe y una Webcam 1080p, por un total de 120 mil pesos. Excelente elección para mejorar tu equipo.
 
-1. Contamos con entregas en 48 horas a todo el país, así recibís tus productos rápidamente y listo para usar.
+Lo mejor es que con este monto podés pagar en 3 cuotas sin interés, y el envío llega en 48 horas a cualquier parte del país. Todo con garantía oficial de 12 meses, así que estás completamente cubierto.
 
-2. Tu compra de $80000 califica para 3 cuotas sin interés, lo que hace mucho más accesible la inversión en estos equipos de calidad.
+Completá tu compra acá y empezá a disfrutar: http://localhost:5173/checkout
 
-Además, todos nuestros productos incluyen garantía oficial de 12 meses y tenés 30 días para devolver sin preguntas si lo necesitás.
-
-Finalizá tu compra haciendo clic en el siguiente enlace:
-
-http://localhost:5173/checkout
-
-Si tenés alguna duda, estamos a tu disposición.
-
-Saludos cordiales,
-Equipo de TechNova",,,,,,
-M-05,200000,"1x Monitor 27"" Full HD, 1x Mouse Pad XL","Hola Cliente 02,
-
-Vemos que dejaste un Monitor 27"" Full HD y un Mouse Pad XL en tu carrito por 200 mil pesos. Una combinación perfecta para tu estación de trabajo.
-
-Te cuento las ventajas: podés pagar en 3 cuotas sin interés y recibís el envío en 48 horas a todo el país. Además, todo viene con garantía oficial de 12 meses y podés devolver lo que quieras en 30 días sin preguntas.
-
-Finalizá tu compra acá: http://localhost:5173/checkout
-
-Cualquier consulta, estamos para ayudarte.
+Cualquier duda, contáctanos.
 
 Saludos, TechNova",,,,,,
 M-06,40000,2x Mouse Pad XL,"Asunto: Cliente 05, tu carrito te espera en TechNova
@@ -128,34 +94,45 @@ Si tienes alguna duda o necesitas ayuda, estamos disponibles para asistirte.
 
 Saludos cordiales,
 Equipo TechNova",,,,,,
-M-07,200000,"1x Monitor 27"" Full HD, 1x Mouse Pad XL","Hola Cliente 03,
+M-07,64000,"3x Mouse Pad XL, 1x Cable USB-C 2m","Asunto: No olvides tu compra en TechNova
 
-Vimos que dejaste un Mouse Pad XL y un Monitor 27"" Full HD en tu carrito por $200000 ARS. No queremos que se te escapen.
+Hola Cliente 02,
 
-Con tu compra obtenés:
+Vimos que dejaste productos en tu carrito. Tienes 3 Mouse Pad XL y 1 Cable USB-C 2m listos por $64000 ARS.
 
-- 3 cuotas sin interés
-- Envío gratis a todo el país
-- Garantía oficial de 12 meses
-- Devolución sin preguntas en 30 días
+No pierdas esta oportunidad, finaliza tu compra ahora: http://localhost:5173/checkout
 
-Completá tu compra aquí: http://localhost:5173/checkout
-
-Si tenés alguna duda, avísame.
+Si tienes dudas, estamos aquí para ayudarte.
 
 Saludos,
-TechNova",,,,,,
-M-08,116000,"1x Webcam 1080p, 1x Auriculares Bluetooth Pro, 1x Mouse Pad XL, 4x Cable USB-C 2m","Hola Cliente 02,
+Equipo TechNova",,,,,,
+M-08,80000,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p","Asunto: No dejes ir tus productos, Cliente 10 - Tu carrito te espera
 
-Vi que dejaste un carrito con Mouse Pad XL, Auriculares Bluetooth Pro, Webcam 1080p y 4 Cables USB-C 2m por 116 mil pesos. Un combo muy completo para tu setup.
+Hola Cliente 10,
 
-Lo mejor es que pagás en 3 cuotas sin interés y el envío llega en 48 horas a todo el país. Todo protegido con garantía oficial de 12 meses, así que no tenés riesgo.
+Notamos que dejaste algunos productos en tu carrito que podrían ser perfectos para ti.
 
-Completá tu compra acá: http://localhost:5173/checkout
+Te recordamos que tenías:
+- Auriculares Bluetooth Pro (x1) - $45000
+- Webcam 1080p (x1) - $35000
 
-Cualquier duda, contáctanos.
+Total: $80000 ARS
 
-Saludos, TechNova",,,,,,
+Sabemos que puede haber sido difícil decidirte, así que queremos ayudarte con dos ventajas que tal vez no conocías:
+
+1. Podés pagar en 3 cuotas sin interés. Con una compra como la tuya, es una excelente manera de distribuir el gasto sin preocupaciones.
+
+2. Todos nuestros productos incluyen garantía oficial de 12 meses, así que tu inversión está completamente protegida.
+
+Además, llegamos a todo el país en 48 horas y si cambias de idea, tenés 30 días para devolver sin preguntas.
+
+Finaliza tu compra aquí:
+http://localhost:5173/checkout
+
+Si tienes dudas, estamos para ayudarte.
+
+Saludos,
+Equipo TechNova",,,,,,
 M-09,76000,"3x Mouse Pad XL, 4x Cable USB-C 2m","Asunto: Cliente 09, completa tu compra en TechNova
 
 ---
@@ -185,48 +162,77 @@ Si tenés alguna duda, estamos a tu disposición.
 
 Saludos cordiales,
 Equipo de TechNova",,,,,,
-M-10,120000,"1x SSD 1TB NVMe, 1x Webcam 1080p","Hola Cliente 05,
+M-10,200000,"1x Monitor 27"" Full HD, 1x Mouse Pad XL","Hola Cliente 05! Que bueno que volvÃ©s. Vi que tenÃ©s en el carrito el Mouse Pad XL y el Monitor 27"" Full HD, perfecta dupla por $200000.
+ 
+ Con esta compra podÃ©s hacer hasta 3 cuotas sin interÃ©s. AdemÃ¡s tenÃ©s garantÃ­a de 12 meses y 30 dÃ­as para devolver sin preguntas si lo necesitÃ¡s. El envÃ­o a todo el paÃ­s sale en 48hs y es gratis.
+ 
+ Todo listo para que completes la compra acÃ¡: http://localhost:5173/checkout
+ 
+ Â¿Hay algo que te preocupe o alguna duda antes de finalizar?",,,,,,
+M-11,150000,"1x SSD 1TB NVMe, 1x Headset Gamer 7.1","Asunto: Cliente 09, tu carrito te espera en TechNova
+ 
+ Hola Cliente 09,
+ 
+ Notamos que dejaste productos en tu carrito y queremos ayudarte a completar tu compra.
+ 
+ Tienes reservados:
+ SSD 1TB NVMe - $85000
+ Headset Gamer 7.1 - $65000
+ Total: $150000 ARS
+ 
+ Te recordamos dos grandes beneficios que aplican a tu compra:
+ 
+ 1. Pagos en 3 cuotas sin interÃ©s por ser una compra mayor a $500, para que sea mÃ¡s accesible para vos.
+ 
+ 2. GarantÃ­a oficial de 12 meses en ambos productos, para que compres con total tranquilidad.
+ 
+ Finaliza tu compra aquÃ­: http://localhost:5173/checkout
+ 
+ Cualquier duda, estamos para ayudarte.
+ 
+ Saludos,
+ TechNova",,,,,,
+M-12,160000,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL","Hola Cliente 07,
 
-Vimos que dejaste estos productos en tu carrito y no queremos que te los pierdas:
+Vimos que dejaste productos en tu carrito y no queremos que se te escape esta oportunidad.
 
-SSD 1TB NVMe (x1) - $85000
-Webcam 1080p (x1) - $35000
-Total: $120000 ARS
+Tenías seleccionados:
+- Teclado Mecánico RGB (x1) - $55000
+- Mouse Pad XL (x1) - $20000
+- SSD 1TB NVMe (x1) - $85000
 
-Con esta compra te llevas grandes beneficios:
+Total: $160000 ARS
 
-Envío gratis a todo el país en 48 horas (tu compra supera los $30000)
-3 cuotas sin interés (compras mayores a $500)
-Garantía oficial de 12 meses en ambos productos
-Devolución sin preguntas en 30 días si lo necesitas
+Te recordamos dos beneficios que hacen tu compra más fácil: contamos con envíos en 48hs a todo el país y en compras mayores a $500 puedes pagar en 3 cuotas sin interés.
 
 Finaliza tu compra aquí: http://localhost:5173/checkout
 
-Cualquier pregunta, aquí estamos para ayudarte.
+Cualquier consulta, no dudes en escribirnos.
 
 Saludos,
-Equipo TechNova",,,,,,
-M-11,112000,"1x Webcam 1080p, 1x Auriculares Bluetooth Pro, 1x Mouse Pad XL, 3x Cable USB-C 2m","Asunto: Cliente 01, tu carrito de $112000 ARS está listo para finalizar
+TechNova",,,,,,
+M-13,68000,"3x Mouse Pad XL, 2x Cable USB-C 2m","Hola Cliente 07,
 
-Hola Cliente 01,
+Te recordamos que dejaste productos en tu carrito esperando por ti.
 
-Vimos que dejaste en tu carrito un Mouse Pad XL, Auriculares Bluetooth Pro, una Webcam 1080p y 3 Cables USB-C 2m por un total de $112000 ARS. No queremos que te pierdas esta compra.
+Tenías seleccionados:
+- Mouse Pad XL (x3) - $20000
+- Cable USB-C 2m (x2) - $4000
 
-Te recordamos dos grandes beneficios para completar hoy:
+Total: $68000 ARS
 
-1. Pagá en 3 cuotas sin interés. Distribuí el monto sin costo adicional con esta compra.
+Completa tu compra aquí: http://localhost:5173/checkout
 
-2. Garantía oficial de 12 meses en todos tus productos, más devolución sin preguntas dentro de 30 días.
-
-Además, realizamos envíos a todo el país en 48 horas.
-
-Finaliza tu compra aquí: http://localhost:5173/checkout
-
-Cualquier consulta, estamos disponibles para ayudarte.
+Cualquier duda estamos a tu disposición.
 
 Saludos,
-Equipo TechNova",,,,,,
-M-12,80000,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p","Asunto: Cliente 10, tus productos siguen esperándote en TechNova
+TechNova",,,,,,
+M-14,59000,"1x Teclado Mecanico RGB, 1x Cable USB-C 2m","Hola Cliente 08! Vi que tenÃ©s en el carrito el Teclado MecÃ¡nico RGB y el Cable USB-C 2m, por un total de 59.000 pesos. Son complementos perfectos para tu estaciÃ³n de trabajo.
+ 
+ No dejes pasar esta compra, completala ahora en: http://localhost:5173/checkout
+ 
+ Si tenÃ©s dudas sobre los productos o necesitÃ¡s ayuda, estoy acÃ¡ para asistirte.",,,,,,
+M-15,80000,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p","Asunto: Cliente 10, tus productos siguen esperándote en TechNova
 
 Hola Cliente 10,
 
@@ -252,43 +258,7 @@ Cualquier duda, nos contactas sin problema.
 
 Saludos,
 Equipo TechNova",,,,,,
-M-13,64000,"3x Mouse Pad XL, 1x Cable USB-C 2m","Asunto: Cliente 06, completa tu compra en TechNova
-
-Hola Cliente 06,
-
-Vimos que dejaste productos en tu carrito y queremos recordarte que están listos para finalizar tu compra:
-
-Mouse Pad XL (x3) - $20000
-Cable USB-C 2m (x1) - $4000
-
-Total: $64000 ARS
-
-No pierdas esta oportunidad. Completa tu compra aquí: http://localhost:5173/checkout
-
-Estamos para ayudarte si tienes dudas.
-
-Saludos,
-Equipo TechNova",,,,,,
-M-14,160000,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL","Hola Cliente 07,
-
-Vimos que dejaste productos en tu carrito y no queremos que se te escape esta oportunidad.
-
-Tenías seleccionados:
-- Teclado Mecánico RGB (x1) - $55000
-- Mouse Pad XL (x1) - $20000
-- SSD 1TB NVMe (x1) - $85000
-
-Total: $160000 ARS
-
-Te recordamos dos beneficios que hacen tu compra más fácil: contamos con envíos en 48hs a todo el país y en compras mayores a $500 puedes pagar en 3 cuotas sin interés.
-
-Finaliza tu compra aquí: http://localhost:5173/checkout
-
-Cualquier consulta, no dudes en escribirnos.
-
-Saludos,
-TechNova",,,,,,
-M-15,40000,2x Mouse Pad XL,"Asunto: Cliente 03, tu carrito te está esperando en TechNova
+M-16,40000,2x Mouse Pad XL,"Asunto: Cliente 03, tu carrito te está esperando en TechNova
 
 Hola Cliente 03,
 
@@ -300,139 +270,65 @@ Si tienes dudas, estamos para ayudarte.
 
 Saludos,
 TechNova",,,,,,
-M-16,72000,"3x Mouse Pad XL, 3x Cable USB-C 2m","Asunto: Cliente 08, completá tu compra en TechNova
+M-17,69000,"1x Headset Gamer 7.1, 1x Cable USB-C 2m","Asunto: No olvides tu carrito, Cliente 09
+ 
+ Hola Cliente 09,
+ 
+ Vimos que dejaste productos en tu carrito de TechNova. Te esperan: Headset Gamer 7.1 y Cable USB-C 2m por un total de $69000 ARS.
+ 
+ Completa tu compra ahora en http://localhost:5173/checkout
+ 
+ Saludos,
+ TechNova",,,,,,
+M-18,160000,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL","Hola Cliente 01,
 
-Hola Cliente 08,
+Vi que dejaste un excelente combo en tu carrito: Teclado Mecánico RGB, Mouse Pad XL y SSD 1TB NVMe por $160000 ARS.
 
-Te escribimos porque vimos que dejaste algunos productos en tu carrito y nos gustaría ayudarte a completar tu compra.
+Te cuento algunos beneficios que aplican a tu compra:
 
-Tenías seleccionados:
-- Mouse Pad XL (x3) - $20000
-- Cable USB-C 2m (x3) - $4000
-Total: $72000 ARS
+- Envío gratis a todo el país en 48hs
+- Pagás en 3 cuotas sin interés
+- Garantía oficial de 12 meses
+- 30 días para devolver si lo necesitás
 
-Queremos recordarte que en TechNova contás con beneficios especiales para tu compra. Primero, podés pagar en 3 cuotas sin interés ya que tu compra supera los $500. Además, todos nuestros productos tienen garantía oficial de 12 meses, así que tu inversión está completamente protegida.
+Completá tu compra acá: http://localhost:5173/checkout
 
-Si cambiaras de idea o tuvieras dudas, tenemos política de devolución sin preguntas en los primeros 30 días. También te garantizamos entrega en 48 horas a todo el país.
-
-Completá tu compra desde aquí:
-http://localhost:5173/checkout
-
-Cualquier duda, estamos disponibles para ayudarte.
+¿Tenés alguna duda antes de finalizar?
 
 Saludos,
-Equipo de TechNova",,,,,,
-M-17,40000,2x Mouse Pad XL,"Asunto: Cliente 01, tu carrito te espera en TechNova
+TechNova",,,,,,
+M-19,200000,"1x Monitor 27"" Full HD, 1x Mouse Pad XL","Asunto: Cliente 01, tu carrito de $200000 ARS te espera
 
 Hola Cliente 01,
 
-Vimos que dejaste 2 Mouse Pad XL en tu carrito por $40000 ARS. No queremos que te pierdas esta oferta.
+Vimos que dejaste en tu carrito un Monitor 27"" Full HD y un Mouse Pad XL por un total de $200000 ARS. No queremos que te pierdas esta compra.
 
-Completa tu compra ahora: http://localhost:5173/checkout
+Te recordamos dos grandes beneficios para finalizar hoy:
 
-Cualquier duda, estamos acá para ayudarte.
+1. Pagá en 3 cuotas sin interés. Con este monto podés distribuir el pago sin costo adicional.
 
-Saludos,
-Equipo TechNova",,,,,,
-M-18,80000,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p","Asunto: No dejes ir tus productos, Cliente 10 - Tu carrito te espera
+2. Garantía oficial de 12 meses en ambos productos, más devolución sin preguntas dentro de 30 días.
 
-Hola Cliente 10,
-
-Notamos que dejaste algunos productos en tu carrito que podrían ser perfectos para ti.
-
-Te recordamos que tenías:
-- Auriculares Bluetooth Pro (x1) - $45000
-- Webcam 1080p (x1) - $35000
-
-Total: $80000 ARS
-
-Sabemos que puede haber sido difícil decidirte, así que queremos ayudarte con dos ventajas que tal vez no conocías:
-
-1. Podés pagar en 3 cuotas sin interés. Con una compra como la tuya, es una excelente manera de distribuir el gasto sin preocupaciones.
-
-2. Todos nuestros productos incluyen garantía oficial de 12 meses, así que tu inversión está completamente protegida.
-
-Además, llegamos a todo el país en 48 horas y si cambias de idea, tenés 30 días para devolver sin preguntas.
-
-Finaliza tu compra aquí:
-http://localhost:5173/checkout
-
-Si tienes dudas, estamos para ayudarte.
-
-Saludos,
-Equipo TechNova",,,,,,
-M-19,120000,"1x SSD 1TB NVMe, 1x Webcam 1080p","Asunto: Cliente 03, completa tu compra en TechNova
-
-Hola Cliente 03,
-
-Notamos que dejaste en tu carrito un SSD 1TB NVMe y una Webcam 1080p, totalizando $120000 ARS. No queremos que te los pierdas.
-
-Te recordamos dos grandes beneficios para tu compra:
-
-1. Pagá en 3 cuotas sin interés en compras mayores a $500. Tu compra califica perfectamente.
-
-2. Contás con garantía oficial de 12 meses en ambos productos, con devolución sin preguntas dentro de 30 días si lo necesitás.
-
-Finaliza tu compra aquí: http://localhost:5173/checkout
-
-Si tenés alguna pregunta, estamos disponibles para ayudarte.
-
-Saludos,
-TechNova",,,,,,
-M-20,80000,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p","Hola Cliente 07,
-
-Vimos que dejaste algunos productos en tu carrito de compra. No queremos que te pierdas la oportunidad de llevar tus Auriculares Bluetooth Pro y Webcam 1080p por $80000 ARS.
-
-Completa tu compra ahora desde aquí: http://localhost:5173/checkout
-
-Si tienes dudas, estamos para ayudarte.
-
-Saludos,
-TechNova",,,,,,
-M-21,128000,"1x SSD 1TB NVMe, 1x Webcam 1080p, 2x Cable USB-C 2m","Hola Cliente 05,
-
-Te escribo porque encontramos tu carrito con estos productos que dejaste sin completar:
-
-SSD 1TB NVMe (x1) - $85000
-Webcam 1080p (x1) - $35000
-Cable USB-C 2m (x2) - $4000
-Total: $128000 ARS
-
-Esta es una compra muy buena y con tu pedido obtenes:
-
-Envío gratis a todo el país en 48 horas
-3 cuotas sin interés en todos los productos
-Garantía oficial de 12 meses
-Devolución sin preguntas en 30 días
-
-Finaliza tu compra aquí: http://localhost:5173/checkout
-
-Si tenes alguna duda o necesitas ayuda, estoy acá para asistirte.
-
-Saludos,
-Equipo TechNova",,,,,,
-M-22,200000,"1x Monitor 27"" Full HD, 1x Mouse Pad XL","Hola Cliente 05,
-
-Encontramos tu carrito con estos productos que dejaste pendientes:
-
-Mouse Pad XL (x1) - $20000
-Monitor 27"" Full HD (x1) - $180000
-Total: $200000 ARS
-
-No dejes ir esta oportunidad. Con tu compra obtienes:
-
-Envío gratis a todo el país en 48 horas
-Hasta 12 cuotas con interés (o 3 cuotas sin interés)
-Garantía oficial de 12 meses
-Devolución sin preguntas en 30 días
+Además, realizamos envíos a todo el país en 48 horas.
 
 Completa tu compra aquí: http://localhost:5173/checkout
 
-Si tienes alguna duda sobre los productos o los medios de pago, me avisa y te ayudo sin problema.
+Cualquier consulta, estamos disponibles para ayudarte.
 
 Saludos,
 Equipo TechNova",,,,,,
-M-23,160000,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL","Asunto: Cliente 09, completa tu compra en TechNova
+M-20,200000,"1x Monitor 27"" Full HD, 1x Mouse Pad XL","Hola Cliente 08! Me alegra encontrarte. Vi que dejaste en el carrito el Mouse Pad XL y el Monitor 27"" Full HD, una excelente combinaciÃ³n para tu setup.
+ 
+ Por 200.000 pesos tenÃ©s beneficios que quizÃ¡s no sabÃ­as:
+ - EnvÃ­o gratis a todo el paÃ­s en 48hs
+ - FinanciaciÃ³n en 3 cuotas sin interÃ©s
+ 
+ AdemÃ¡s, todo con garantÃ­a oficial de 12 meses y 30 dÃ­as para devolver sin preguntas si lo necesitÃ¡s.
+ 
+ PodÃ©s completar la compra acÃ¡: http://localhost:5173/checkout
+ 
+ Hay algo que quieras consultar antes de finalizar?",,,,,,
+M-21,160000,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL","Asunto: Cliente 09, completa tu compra en TechNova
 
 ---
 
@@ -462,7 +358,69 @@ Si tenés alguna consulta, estamos a tu disposición.
 
 Saludos cordiales,
 Equipo de TechNova",,,,,,
-M-24,120000,"1x SSD 1TB NVMe, 1x Webcam 1080p","Asunto: ¡No olvides tu carrito, Cliente 04!
+M-22,24000,"1x Mouse Pad XL, 1x Cable USB-C 2m","Asunto: Cliente 04, completa tu compra en TechNova
+
+Hola Cliente 04,
+
+Vimos que dejaste productos en tu carrito y no queremos que te los pierdas.
+
+Tenías seleccionados:
+- Mouse Pad XL (x1) - $20000
+- Cable USB-C 2m (x1) - $4000
+
+Total: $24000 ARS
+
+Finaliza tu compra aquí: http://localhost:5173/checkout
+
+Si tienes alguna pregunta, estamos para ayudarte.
+
+Saludos,
+Equipo TechNova",,,,,,
+M-23,120000,"1x SSD 1TB NVMe, 1x Webcam 1080p","Asunto: Completá tu compra - SSD 1TB NVMe y Webcam 1080p con garantía de 12 meses
+
+---
+
+Hola Cliente 07,
+
+Notamos que dejaste en tu carrito un SSD 1TB NVMe y una Webcam 1080p por un total de $120000 ARS y no completaste tu compra. No queremos que te pierdas esta oportunidad.
+
+Te recordamos que en TechNova contamos con beneficios especiales para ti:
+
+Pagos flexibles: Dividí tu compra en 3 cuotas sin interés. Con esta inversión en tecnología, es la mejor forma de distribuir el gasto sin preocupaciones.
+
+Garantía oficial de 12 meses: Tanto el SSD como la Webcam están completamente protegidos. Nos aseguramos de que disfrutes de productos de calidad respaldados por nuestra garantía.
+
+Además, contamos con envíos a todo el país en 48 horas y política de devolución por 30 días sin preguntas, así que tu compra es 100% segura.
+
+Finalizá tu compra ahora en el siguiente link: http://localhost:5173/checkout
+
+Si tienes alguna consulta o necesitas ayuda, no dudes en contactarnos.
+
+Saludos cordiales,
+Equipo de Ventas TechNova",,,,,,
+M-24,130000,"1x SSD 1TB NVMe, 1x Auriculares Bluetooth Pro","Asunto: Cliente 10, completá tu compra y recibila en 48hs
+
+Hola Cliente 10,
+
+Noté que dejaste algunos productos en tu carrito que se ven muy interesantes.
+
+Te recordamos que tenías seleccionados:
+- Auriculares Bluetooth Pro: $45000
+- SSD 1TB NVMe: $85000
+
+Total: $130000 ARS
+
+Queremos que sepas dos cosas que hacen que esta compra sea aún mejor: Primero, recibirás tu pedido en solo 48 horas a cualquier lugar del país. Segundo, como el monto supera los $500, puedes pagar en 3 cuotas sin interés, lo que hace que sea mucho más accesible.
+
+Además, todos nuestros productos incluyen garantía oficial de 12 meses y tenés 30 días para devolver lo que no te satisfaga sin ninguna pregunta.
+
+Completá tu compra aquí: http://localhost:5173/checkout
+
+Si tenés alguna duda, estamos acá para ayudarte.
+
+Saludos,
+TechNova",,,,,,
+M-25,120000,"1x SSD 1TB NVMe, 1x Webcam 1080p","Asunto: ¡No olvides tu carrito, Cliente 04!
 
 Hola Cliente 04,
 
@@ -481,164 +439,96 @@ Estamos para ayudarte si tienes dudas.
 
 Saludos,
 Equipo TechNova",,,,,,
-M-25,80000,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p","Asunto: No olvides tus productos en TechNova
+M-26,200000,"1x Monitor 27"" Full HD, 1x Mouse Pad XL","Hola Cliente 03,
 
-Hola Cliente 06,
+Vimos que dejaste un Mouse Pad XL y un Monitor 27"" Full HD en tu carrito por $200000 ARS. No queremos que se te escapen.
 
-Vimos que dejaste dos productos en tu carrito: Auriculares Bluetooth Pro y Webcam 1080p por un total de $80000 ARS. No queremos que se te escape esta oportunidad.
+Con tu compra obtenés:
 
-Completa tu compra ahora ingresando aquí: http://localhost:5173/checkout
-
-Cualquier duda, estamos disponibles para ayudarte.
-
-Saludos,
-Equipo TechNova",,,,,,
-M-26,124000,"1x SSD 1TB NVMe, 1x Webcam 1080p, 1x Cable USB-C 2m","Asunto: ¡No olvides tu carrito, Cliente 04!
-
-Hola Cliente 04,
-
-Notamos que dejaste productos en tu carrito en TechNova:
-
-SSD 1TB NVMe (x1) - $85000
-Webcam 1080p (x1) - $35000
-Cable USB-C 2m (x1) - $4000
-
-Total: $124000 ARS
-
-Con tu compra podés pagar en 3 cuotas sin interés y tenés garantía oficial de 12 meses en todos los productos. Envío gratis a todo el país.
+- 3 cuotas sin interés
+- Envío gratis a todo el país
+- Garantía oficial de 12 meses
+- Devolución sin preguntas en 30 días
 
 Completá tu compra aquí: http://localhost:5173/checkout
 
-¿Alguna pregunta? Estamos para ayudarte.
+Si tenés alguna duda, avísame.
 
 Saludos,
-Equipo TechNova",,,,,,
-M-27,40000,2x Mouse Pad XL,"Hola Cliente 02, notamos que dejaste dos Mouse Pad XL en tu carrito por 40 mil pesos. Son excelentes para gaming y trabajo, con superficie premium que cuida tu mouse.
+TechNova",,,,,,
+M-27,80000,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p","Hola Cliente 07,
+
+Vimos que dejaste algunos productos en tu carrito de compra. No queremos que te pierdas la oportunidad de llevar tus Auriculares Bluetooth Pro y Webcam 1080p por $80000 ARS.
+
+Completa tu compra ahora desde aquí: http://localhost:5173/checkout
+
+Si tienes dudas, estamos para ayudarte.
+
+Saludos,
+TechNova",,,,,,
+M-28,40000,2x Mouse Pad XL,"Hola Cliente 02, notamos que dejaste dos Mouse Pad XL en tu carrito por 40 mil pesos. Son excelentes para gaming y trabajo, con superficie premium que cuida tu mouse.
 
 Completá tu compra ahora y recibís envío gratis. Si tenés dudas sobre los productos o la compra, estamos acá para ayudarte.
 
 Finalizá tu pedido acá: http://localhost:5173/checkout
 
 Saludos, TechNova",,,,,,
-M-28,120000,"1x SSD 1TB NVMe, 1x Webcam 1080p","Hola Cliente 03,
+M-29,200000,"1x Monitor 27"" Full HD, 1x Mouse Pad XL","Hola Cliente 02,
 
-Vi que volviste al carrito con el SSD 1TB NVMe y la Webcam 1080p por $120000 ARS. Perfecto, son excelentes productos.
+Vemos que dejaste un Monitor 27"" Full HD y un Mouse Pad XL en tu carrito por 200 mil pesos. Una combinación perfecta para tu estación de trabajo.
 
-Te recuerdo que podés:
+Te cuento las ventajas: podés pagar en 3 cuotas sin interés y recibís el envío en 48 horas a todo el país. Además, todo viene con garantía oficial de 12 meses y podés devolver lo que quieras en 30 días sin preguntas.
 
-- Pagar en 3 cuotas sin interés
-- Recibir en 48hs a cualquier parte del país
-- Contar con garantía de 12 meses en ambos
+Finalizá tu compra acá: http://localhost:5173/checkout
 
-Finalizá tu compra aquí: http://localhost:5173/checkout
-
-Cualquier duda, estoy acá.
-
-Saludos,
-TechNova",,,,,,
-M-29,120000,"1x SSD 1TB NVMe, 1x Webcam 1080p","Hola Cliente 02,
-
-Vi que dejaste en tu carrito un SSD 1TB NVMe y una Webcam 1080p, por un total de 120 mil pesos. Excelente elección para mejorar tu equipo.
-
-Lo mejor es que con este monto podés pagar en 3 cuotas sin interés, y el envío llega en 48 horas a cualquier parte del país. Todo con garantía oficial de 12 meses, así que estás completamente cubierto.
-
-Completá tu compra acá y empezá a disfrutar: http://localhost:5173/checkout
-
-Cualquier duda, contáctanos.
+Cualquier consulta, estamos para ayudarte.
 
 Saludos, TechNova",,,,,,
-M-30,40000,2x Mouse Pad XL,"Asunto: ¡No olvides tu carrito, Cliente 04!
+M-30,72000,"3x Mouse Pad XL, 3x Cable USB-C 2m","Asunto: Cliente 08, completá tu compra en TechNova
 
-Hola Cliente 04,
+Hola Cliente 08,
 
-Notamos que dejaste 2 Mouse Pad XL en tu carrito por $40000 ARS. ¿Querés completar tu compra? Solo toma un minuto.
-
-Finaliza tu pedido aquí: http://localhost:5173/checkout
-
-¡Te esperamos en TechNova!
-
-Saludos,
-Equipo TechNova",,,,,,
-M-31,200000,"1x Monitor 27"" Full HD, 1x Mouse Pad XL","Asunto: ¡No olvides tu carrito, Cliente 04!
-
-Hola Cliente 04,
-
-Notamos que dejaste productos en tu carrito en TechNova:
-
-Mouse Pad XL (x1) - $20000
-Monitor 27"" Full HD (x1) - $180000
-
-Total: $200000 ARS
-
-Con tu compra podés pagar en 3 cuotas sin interés y disfrutás de garantía oficial de 12 meses. Envío gratis a todo el país.
-
-Completá tu compra aquí: http://localhost:5173/checkout
-
-¿Tenés alguna duda? Estamos acá para ayudarte.
-
-Saludos,
-Equipo TechNova",,,,,,
-M-32,68000,"3x Mouse Pad XL, 2x Cable USB-C 2m","Hola Cliente 07,
-
-Te recordamos que dejaste productos en tu carrito esperando por ti.
+Te escribimos porque vimos que dejaste algunos productos en tu carrito y nos gustaría ayudarte a completar tu compra.
 
 Tenías seleccionados:
 - Mouse Pad XL (x3) - $20000
-- Cable USB-C 2m (x2) - $4000
+- Cable USB-C 2m (x3) - $4000
+Total: $72000 ARS
 
-Total: $68000 ARS
+Queremos recordarte que en TechNova contás con beneficios especiales para tu compra. Primero, podés pagar en 3 cuotas sin interés ya que tu compra supera los $500. Además, todos nuestros productos tienen garantía oficial de 12 meses, así que tu inversión está completamente protegida.
 
-Completa tu compra aquí: http://localhost:5173/checkout
+Si cambiaras de idea o tuvieras dudas, tenemos política de devolución sin preguntas en los primeros 30 días. También te garantizamos entrega en 48 horas a todo el país.
 
-Cualquier duda estamos a tu disposición.
+Completá tu compra desde aquí:
+http://localhost:5173/checkout
 
-Saludos,
-TechNova",,,,,,
-M-33,200000,"1x Monitor 27"" Full HD, 1x Mouse Pad XL","Asunto: Cliente 01, tu carrito de $200000 ARS te espera
-
-Hola Cliente 01,
-
-Vimos que dejaste en tu carrito un Monitor 27"" Full HD y un Mouse Pad XL por un total de $200000 ARS. No queremos que te pierdas esta compra.
-
-Te recordamos dos grandes beneficios para finalizar hoy:
-
-1. Pagá en 3 cuotas sin interés. Con este monto podés distribuir el pago sin costo adicional.
-
-2. Garantía oficial de 12 meses en ambos productos, más devolución sin preguntas dentro de 30 días.
-
-Además, realizamos envíos a todo el país en 48 horas.
-
-Completa tu compra aquí: http://localhost:5173/checkout
-
-Cualquier consulta, estamos disponibles para ayudarte.
+Cualquier duda, estamos disponibles para ayudarte.
 
 Saludos,
-Equipo TechNova",,,,,,
-M-34,160000,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL","Asunto: Cliente 06, tu carrito te espera en TechNova
-
-Hola Cliente 06,
-
-Vimos que dejaste algunos productos en tu carrito y queremos recordarte que están reservados para ti:
-
-Teclado Mecánico RGB (x1) - $55000
-Mouse Pad XL (x1) - $20000
-SSD 1TB NVMe (x1) - $85000
-
-Total: $160000 ARS
-
-Queremos ayudarte a completar tu compra destacando dos beneficios especiales que tienes:
-
-Con compras mayores a $500 puedes acceder a 3 cuotas sin interés, por lo que tu inversión será mucho más accesible.
-
-Además, todos nuestros productos cuentan con garantía oficial de 12 meses, así que tu compra está completamente protegida.
-
-Finaliza tu compra aquí: http://localhost:5173/checkout
-
-Si tienes preguntas, no dudes en contactarnos. Estamos para ayudarte.
-
-Saludos,
-Equipo TechNova",,,,,,
-M-35,160000,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL","Hola Cliente 10,
+Equipo de TechNova",,,,,,
+M-31,180000,"1x Monitor 27"" Full HD","Asunto: CompletÃ¡ tu compra - Monitor 27"" Full HD con garantÃ­a de 12 meses
+ 
+ ---
+ 
+ Hola Cliente 07,
+ 
+ Notamos que dejaste en tu carrito un Monitor 27"" Full HD por $180000 ARS y no completaste tu compra. No queremos que te pierdas esta oportunidad.
+ 
+ Te recordamos que en TechNova contamos con beneficios especiales para ti:
+ 
+ Pagos flexibles: DividÃ­ tu compra en 3 cuotas sin interÃ©s. Con un monto como el tuyo, es una excelente opciÃ³n para cuidar tu bolsillo.
+ 
+ GarantÃ­a oficial de 12 meses: Tu monitor estÃ¡ completamente protegido. Si algo no funciona como esperamos, nos hacemos cargo.
+ 
+ AdemÃ¡s, contamos con envÃ­os a todo el paÃ­s en 48 horas y polÃ­tica de devoluciÃ³n por 30 dÃ­as sin preguntas, asÃ­ que tu compra es 100% segura.
+ 
+ FinalizÃ¡ tu compra ahora en el siguiente link: http://localhost:5173/checkout
+ 
+ Si tienes alguna consulta o necesitas ayuda, no dudes en contactarnos.
+ 
+ Saludos cordiales,
+ Equipo de Ventas TechNova",,,,,,
+M-32,160000,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL","Hola Cliente 10,
 
 Qué buena selección hiciste. Vemos que dejaste en el carrito:
 
@@ -663,3 +553,465 @@ Alguna duda sobre los productos o el proceso de pago?
 
 Saludos,
 TechNova",,,,,,
+M-33,85000,1x SSD 1TB NVMe,"Asunto: Cliente 06, tu SSD 1TB NVMe te está esperando
+
+Hola Cliente 06,
+
+Te escribo porque vimos que dejaste en tu carrito el SSD 1TB NVMe por $85.000 ARS.
+
+Queremos que sepas que tienes opciones fantásticas para completar tu compra:
+
+1. Puedes pagar en 3 cuotas sin interés, así el gasto se distribuye de forma más cómoda para tu presupuesto.
+
+2. Contarás con garantía oficial de 12 meses, así que tu inversión está completamente protegida.
+
+Además, en TechNova ofrecemos envíos a todo el país en 48 horas y si por algún motivo cambias de opinión, tienes 30 días para devolver sin hacer preguntas.
+
+Finaliza tu compra aquí: http://localhost:5173/checkout
+
+Si tienes dudas o necesitas ayuda, no dudes en contactarnos.
+
+Saludos,
+Equipo TechNova",,,,,,
+M-34,80000,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p","Asunto: No olvides tus productos en TechNova
+
+Hola Cliente 06,
+
+Vimos que dejaste dos productos en tu carrito: Auriculares Bluetooth Pro y Webcam 1080p por un total de $80000 ARS. No queremos que se te escape esta oportunidad.
+
+Completa tu compra ahora ingresando aquí: http://localhost:5173/checkout
+
+Cualquier duda, estamos disponibles para ayudarte.
+
+Saludos,
+Equipo TechNova",,,,,,
+M-35,55000,1x Teclado Mecanico RGB,"Asunto: Cliente 06, tu Teclado MecÃ¡nico RGB te estÃ¡ esperando
+ 
+ Hola Cliente 06,
+ 
+ Te escribo porque vimos que dejaste en tu carrito el Teclado MecÃ¡nico RGB por $55.000 ARS.
+ 
+ Queremos que sepas que tienes opciones fantÃ¡sticas para completar tu compra:
+ 
+ 1. Puedes pagar en 3 cuotas sin interÃ©s, asÃ­ el gasto se distribuye de forma mÃ¡s cÃ³moda para tu presupuesto.
+ 
+ 2. ContarÃ¡s con garantÃ­a oficial de 12 meses, asÃ­ que tu inversiÃ³n estÃ¡ completamente protegida.
+ 
+ AdemÃ¡s, en TechNova ofrecemos envÃ­os a todo el paÃ­s en 48 horas y si por algÃºn motivo cambias de opiniÃ³n, tienes 30 dÃ­as para devolver sin hacer preguntas.
+ 
+ Finaliza tu compra aquÃ­: http://localhost:5173/checkout
+ 
+ Si tienes dudas o necesitas ayuda, no dudes en contactarnos.
+ 
+ Saludos,
+ Equipo TechNova",,,,,,
+M-36,40000,2x Mouse Pad XL,"Asunto: ¡No olvides tu carrito, Cliente 04!
+
+Hola Cliente 04,
+
+Notamos que dejaste 2 Mouse Pad XL en tu carrito por $40000 ARS. ¿Querés completar tu compra? Solo toma un minuto.
+
+Finaliza tu pedido aquí: http://localhost:5173/checkout
+
+¡Te esperamos en TechNova!
+
+Saludos,
+Equipo TechNova",,,,,,
+M-37,90000,2x Auriculares Bluetooth Pro,"Asunto: Cliente 03, tus Auriculares Bluetooth Pro te están esperando
+
+---
+
+Hola Cliente 03,
+
+Notamos que dejaste algunos productos en tu carrito y queremos ayudarte a completar tu compra.
+
+Tenías seleccionados 2 Auriculares Bluetooth Pro por un total de $90000 ARS.
+
+Te recordamos dos beneficios que seguramente te interesarán:
+
+1. Puedes abonar en 3 cuotas sin interés, lo que hace mucho más accesible tu compra.
+
+2. Contarás con garantía oficial de 12 meses en tus auriculares, además de poder devolveros dentro de 30 días si lo necesitaras.
+
+Sin olvidar que realizamos envíos a todo el país en 48 horas.
+
+Para finalizar tu compra, ingresá aquí: http://localhost:5173/checkout
+
+Cualquier duda, estamos disponibles para ayudarte.
+
+Saludos,
+TechNova",,,,,,
+M-38,128000,"1x SSD 1TB NVMe, 1x Webcam 1080p, 2x Cable USB-C 2m","Hola Cliente 05,
+
+Te escribo porque encontramos tu carrito con estos productos que dejaste sin completar:
+
+SSD 1TB NVMe (x1) - $85000
+Webcam 1080p (x1) - $35000
+Cable USB-C 2m (x2) - $4000
+Total: $128000 ARS
+
+Esta es una compra muy buena y con tu pedido obtenes:
+
+Envío gratis a todo el país en 48 horas
+3 cuotas sin interés en todos los productos
+Garantía oficial de 12 meses
+Devolución sin preguntas en 30 días
+
+Finaliza tu compra aquí: http://localhost:5173/checkout
+
+Si tenes alguna duda o necesitas ayuda, estoy acá para asistirte.
+
+Saludos,
+Equipo TechNova",,,,,,
+M-39,120000,"1x SSD 1TB NVMe, 1x Webcam 1080p","Hola Cliente 05,
+
+Vimos que dejaste estos productos en tu carrito y no queremos que te los pierdas:
+
+SSD 1TB NVMe (x1) - $85000
+Webcam 1080p (x1) - $35000
+Total: $120000 ARS
+
+Con esta compra te llevas grandes beneficios:
+
+Envío gratis a todo el país en 48 horas (tu compra supera los $30000)
+3 cuotas sin interés (compras mayores a $500)
+Garantía oficial de 12 meses en ambos productos
+Devolución sin preguntas en 30 días si lo necesitas
+
+Finaliza tu compra aquí: http://localhost:5173/checkout
+
+Cualquier pregunta, aquí estamos para ayudarte.
+
+Saludos,
+Equipo TechNova",,,,,,
+M-40,49000,"1x Auriculares Bluetooth Pro, 1x Cable USB-C 2m","Asunto: Cliente 02, completa tu compra en TechNova
+
+Hola Cliente 02,
+
+Vimos que dejaste productos en tu carrito y queremos ayudarte a completar tu compra.
+
+Tienes:
+- Auriculares Bluetooth Pro (x1) - $45000
+- Cable USB-C 2m (x1) - $4000
+
+Total: $49000 ARS
+
+Dos razones para finalizar ahora:
+
+1. Pagá en 3 cuotas sin interés. Con tu compra de $49000, podés dividir el monto y pagar sin cargos adicionales.
+
+2. Recibí tu pedido en 48 horas a cualquier parte del país. Además, contás con 12 meses de garantía oficial y 30 días para devolver sin preguntas.
+
+Finaliza tu compra aquí: http://localhost:5173/checkout
+
+Si necesitas ayuda, estamos disponibles.
+
+Saludos,
+Equipo TechNova",,,,,,
+M-41,124000,"1x SSD 1TB NVMe, 1x Webcam 1080p, 1x Cable USB-C 2m","Asunto: ¡No olvides tu carrito, Cliente 04!
+
+Hola Cliente 04,
+
+Notamos que dejaste productos en tu carrito en TechNova:
+
+SSD 1TB NVMe (x1) - $85000
+Webcam 1080p (x1) - $35000
+Cable USB-C 2m (x1) - $4000
+
+Total: $124000 ARS
+
+Con tu compra podés pagar en 3 cuotas sin interés y tenés garantía oficial de 12 meses en todos los productos. Envío gratis a todo el país.
+
+Completá tu compra aquí: http://localhost:5173/checkout
+
+¿Alguna pregunta? Estamos para ayudarte.
+
+Saludos,
+Equipo TechNova",,,,,,
+M-42,112000,"1x Webcam 1080p, 1x Auriculares Bluetooth Pro, 1x Mouse Pad XL, 3x Cable USB-C 2m","Asunto: Cliente 01, tu carrito de $112000 ARS está listo para finalizar
+
+Hola Cliente 01,
+
+Vimos que dejaste en tu carrito un Mouse Pad XL, Auriculares Bluetooth Pro, una Webcam 1080p y 3 Cables USB-C 2m por un total de $112000 ARS. No queremos que te pierdas esta compra.
+
+Te recordamos dos grandes beneficios para completar hoy:
+
+1. Pagá en 3 cuotas sin interés. Distribuí el monto sin costo adicional con esta compra.
+
+2. Garantía oficial de 12 meses en todos tus productos, más devolución sin preguntas dentro de 30 días.
+
+Además, realizamos envíos a todo el país en 48 horas.
+
+Finaliza tu compra aquí: http://localhost:5173/checkout
+
+Cualquier consulta, estamos disponibles para ayudarte.
+
+Saludos,
+Equipo TechNova",,,,,,
+M-43,200000,"1x Monitor 27"" Full HD, 1x Mouse Pad XL","Asunto: ¡No olvides tu carrito, Cliente 04!
+
+Hola Cliente 04,
+
+Notamos que dejaste productos en tu carrito en TechNova:
+
+Mouse Pad XL (x1) - $20000
+Monitor 27"" Full HD (x1) - $180000
+
+Total: $200000 ARS
+
+Con tu compra podés pagar en 3 cuotas sin interés y disfrutás de garantía oficial de 12 meses. Envío gratis a todo el país.
+
+Completá tu compra aquí: http://localhost:5173/checkout
+
+¿Tenés alguna duda? Estamos acá para ayudarte.
+
+Saludos,
+Equipo TechNova",,,,,,
+M-44,100000,"1x Auriculares Bluetooth Pro, 1x Teclado Mecanico RGB","Asunto: Cliente 03, completa tu compra en TechNova
+
+---
+
+Hola Cliente 03,
+
+Vimos que dejaste productos en tu carrito y queremos ayudarte a finalizarlos.
+
+Tenías seleccionados:
+- Teclado Mecánico RGB (x1) - $55000
+- Auriculares Bluetooth Pro (x1) - $45000
+
+Total: $100000 ARS
+
+Te recordamos dos beneficios que seguramente te interesarán:
+
+1. Puedes pagar en 3 cuotas sin interés en compras mayores a $500, facilitando tu presupuesto.
+
+2. Ambos productos incluyen garantía oficial de 12 meses y tienes 30 días para devolveros si lo necesitaras sin hacer preguntas.
+
+También realizamos envíos a todo el país en 48 horas.
+
+Para completar tu compra, ingresá aquí: http://localhost:5173/checkout
+
+Cualquier consulta, estamos disponibles.
+
+Saludos,
+TechNova",,,,,,
+M-45,105000,"1x SSD 1TB NVMe, 1x Mouse Pad XL","Asunto: Cliente 10, completÃ¡ tu compra y recibila en 48hs
+ 
+ Hola Cliente 10,
+ 
+ NotÃ© que dejaste algunos productos en tu carrito que se ven muy interesantes.
+ 
+ Te recordamos que tenÃ­as seleccionados:
+ - Mouse Pad XL: $20000
+ - SSD 1TB NVMe: $85000
+ 
+ Total: $105000 ARS
+ 
+ Queremos que sepas dos cosas que hacen que esta compra sea aÃºn mejor: Primero, recibirÃ¡s tu pedido en solo 48 horas a cualquier lugar del paÃ­s. Segundo, puedes pagar en 3 cuotas sin interÃ©s, lo que hace que sea mucho mÃ¡s accesible para tu bolsillo.
+ 
+ AdemÃ¡s, todos nuestros productos incluyen garantÃ­a oficial de 12 meses y tenÃ©s 30 dÃ­as para devolver lo que no te satisfaga sin ninguna pregunta.
+ 
+ CompletÃ¡ tu compra aquÃ­: http://localhost:5173/checkout
+ 
+ Si tenÃ©s alguna duda, estamos acÃ¡ para ayudarte.
+ 
+ Saludos,
+ TechNova",,,,,,
+M-46,40000,2x Mouse Pad XL,"Asunto: Cliente 01, tu carrito te espera en TechNova
+
+Hola Cliente 01,
+
+Vimos que dejaste 2 Mouse Pad XL en tu carrito por $40000 ARS. No queremos que te pierdas esta oferta.
+
+Completa tu compra ahora: http://localhost:5173/checkout
+
+Cualquier duda, estamos acá para ayudarte.
+
+Saludos,
+Equipo TechNova",,,,,,
+M-47,80000,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p","Asunto: Cliente 09, tus productos te esperan en TechNova
+
+---
+
+Hola Cliente 09,
+
+Te escribimos porque vimos que dejaste productos en tu carrito en TechNova y queremos ayudarte a completar tu compra.
+
+Recordamos que tenías seleccionados:
+- Auriculares Bluetooth Pro (x1) - $45000
+- Webcam 1080p (x1) - $35000
+Total: $80000 ARS
+
+Nos gustaría destacarte dos razones por las que esta es una excelente compra:
+
+1. Contamos con entregas en 48 horas a todo el país, así recibís tus productos rápidamente y listo para usar.
+
+2. Tu compra de $80000 califica para 3 cuotas sin interés, lo que hace mucho más accesible la inversión en estos equipos de calidad.
+
+Además, todos nuestros productos incluyen garantía oficial de 12 meses y tenés 30 días para devolver sin preguntas si lo necesitás.
+
+Finalizá tu compra haciendo clic en el siguiente enlace:
+
+http://localhost:5173/checkout
+
+Si tenés alguna duda, estamos a tu disposición.
+
+Saludos cordiales,
+Equipo de TechNova",,,,,,
+M-48,116000,"1x Webcam 1080p, 1x Auriculares Bluetooth Pro, 1x Mouse Pad XL, 4x Cable USB-C 2m","Hola Cliente 02,
+
+Vi que dejaste un carrito con Mouse Pad XL, Auriculares Bluetooth Pro, Webcam 1080p y 4 Cables USB-C 2m por 116 mil pesos. Un combo muy completo para tu setup.
+
+Lo mejor es que pagás en 3 cuotas sin interés y el envío llega en 48 horas a todo el país. Todo protegido con garantía oficial de 12 meses, así que no tenés riesgo.
+
+Completá tu compra acá: http://localhost:5173/checkout
+
+Cualquier duda, contáctanos.
+
+Saludos, TechNova",,,,,,
+M-49,110000,"1x Auriculares Bluetooth Pro, 1x Headset Gamer 7.1","Asunto: Cliente 04, tu carrito de TechNova te estÃ¡ esperando
+ 
+ Hola Cliente 04,
+ 
+ Notamos que dejaste algunos productos en tu carrito y queremos ayudarte a completar tu compra.
+ 
+ TenÃ­as seleccionados:
+ - Auriculares Bluetooth Pro (x1) - $45000
+ - Headset Gamer 7.1 (x1) - $65000
+ 
+ Total: $110000 ARS
+ 
+ Queremos recordarte dos grandes beneficios de tu compra:
+ 
+ 1. Pagos en 3 cuotas sin interÃ©s: Con una compra de este monto, puedes financiar tu pedido sin cargos adicionales, haciendo mÃ¡s accesible tu inversiÃ³n en audio de calidad.
+ 
+ 2. GarantÃ­a oficial de 12 meses: Ambos productos cuentan con protecciÃ³n completa, asÃ­ que tu compra estÃ¡ respaldada. AdemÃ¡s, contamos con devoluciones sin preguntas en 30 dÃ­as si cambias de idea.
+ 
+ Tu pedido se entregarÃ¡ en 48 horas a cualquier lugar del paÃ­s.
+ 
+ Finaliza tu compra aquÃ­: http://localhost:5173/checkout
+ 
+ Cualquier duda estamos disponibles para ayudarte.
+ 
+ Saludos,
+ Equipo TechNova",,,,,,
+M-50,160000,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL","Asunto: Cliente 06, tu carrito te espera en TechNova
+
+Hola Cliente 06,
+
+Vimos que dejaste algunos productos en tu carrito y queremos recordarte que están reservados para ti:
+
+Teclado Mecánico RGB (x1) - $55000
+Mouse Pad XL (x1) - $20000
+SSD 1TB NVMe (x1) - $85000
+
+Total: $160000 ARS
+
+Queremos ayudarte a completar tu compra destacando dos beneficios especiales que tienes:
+
+Con compras mayores a $500 puedes acceder a 3 cuotas sin interés, por lo que tu inversión será mucho más accesible.
+
+Además, todos nuestros productos cuentan con garantía oficial de 12 meses, así que tu compra está completamente protegida.
+
+Finaliza tu compra aquí: http://localhost:5173/checkout
+
+Si tienes preguntas, no dudes en contactarnos. Estamos para ayudarte.
+
+Saludos,
+Equipo TechNova",,,,,,
+M-51,120000,"1x SSD 1TB NVMe, 1x Webcam 1080p","Hola Cliente 03,
+
+Vi que volviste al carrito con el SSD 1TB NVMe y la Webcam 1080p por $120000 ARS. Perfecto, son excelentes productos.
+
+Te recuerdo que podés:
+
+- Pagar en 3 cuotas sin interés
+- Recibir en 48hs a cualquier parte del país
+- Contar con garantía de 12 meses en ambos
+
+Finalizá tu compra aquí: http://localhost:5173/checkout
+
+Cualquier duda, estoy acá.
+
+Saludos,
+TechNova",,,,,,
+M-52,160000,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL","Asunto: Cliente 08, completá tu compra en TechNova
+
+Hola Cliente 08,
+
+Te escribimos porque vimos que dejaste algunos productos en tu carrito y nos gustaría ayudarte a completar tu compra.
+
+Tenías seleccionados:
+- Teclado Mecánico RGB (x1) - $55000
+- Mouse Pad XL (x1) - $20000
+- SSD 1TB NVMe (x1) - $85000
+Total: $160000 ARS
+
+Queremos recordarte que en TechNova contás con beneficios especiales para tu compra. Primero, podés pagar en 3 cuotas sin interés en una compra de este monto. Además, todos nuestros productos tienen garantía oficial de 12 meses, así que tu inversión está completamente protegida.
+
+Si cambiaras de idea o tuvieras dudas, tenemos política de devolución sin preguntas en los primeros 30 días. También te garantizamos entrega en 48 horas a todo el país.
+
+Completá tu compra desde aquí:
+http://localhost:5173/checkout
+
+Cualquier duda, estamos disponibles para ayudarte.
+
+Saludos,
+Equipo de TechNova",,,,,,
+M-53,64000,"3x Mouse Pad XL, 1x Cable USB-C 2m","Asunto: Cliente 06, completa tu compra en TechNova
+
+Hola Cliente 06,
+
+Vimos que dejaste productos en tu carrito y queremos recordarte que están listos para finalizar tu compra:
+
+Mouse Pad XL (x3) - $20000
+Cable USB-C 2m (x1) - $4000
+
+Total: $64000 ARS
+
+No pierdas esta oportunidad. Completa tu compra aquí: http://localhost:5173/checkout
+
+Estamos para ayudarte si tienes dudas.
+
+Saludos,
+Equipo TechNova",,,,,,
+M-54,120000,"1x SSD 1TB NVMe, 1x Webcam 1080p","Asunto: Cliente 03, completa tu compra en TechNova
+
+Hola Cliente 03,
+
+Notamos que dejaste en tu carrito un SSD 1TB NVMe y una Webcam 1080p, totalizando $120000 ARS. No queremos que te los pierdas.
+
+Te recordamos dos grandes beneficios para tu compra:
+
+1. Pagá en 3 cuotas sin interés en compras mayores a $500. Tu compra califica perfectamente.
+
+2. Contás con garantía oficial de 12 meses en ambos productos, con devolución sin preguntas dentro de 30 días si lo necesitás.
+
+Finaliza tu compra aquí: http://localhost:5173/checkout
+
+Si tenés alguna pregunta, estamos disponibles para ayudarte.
+
+Saludos,
+TechNova",,,,,,
+M-55,80000,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p","Asunto: Cliente 08, completá tu compra en TechNova
+
+Hola Cliente 08,
+
+Te escribimos porque vimos que dejaste algunos productos en tu carrito y nos gustaría ayudarte a completar tu compra.
+
+Tenías seleccionados:
+- Auriculares Bluetooth Pro (x1) - $45000
+- Webcam 1080p (x1) - $35000
+Total: $80000 ARS
+
+Queremos recordarte que en TechNova contás con beneficios especiales para tu compra. Primero, podés pagar en 3 cuotas sin interés ya que tu compra supera los $500. Además, todos nuestros productos tienen garantía oficial de 12 meses, así que tu inversión está completamente protegida.
+
+Si cambiaras de idea o tuvieras dudas, tenemos política de devolución sin preguntas en los primeros 30 días. También te garantizamos entrega en 48 horas a todo el país.
+
+Completá tu compra desde aquí:
+http://localhost:5173/checkout
+
+Cualquier duda, estamos disponibles para ayudarte.
+
+Saludos,
+Equipo de TechNova",,,,,,

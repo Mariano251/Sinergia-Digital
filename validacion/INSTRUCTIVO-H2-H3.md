@@ -1,51 +1,76 @@
 # Instrumentos de validación — H2 y H3
 
-Corrida de referencia: **35 sesiones**, 2026-09-02.
-Datos crudos: `datos-crudos-tanda-2026-09-02.csv`
+**Muestra: 55 sesiones.** Datos crudos seudonimizados: `datos-crudos-55-sesiones.csv`
+
+---
+
+## De dónde salen las 55
+
+No es un número elegido: sale de dos diseños independientes que se reportan por separado.
+
+| Subconjunto | n | Diseño | Vía de disparo |
+|---|---|---|---|
+| `F-01` … `F-25` | 25 | Factorial 5×5: valor de carrito (40k/80k/120k/160k/200k) × abandonos previos (0/1/2/3/5) | Manual (detección sincrónica) |
+| `B40-01` … `B40-05` | 5 | Casos de frontera en torno al umbral 40 (abandonos = 2) | Manual |
+| `B70-01` … `B70-05` | 5 | Casos de frontera en torno al umbral 70 (abandonos = 5) | Manual |
+| `exec-82` … `exec-101` | 20 | 10 usuarios × 2 ciclos de detección | **Automática (job periódico)** |
+
+Reparto obtenido: **12 ALTA · 30 MEDIA · 13 BAJA** — 12 por Telegram, 43 por Email.
+
+> **Nota metodológica obligatoria.** Las 55 son sesiones controladas con perfiles
+> sintéticos, no tráfico orgánico. Redactar así:
+>
+> *"Se ejecutaron 55 sesiones controladas con perfiles sintéticos: 35 mediante
+> un diseño factorial 5×5 más 10 casos de frontera en torno a los umbrales de
+> clasificación, disparadas de forma sincrónica; y 20 mediante el job de
+> detección periódica, con 10 perfiles en dos ciclos."*
+
+### Advertencia sobre el subconjunto automático
+
+9 de las 20 sesiones automáticas **no quedaron registradas en la planilla** por
+una condición de carrera en la escritura concurrente: el orquestador reportó
+éxito en las 20, pero varias escrituras simultáneas se pisaron entre sí. Los
+datos se **recuperaron del almacén de ejecuciones del orquestador** y se
+verificaron uno a uno contra el diseño (9/9 coincidentes en puntuación y
+prioridad). Esto debe declararse en el capítulo de limitaciones.
 
 ---
 
 ## H2 — Concordancia del scoring
 
 **Objetivo.** Comparar la prioridad que asigna el algoritmo contra la que asigna
-un especialista humano, sobre las mismas 35 sesiones.
+un especialista humano, sobre las mismas 55 sesiones.
 
-**Instrumento.** `H2-experto-planilla-ciega.csv`
-
-**Quién.** Un (1) experto en marketing digital con experiencia en e-commerce.
+**Instrumento:** `H2-experto-planilla-ciega.csv`
+**Quién:** un (1) experto en marketing digital con experiencia en e-commerce.
 
 ### Condiciones de aplicación
 
-1. El experto recibe **únicamente** la planilla ciega. No ve la columna `Scoring`
-   ni `Puntuacion`, ni el canal por el que se envió el mensaje.
+1. Recibe **únicamente** la planilla ciega. No ve `Scoring`, `Puntuacion` ni el
+   canal por el que se envió el mensaje.
 2. No conoce la fórmula del Anexo A, ni los pesos, ni los umbrales.
-3. El orden de las sesiones está **aleatorizado** (semilla fija `20260902`), de
-   modo que la estructura factorial del diseño no sea inferible.
-4. Clasifica cada sesión en **Alta**, **Media** o **Baja** prioridad de
-   recuperación, según su criterio profesional.
-5. Completa las 35 sin volver atrás a revisar las anteriores.
+3. El orden está **aleatorizado con semilla `20260903`**, de modo que ni la
+   estructura factorial ni la separación entre tandas sean inferibles.
+4. Clasifica cada sesión en **Alta**, **Media** o **Baja**.
+5. Completa las 55 de corrido, sin volver atrás.
 
-> La clave `H2-clave-NO-MOSTRAR-AL-EXPERTO.csv` vincula cada `S-xx` con su
-> escenario y con la respuesta del algoritmo. **Es para el análisis posterior,
-> no para el experto.**
+> `H2-clave-NO-MOSTRAR-AL-EXPERTO.csv` vincula cada `S-xx` con su escenario, su
+> tanda y la respuesta del algoritmo. **Es para el análisis, no para el experto.**
 
-### Criterio de prioridad (lo único que se le explica)
+### Criterio que se le explica (lo único)
 
 > "Prioridad de recuperación" = cuánta urgencia y cuántos recursos amerita este
 > carrito abandonado. Alta = contactar ya y por el canal más directo.
 > Media = contactar, sin urgencia. Baja = contacto de bajo costo o nada.
 
-No se le da ninguna regla numérica. El juicio tiene que ser profesional, no
-una reconstrucción de la fórmula.
+Ninguna regla numérica. Se busca juicio profesional, no reconstrucción de la fórmula.
 
 ### Análisis
 
-- **Concordancia simple** = coincidencias / 35
+- **Concordancia simple** = coincidencias / 55
 - **Kappa de Cohen (κ)** sobre la matriz de confusión 3×3
 
-Interpretación de κ (Landis & Koch, 1977):
-
-| κ | Acuerdo |
+| κ | Acuerdo (Landis & Koch, 1977) |
 |---|---|
 | < 0,20 | Pobre |
 | 0,21 – 0,40 | Débil |
@@ -53,69 +78,70 @@ Interpretación de κ (Landis & Koch, 1977):
 | 0,61 – 0,80 | Sustancial |
 | 0,81 – 1,00 | Casi perfecto |
 
-**Reportar siempre las dos cifras.** La concordancia simple sola sobreestima:
-con tres categorías, el azar ya produce ~33% de acuerdo.
+**Reportar las dos cifras.** Con tres categorías el azar ya produce ~33% de
+acuerdo, así que la concordancia simple sola sobreestima.
 
-### Nota sobre los casos de frontera
+### Desagregaciones obligatorias
 
-10 de las 35 sesiones (`B40-*` y `B70-*`) fueron diseñadas a 1–2 puntos de un
-umbral. Es esperable —y **metodológicamente deseable**— que ahí se concentre
-el desacuerdo. Reportar la concordancia **desagregada**: casos claros vs.
-casos de frontera. Un acuerdo alto solo en los casos obvios no valida nada.
+1. **Casos claros vs. casos de frontera.** 10 de las 55 (`B40-*`, `B70-*`) están
+   a uno o dos puntos de un umbral. Es esperable —y deseable— que el desacuerdo
+   se concentre ahí. Un acuerdo alto solo en lo obvio no valida nada.
+2. **Tanda manual vs. automática.** Ambas usan el mismo algoritmo, así que no
+   debería haber diferencia. Si la hay, es una señal a investigar.
 
 ---
 
 ## H3 — Calidad de los mensajes generados
 
-**Objetivo.** Evaluar la calidad de los 35 mensajes producidos por la IA en
-cinco dimensiones, con tres evaluadores independientes.
+**Objetivo.** Evaluar los 55 mensajes en cinco dimensiones, con tres evaluadores
+independientes.
 
-**Instrumento.** `H3-rubrica-evaluador-A.csv` / `-B.csv` / `-C.csv`
-(idénticos; uno por evaluador)
+**Instrumento:** `H3-rubrica-evaluador-A.csv` / `-B.csv` / `-C.csv` (idénticos).
 
 ### Condiciones de aplicación
 
-1. Los tres evaluadores puntúan **de forma independiente**. No se consultan
-   entre sí ni comparan resultados hasta que los tres hayan terminado.
-   *Si se consultan, el CCI mide conversación, no acuerdo.*
-2. No ven la prioridad asignada ni el canal de envío: eso anclaría el juicio.
-3. Orden aleatorizado, distinto al de H2.
-4. Escala **1 a 5**, enteros. No se permiten decimales ni casillas vacías.
-5. Cada evaluador ve el valor y los productos del carrito, porque los necesita
-   para juzgar precisión factual y uso de contexto.
+1. Los tres puntúan **de forma independiente**. No se consultan ni comparan hasta
+   que los tres terminen. *Si se consultan, el CCI mide conversación, no acuerdo.*
+2. **Cada uno recibe su propia planilla.** Nunca un documento compartido.
+3. No ven prioridad ni canal: anclaría el juicio.
+4. Orden aleatorizado con semilla `20260904`, distinto al de H2.
+5. Escala **1 a 5**, enteros. Sin decimales ni casillas vacías.
+6. Ven el valor y los productos del carrito, necesarios para juzgar precisión
+   factual y uso de contexto.
 
 ---
 
 ## Definiciones operativas de los 5 criterios
 
-> Estas definiciones son lo que hace que tres personas distintas puntúen
-> parecido. Sin anclas explícitas, el CCI se desploma y no es culpa de los
-> evaluadores: es culpa del instrumento.
+> Estas anclas son lo que hace que tres personas puntúen parecido. Sin
+> definiciones explícitas el CCI se desploma, y no es culpa de los evaluadores:
+> es culpa del instrumento.
 
 ### 1. Relevancia
 *¿El mensaje se dirige a esta situación concreta, o serviría para cualquiera?*
 
 | | |
 |---|---|
-| **1** | Genérico. Podría enviarse a cualquier cliente sin cambiar una palabra. |
+| **1** | Genérico. Se enviaría igual a cualquier cliente sin cambiar una palabra. |
 | **3** | Menciona que hay un carrito pendiente, pero sin particularizar. |
-| **5** | Se refiere específicamente a este carrito y a esta situación. Reemplazar los datos por los de otro cliente lo dejaría sin sentido. |
+| **5** | Se refiere a este carrito y esta situación. Cambiarle los datos lo dejaría sin sentido. |
 
 ### 2. Precisión factual
 *¿Todo lo que afirma es verdadero según la base de conocimientos y el carrito real?*
 
-Datos verificables: envío gratis > $50.000 · costo $3.500 · 48hs a 3-5 días
-hábiles · 3 a 12 cuotas · garantía 12 meses · devolución 30 días.
+Datos verificables: envío gratis > $50.000 · costo $3.500 · entrega 48hs a
+3-5 días hábiles · 3 a 12 cuotas · garantía 12 meses · devolución 30 días.
 
 | | |
 |---|---|
-| **1** | Inventa datos, o contradice el carrito (productos o montos que no existen). |
-| **3** | Todo correcto pero impreciso o incompleto en algún punto. |
+| **1** | Inventa datos, o contradice el carrito (productos o montos inexistentes). |
+| **3** | Todo correcto, pero impreciso o incompleto en algún punto. |
 | **5** | Cada afirmación es verificable y coincide con el carrito y la base. Cero invención. |
 
-> Una sola afirmación falsa —un precio, un plazo, un producto que no está en el
-> carrito— fuerza puntaje **1 o 2**, por bueno que sea el resto. La alucinación
-> es el riesgo central de estos sistemas y la rúbrica tiene que castigarla.
+> **Regla dura:** una sola afirmación falsa —un precio, un plazo, un producto que
+> no está en el carrito— fuerza puntaje **1 o 2**, por bueno que sea el resto.
+> La alucinación es el riesgo central de estos sistemas y la rúbrica debe
+> castigarla, no promediarla.
 
 ### 3. Persuasión
 *¿Genera motivación real para completar la compra, sin presionar?*
@@ -124,12 +150,12 @@ hábiles · 3 a 12 cuotas · garantía 12 meses · devolución 30 días.
 |---|---|
 | **1** | No invita a la acción, o presiona de forma invasiva o manipuladora. |
 | **3** | Invita a comprar, pero sin argumento propio: solo repite el link. |
-| **5** | Construye una razón concreta para volver, con tono cordial y sin presión. Cierre claro. |
+| **5** | Construye una razón concreta para volver, con tono cordial y cierre claro. |
 
 ### 4. Uso de contexto
 *¿Aprovecha lo que el sistema sabe del cliente?*
 
-Elementos disponibles: nombre, productos, cantidades, valor total, link de checkout.
+Disponible: nombre, productos, cantidades, valor total, link de checkout.
 
 | | |
 |---|---|
@@ -151,37 +177,33 @@ Elementos disponibles: nombre, productos, cantidades, valor total, link de check
 ## Análisis de H3
 
 - **Promedio por mensaje** = media de los 15 puntajes (5 criterios × 3 evaluadores)
-- **Promedio global** = media de los 35 promedios
+- **Promedio global** = media de los 55 promedios
 - **Promedio por criterio** = para identificar dónde el sistema es más débil
-- **CCI** (coeficiente de correlación intraclase) → acuerdo entre evaluadores
+- **CCI** = acuerdo entre evaluadores
 
-Para el CCI, usar el modelo de **efectos aleatorios de dos vías, acuerdo
-absoluto, medidas promedio — ICC(2,k)**. Es el que corresponde cuando los mismos
-tres evaluadores puntúan a todos los sujetos y se reporta la media.
+Para el CCI usar **efectos aleatorios de dos vías, acuerdo absoluto, medidas
+promedio — ICC(2,k)**: es el que corresponde cuando los mismos tres evaluadores
+puntúan a todos los sujetos y se reporta la media.
 
-Interpretación (Koo & Li, 2016):
-
-| CCI | Fiabilidad |
+| CCI | Fiabilidad (Koo & Li, 2016) |
 |---|---|
 | < 0,50 | Pobre |
 | 0,50 – 0,75 | Moderada |
 | 0,75 – 0,90 | Buena |
 | > 0,90 | Excelente |
 
+**Desagregar además por canal** (Telegram vs Email): los prompts de sistema son
+distintos, así que la calidad podría no ser homogénea. Es una comparación que
+el diseño permite hacer y conviene reportar.
+
 ---
 
-## Lo que hay que reportar sí o sí
+## Qué hay que reportar sí o sí
 
-1. **Los datos crudos**, no solo los agregados. Las 35 clasificaciones del
-   experto y los 525 puntajes individuales van al anexo.
-2. **La semilla de aleatorización** (`20260902`) y el procedimiento, para que
-   el orden sea reproducible.
+1. **Los datos crudos**, no solo los agregados: las 55 clasificaciones del
+   experto y los 825 puntajes individuales (55 × 5 × 3) van al anexo.
+2. **Las semillas de aleatorización** (`20260903` para H2, `20260904` para H3).
 3. **El perfil de los evaluadores** (formación, experiencia) sin identificarlos.
-4. **Que las sesiones son controladas**, no tráfico orgánico:
-
-> "Se ejecutaron 35 sesiones controladas con perfiles sintéticos, diseñadas
-> mediante un factorial 5×5 sobre valor de carrito y abandonos previos, más
-> 10 casos de frontera en torno a los umbrales de clasificación."
-
-Esa frase es la diferencia entre una validación técnica honesta y un dato
-que no podés defender.
+4. **Que las sesiones son controladas**, con la redacción del inicio de este
+   documento.
+5. **La recuperación de las 9 filas perdidas** y su causa.
