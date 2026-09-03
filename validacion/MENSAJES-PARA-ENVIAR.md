@@ -8,7 +8,9 @@
 | `H3-rubrica-evaluador-A.csv` | ✅ solo al evaluador A |
 | `H3-rubrica-evaluador-B.csv` | ✅ solo al evaluador B |
 | `H3-rubrica-evaluador-C.csv` | ✅ solo al evaluador C |
-| `INSTRUCTIVO-H2-H3.md` | ✅ a todos (la sección que le toca) |
+| `PARA-EXPERTO-criterio.md` | ✅ solo al experto |
+| `PARA-EVALUADORES-rubrica.md` | ✅ solo a los 3 evaluadores |
+| `INSTRUCTIVO-H2-H3.md` | ❌ **NUNCA** — revela el diseño y las rondas |
 | `H2-clave-NO-MOSTRAR-AL-EXPERTO.csv` | ❌ **NUNCA** |
 | `H3-clave-NO-MOSTRAR-A-EVALUADORES.csv` | ❌ **NUNCA** |
 | `datos-crudos-55-sesiones.csv` | ❌ **NUNCA** (trae las respuestas) |
@@ -76,7 +78,7 @@ acuerdo independiente: mide contagio.
 > - **Uso de contexto** — ¿aprovecha el nombre, los productos, el monto?
 > - **Claridad** — ¿se entiende de una sola lectura?
 >
-> **Te adjunto el instructivo con las definiciones.** Leelo antes de arrancar:
+> **Te adjunto la rúbrica con las definiciones.** Leelo antes de arrancar:
 > explica qué significa un 1, un 3 y un 5 en cada criterio. Es importante que
 > los tres usemos la misma vara.
 >
@@ -102,7 +104,9 @@ acuerdo independiente: mide contagio.
 - [ ] Ninguno recibió un archivo con "CLAVE" o "NO-MOSTRAR" en el nombre
 - [ ] Nadie recibió `datos-crudos-55-sesiones.csv`
 - [ ] El experto **no** recibió las rúbricas de H3 (ni al revés)
-- [ ] Adjuntaste el `INSTRUCTIVO-H2-H3.md` (a los evaluadores, sí o sí)
+- [ ] Adjuntaste `PARA-EVALUADORES-rubrica.md` a los evaluadores (sí o sí)
+- [ ] Adjuntaste `PARA-EXPERTO-criterio.md` al experto
+- [ ] **NADIE** recibió `INSTRUCTIVO-H2-H3.md`
 - [ ] Les pediste que **no comenten entre ellos** hasta terminar
 
 ---
