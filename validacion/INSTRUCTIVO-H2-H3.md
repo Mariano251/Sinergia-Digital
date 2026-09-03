@@ -133,7 +133,7 @@ Datos verificables — **base de conocimientos real del sistema**, verificada
 contra los prompts en producción:
 
 - Envíos: 48hs a todo el país. Gratis en compras superiores a **$30.000**.
-- Pagos: 3 cuotas sin interés en compras superiores a $500. Hasta 12 cuotas con interés.
+- Pagos: 3 cuotas sin interés en cualquier compra de la tienda. Hasta 12 cuotas con interés.
 - Garantía: 12 meses oficial.
 - Devoluciones: 30 días sin preguntas.
 - Descuentos: hasta 5% si el cliente lo pide. Nunca superar el 10%.

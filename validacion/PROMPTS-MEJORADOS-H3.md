@@ -26,19 +26,17 @@ La calidad sigue al detalle del prompt casi linealmente.
 
 ---
 
-## ⚠️ Dos cosas para revisar antes de pegar
+## Dos salvedades, ya resueltas
 
-**1. El umbral de cuotas dice `+$500`.** En pesos argentinos eso lo cumple cualquier
-carrito, y varios mensajes evaluados quedaron diciendo *"tu compra supera los $500"*
-para un carrito de $200.000 — suena raro y probablemente costó puntos en Relevancia y
-Persuasión. **Confirmá si querías $50.000.** Lo dejé como está: es una regla de negocio
-tuya, no la cambio por mi cuenta.
+**1. Umbral de cuotas.** Decía `+$500`, que en pesos lo cumple cualquier carrito
+(el producto más barato del catálogo vale $4.000). Se dejó la regla de negocio
+intacta y se reformuló la redacción para que el modelo deje de citar un número
+que no discrimina. Detalle al final de este documento.
 
-**2. El `INSTRUCTIVO-H2-H3.md` que recibieron los evaluadores decía "envío gratis
-> $50.000 · costo $3.500 · 3-5 días hábiles"**, que salió de una versión vieja del
-workflow. La base real dice `+$30.000` y `48hs`. Impacto medido: bajo (solo 11 de 55
-mensajes mencionan envío gratis, y puntuaron más alto que el resto). Pero **antes de la
-próxima ronda de evaluación hay que sincronizar el instructivo con la base real.**
+**2. Base de conocimientos del instructivo.** La versión entregada en la primera
+ronda tomaba los datos de un workflow viejo (envío gratis > $50.000, costo $3.500,
+3-5 días hábiles). **Ya está sincronizada** con la base real: > $30.000 y 48hs.
+La salvedad de la primera ronda queda documentada en el instructivo.
 
 ---
 
@@ -57,7 +55,7 @@ Link de checkout: {{ $json.checkout_url }}
 
 BASE DE CONOCIMIENTOS (única fuente de datos permitida):
 - Envíos: 48hs a todo el país. Gratis en compras superiores a $30.000.
-- Pagos: 3 cuotas sin interés en compras superiores a $500. Hasta 12 cuotas con interés.
+- Pagos: 3 cuotas sin interés en cualquier compra de la tienda. Hasta 12 cuotas con interés.
 - Garantía: 12 meses oficial.
 - Devoluciones: 30 días sin preguntas.
 - Descuentos: hasta 5% si el cliente lo pide. Nunca superar el 10%.
@@ -97,7 +95,7 @@ Link de checkout: {{ $json.checkout_url }}
 
 BASE DE CONOCIMIENTOS (única fuente de datos permitida):
 - Envíos: 48hs a todo el país. Gratis en compras superiores a $30.000.
-- Pagos: 3 cuotas sin interés en compras superiores a $500. Hasta 12 cuotas con interés.
+- Pagos: 3 cuotas sin interés en cualquier compra de la tienda. Hasta 12 cuotas con interés.
 - Garantía: 12 meses oficial.
 - Devoluciones: 30 días sin preguntas.
 
@@ -138,7 +136,7 @@ Link de checkout: {{ $json.checkout_url }}
 
 BASE DE CONOCIMIENTOS (única fuente de datos permitida):
 - Envíos: 48hs a todo el país. Gratis en compras superiores a $30.000.
-- Pagos: 3 cuotas sin interés en compras superiores a $500.
+- Pagos: 3 cuotas sin interés en cualquier compra de la tienda.
 - Garantía: 12 meses oficial.
 - Devoluciones: 30 días sin preguntas.
 
@@ -175,3 +173,28 @@ Para medir la mejora hay que:
 3. Comparar 3,55 (antes) contra el nuevo promedio
 
 Ahí sí el número mide una mejora real. Cualquier otra cosa es ajustar al resultado.
+
+---
+
+## Decisión sobre el umbral de cuotas — resuelta
+
+**La regla de negocio no se modificó.** El umbral real sigue siendo $500.
+
+Lo que se cambió es cómo se le presenta al modelo. El producto más barato del
+catálogo es el Cable USB-C a $4.000, de modo que **todo carrito posible de esta
+tienda supera los $500**: el umbral es cierto pero no discrimina nada.
+
+Hacer que el modelo lo recitara producía frases como *"tu compra supera los
+$500"* para un carrito de $200.000, que suena absurdo y probablemente costó
+puntos en relevancia y persuasión.
+
+```
+antes:  Pagos: 3 cuotas sin interés en compras superiores a $500.
+ahora:  Pagos: 3 cuotas sin interés en cualquier compra de la tienda.
+```
+
+Sigue siendo **factualmente correcto** y deja de generar la mención inútil.
+El instructivo de los evaluadores se actualizó en el mismo sentido.
+
+> El umbral de **envío gratis ($30.000) se mantiene tal cual**: ese sí
+> discrimina, porque hay carritos del catálogo por debajo y por encima.
