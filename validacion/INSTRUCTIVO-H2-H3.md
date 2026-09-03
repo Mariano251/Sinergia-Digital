@@ -129,8 +129,22 @@ independientes.
 ### 2. Precisión factual
 *¿Todo lo que afirma es verdadero según la base de conocimientos y el carrito real?*
 
-Datos verificables: envío gratis > $50.000 · costo $3.500 · entrega 48hs a
-3-5 días hábiles · 3 a 12 cuotas · garantía 12 meses · devolución 30 días.
+Datos verificables — **base de conocimientos real del sistema**, verificada
+contra los prompts en producción:
+
+- Envíos: 48hs a todo el país. Gratis en compras superiores a **$30.000**.
+- Pagos: 3 cuotas sin interés en compras superiores a $500. Hasta 12 cuotas con interés.
+- Garantía: 12 meses oficial.
+- Devoluciones: 30 días sin preguntas.
+- Descuentos: hasta 5% si el cliente lo pide. Nunca superar el 10%.
+
+> **Corrección respecto de la versión anterior de este instructivo.** La primera
+> ronda de evaluación se aplicó con una base tomada de una versión antigua del
+> workflow (envío gratis > $50.000, costo $3.500, 3-5 días hábiles). Impacto
+> medido: bajo — solo 11 de 55 mensajes mencionan envío gratis, de los cuales uno
+> cita $30.000 y uno $50.000, y ese grupo puntuó **por encima** del resto en
+> precisión factual (3,76 vs 3,32). Aun así debe declararse como salvedad de la
+> primera ronda.
 
 | | |
 |---|---|
@@ -207,3 +221,116 @@ el diseño permite hacer y conviene reportar.
 4. **Que las sesiones son controladas**, con la redacción del inicio de este
    documento.
 5. **La recuperación de las 9 filas perdidas** y su causa.
+
+---
+---
+
+# SEGUNDA RONDA — protocolo de re-validación
+
+> Esta sección aplica **después** de implementar el rediseño del scoring
+> (`REDISENO-SCORING-H2.md`) y los prompts corregidos (`PROMPTS-MEJORADOS-H3.md`).
+
+## Por qué hace falta una segunda ronda
+
+La primera ronda refutó las dos hipótesis y permitió identificar las causas.
+Las correcciones se derivaron **observando esos mismos datos**, así que no
+pueden validarse con ellos: sería ajustar al conjunto de prueba.
+
+La segunda ronda usa **sesiones nuevas** y, en H2, **un evaluador distinto**.
+
+---
+
+## H2 — segundo experto, obligatorio
+
+**El experto de la primera ronda NO puede validar el rediseño.**
+
+La regla implementada (tramos de valor + castigo por abandono ≥ 4) se dedujo de
+sus propias respuestas. Medir concordancia contra él sería tautológico: se
+estaría comprobando que una copia se parece al original.
+
+| | Experto 1 | Experto 2 |
+|---|---|---|
+| Rol | Derivación de la regla (exploratorio) | **Validación (confirmatorio)** |
+| Datos | Las 55 sesiones de la primera ronda | Sesiones nuevas |
+| Qué mide | Diagnóstico del desacuerdo | Generalización entre profesionales |
+
+Con el experto 2, la concordancia mide algo real: si el heurístico que se
+formalizó es compartido por otros profesionales del rubro, o era idiosincrásico
+del primero.
+
+**Condiciones idénticas a la primera ronda:** planilla ciega, sin ver la
+respuesta del algoritmo, orden aleatorizado, sin conocer la fórmula.
+
+### Cómo reportarlo
+
+> *"El rediseño del algoritmo se derivó del análisis exploratorio de las
+> clasificaciones del primer experto. Su validación se realizó sobre un conjunto
+> de sesiones independiente, evaluado por un segundo experto que no participó en
+> la fase exploratoria."*
+
+Esa frase es lo que separa un hallazgo de un ajuste.
+
+---
+
+## H3 — evaluación ciega a la versión
+
+**No mandar los mensajes nuevos diciendo "esta es la versión mejorada".**
+Los evaluadores puntúan más alto por expectativa, aunque no haya mejora. El
+sesgo es fuerte y conocido.
+
+### Diseño correcto
+
+```
+55 mensajes de la primera ronda  +  55 mensajes nuevos
+              ↓
+     mezclados aleatoriamente
+              ↓
+    110 ítems sin etiqueta de versión
+```
+
+Los mismos tres evaluadores puntúan los 110 sin saber cuál es cuál.
+
+**Ventajas:**
+
+1. La comparación antes/después queda **libre de sesgo de expectativa**
+2. Se obtiene un **re-test de fiabilidad**: los 55 viejos ya fueron puntuados,
+   así que se puede medir la estabilidad de cada evaluador consigo mismo
+3. Cualquier deriva en la severidad de los evaluadores queda controlada, porque
+   ambas versiones se puntúan en la misma sesión de trabajo
+
+**Costo:** unas 2 horas por evaluador en vez de 1. Es el precio de poder
+afirmar que la mejora es real y no expectativa.
+
+### Análisis de la segunda ronda
+
+- Promedio global de cada versión, y la diferencia
+- Diferencia **por criterio** — se espera mayor mejora en precisión factual y
+  persuasión, que son los que las correcciones apuntan
+- Diferencia **por prompt** (Alta / Media / Baja) — se espera la mayor mejora en
+  Baja, que era el que no tenía base de conocimientos
+- CCI de la segunda ronda, y estabilidad intra-evaluador sobre los 55 repetidos
+
+---
+
+## Interacción entre los dos cambios — no perderla de vista
+
+El rediseño del scoring **degrada a Baja** las sesiones con 4 o más abandonos.
+Eso hace que **más mensajes se generen con el prompt de Baja**, que era el peor
+de los tres.
+
+Por eso el orden importa: **corregir el prompt de Baja antes de correr la tanda
+nueva.** Si se cambia el scoring sin corregir ese prompt, el promedio de H3
+puede empeorar aunque el scoring haya mejorado.
+
+---
+
+## Orden de ejecución
+
+1. Aplicar el rediseño del scoring en el nodo `Scoring - Clasificar Lead`
+2. Aplicar los tres prompts corregidos en los nodos `AI Agent - ...`
+3. Re-exportar el workflow al repositorio, para que el artefacto publicado sea
+   el que generó los datos
+4. Correr la tanda nueva de sesiones
+5. Generar los instrumentos: planilla ciega para el **experto 2** y las tres
+   rúbricas con los 110 mensajes mezclados
+6. Recolectar, analizar y comparar contra la primera ronda
