@@ -1,0 +1,56 @@
+Sesion,Valor del carrito (ARS),Etapa alcanzada,Abandonos previos del cliente,Productos en el carrito,PRIORIDAD ASIGNADA (Alta/Media/Baja)
+S-01,80000,cart,2,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p",Media
+S-02,49000,cart,3,"1x Auriculares Bluetooth Pro, 1x Cable USB-C 2m",Baja
+S-03,200000,cart,5,"1x Monitor 27 pulgadas Full HD, 1x Mouse Pad XL",Alta
+S-04,200000,cart,3,"1x Monitor 27 pulgadas Full HD, 1x Mouse Pad XL",Alta
+S-05,128000,cart,5,"1x SSD 1TB NVMe, 1x Webcam 1080p, 2x Cable USB-C 2m",Media
+S-06,160000,cart,5,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL",Media
+S-07,40000,cart,5,2x Mouse Pad XL,Baja
+S-08,200000,cart,4,"1x Monitor 27 pulgadas Full HD, 1x Mouse Pad XL",Alta
+S-09,85000,cart,2,1x SSD 1TB NVMe,Media
+S-10,110000,cart,3,"1x Auriculares Bluetooth Pro, 1x Headset Gamer 7.1",Media
+S-11,150000,cart,3,"1x SSD 1TB NVMe, 1x Headset Gamer 7.1",Media
+S-12,120000,cart,1,"1x SSD 1TB NVMe, 1x Webcam 1080p",Alta
+S-13,160000,cart,1,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL",Alta
+S-14,200000,cart,5,"1x Monitor 27 pulgadas Full HD, 1x Mouse Pad XL",Media
+S-15,55000,cart,4,1x Teclado Mecanico RGB,Baja
+S-16,160000,cart,2,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL",Alta
+S-17,112000,cart,5,"1x Webcam 1080p, 1x Auriculares Bluetooth Pro, 1x Mouse Pad XL, 3x Cable USB-C 2m",Media
+S-18,40000,cart,0,2x Mouse Pad XL,Baja
+S-19,59000,cart,1,"1x Teclado Mecanico RGB, 1x Cable USB-C 2m",Media
+S-20,80000,cart,2,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p",Media
+S-21,80000,cart,5,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p",Baja
+S-22,72000,cart,2,"3x Mouse Pad XL, 3x Cable USB-C 2m",Baja
+S-23,24000,cart,0,"1x Mouse Pad XL, 1x Cable USB-C 2m",Baja
+S-24,120000,cart,2,"1x SSD 1TB NVMe, 1x Webcam 1080p",Alta
+S-25,64000,cart,2,"3x Mouse Pad XL, 1x Cable USB-C 2m",Baja
+S-26,140000,cart,5,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB",Media
+S-27,40000,cart,1,2x Mouse Pad XL,Baja
+S-28,160000,cart,5,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL",Media
+S-29,68000,cart,2,"3x Mouse Pad XL, 2x Cable USB-C 2m",Baja
+S-30,120000,cart,5,"1x SSD 1TB NVMe, 1x Webcam 1080p",Media
+S-31,76000,cart,2,"3x Mouse Pad XL, 4x Cable USB-C 2m",Baja
+S-32,200000,cart,2,"1x Monitor 27 pulgadas Full HD, 1x Mouse Pad XL",Alta
+S-33,160000,cart,0,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL",Alta
+S-34,120000,cart,0,"1x SSD 1TB NVMe, 1x Webcam 1080p",Alta
+S-35,100000,cart,1,"1x Auriculares Bluetooth Pro, 1x Teclado Mecanico RGB",Media
+S-36,40000,cart,0,2x Mouse Pad XL,Baja
+S-37,69000,cart,0,"1x Headset Gamer 7.1, 1x Cable USB-C 2m",Media
+S-38,130000,cart,2,"1x SSD 1TB NVMe, 1x Auriculares Bluetooth Pro",Alta
+S-39,64000,cart,1,"3x Mouse Pad XL, 1x Cable USB-C 2m",Baja
+S-40,40000,cart,3,2x Mouse Pad XL,Baja
+S-41,80000,cart,3,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p",Media
+S-42,120000,cart,3,"1x SSD 1TB NVMe, 1x Webcam 1080p",Media
+S-43,200000,cart,0,"1x Monitor 27 pulgadas Full HD, 1x Mouse Pad XL",Alta
+S-44,40000,cart,2,2x Mouse Pad XL,Baja
+S-45,120000,cart,5,"1x SSD 1TB NVMe, 1x Webcam 1080p",Media
+S-46,180000,cart,1,1x Monitor 27 pulgadas Full HD,Alta
+S-47,80000,cart,1,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p",Media
+S-48,116000,cart,5,"1x Webcam 1080p, 1x Auriculares Bluetooth Pro, 1x Mouse Pad XL, 4x Cable USB-C 2m",Media
+S-49,200000,cart,1,"1x Monitor 27 pulgadas Full HD, 1x Mouse Pad XL",Alta
+S-50,124000,cart,5,"1x SSD 1TB NVMe, 1x Webcam 1080p, 1x Cable USB-C 2m",Media
+S-51,120000,cart,4,"1x SSD 1TB NVMe, 1x Webcam 1080p",Media
+S-52,105000,cart,2,"1x SSD 1TB NVMe, 1x Mouse Pad XL",Media
+S-53,80000,cart,0,"1x Auriculares Bluetooth Pro, 1x Webcam 1080p",Media
+S-54,160000,cart,3,"1x SSD 1TB NVMe, 1x Teclado Mecanico RGB, 1x Mouse Pad XL",Alta
+S-55,90000,cart,2,2x Auriculares Bluetooth Pro,Media
