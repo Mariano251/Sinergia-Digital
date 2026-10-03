@@ -1,0 +1,23 @@
+# Dependencias — nunca al repositorio
+node_modules/
+
+# Compilados
+dist/
+build/
+
+# Variables de entorno y secretos
+.env
+.env.*
+!.env.example
+
+# Informes de cobertura generados (el de la tesis se versiona aparte)
+coverage/
+
+# Python
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
