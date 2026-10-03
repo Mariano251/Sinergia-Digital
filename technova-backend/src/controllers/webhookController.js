@@ -78,9 +78,12 @@ const cartAbandoned = async (req, res, next) => {
       }
     };
 
-    // Enviar el webhook a n8n
+    // Enviar el webhook a n8n, con el token compartido que valida el nodo Webhook
     await axios.post(process.env.N8N_WEBHOOK_URL, payload, {
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type':    'application/json',
+        'X-Webhook-Token': process.env.WEBHOOK_TOKEN || ''
+      },
       timeout: 15000
     });
 

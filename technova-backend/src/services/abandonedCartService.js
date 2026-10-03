@@ -79,9 +79,12 @@ const processAbandonedCarts = async () => {
         // a n8n (incluido telegram_chat_id).
         console.log('📦 Payload enviado a n8n:', JSON.stringify(payload, null, 2));
 
-        // Enviar a n8n
+        // Enviar a n8n, con el token compartido que valida el nodo Webhook
         await axios.post(process.env.N8N_WEBHOOK_URL, payload, {
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type':    'application/json',
+            'X-Webhook-Token': process.env.WEBHOOK_TOKEN || ''
+          },
           timeout: 15000
         });
 

@@ -1,0 +1,929 @@
+{
+  "name": "Sinergia Digital - Recuperacion de Carritos v5 (Header Auth)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "carrito-abandonado",
+        "options": {},
+        "authentication": "headerAuth"
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -640,
+        2608
+      ],
+      "id": "2513f80f-27aa-4f68-83f2-0cc3b813478c",
+      "name": "Webhook - Carrito Abandonado",
+      "webhookId": "ea771c6f-4142-446f-bcfb-d8c79b2ef096",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REEMPLAZAR_POR_EL_ID_DE_LA_CREDENCIAL",
+          "name": "Webhook Token TechNova"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "val-email",
+              "leftValue": "={{ $json.body.email }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "val-precio",
+              "leftValue": "={{ $json.body.cart_value }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            },
+            {
+              "id": "val-customerid",
+              "leftValue": "={{ $json.body.customer_id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -400,
+        2608
+      ],
+      "id": "013f4b95-62d5-48dd-ad2a-efe4f80ddf47",
+      "name": "Validar Datos"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ═══════════════════════════════════════════════════════════════\n// SCORING POR TRAMOS DE VALOR CON CASTIGO POR ABANDONO RECURRENTE\n//   puntuacion = 100 · min(cart_value / 200000, 1)\n//   ALTA  ≥ 70  (equivale a $140.000)\n//   MEDIA ≥ 30  (equivale a  $60.000)\n//   BAJA  < 30\n//   si previous_abandonment_count ≥ 4 → baja un nivel\n//\n// Cambios respecto de la version anterior:\n//   - el abandono deja de sumar linealmente y pasa a ser castigo por umbral\n//   - se elimina cart_stage del calculo: el backend siempre manda 'cart',\n//     con lo cual sus 20 puntos eran una constante que no discriminaba nada\n//   - umbral MEDIA de 40 a 30, para eliminar la zona en la que ALTA era\n//     inalcanzable con cualquier carrito\n// ═══════════════════════════════════════════════════════════════\nconst body = $input.first().json.body;\n\n// --- Entradas ---\nconst cartValue = parseFloat(body.cart_value) || 0;\nconst abandonos = parseInt(body.previous_abandonment_count) || 0;\n// cart_stage se conserva solo para el registro de auditoria: NO entra en el calculo\nconst cartStage = (body.cart_stage || 'browsing').toString().toLowerCase();\n\n// --- Constantes ---\nconst CART_VALUE_MAX = 200000;\nconst U_ALTA         = 70;   // equivale a $140.000\nconst U_MEDIA        = 30;   // equivale a  $60.000\nconst AB_CASTIGO     = 4;    // a partir de aqui se degrada un nivel\n\n// --- Puntuacion (0-100), solo por valor de carrito ---\nconst valorNorm  = Math.min(cartValue / CART_VALUE_MAX, 1);\nconst puntuacion = Math.round(valorNorm * 100 * 100) / 100;\n\n// --- Clasificacion por tramos ---\nconst NIVELES = ['BAJA', 'MEDIA', 'ALTA'];\nlet nivel = puntuacion >= U_ALTA ? 2 : puntuacion >= U_MEDIA ? 1 : 0;\n\n// --- Castigo por abandono recurrente ---\nconst degradado = abandonos >= AB_CASTIGO;\nif (degradado) nivel = Math.max(0, nivel - 1);\n\nconst prioridad = NIVELES[nivel];\n\n// --- Resumen de items ---\nconst items = body.cart?.items || [];\nconst itemsResumen = items.map(i => `${i.name} (x${i.quantity}) - $${i.price}`).join(', ');\n\n// --- Timestamps para latencia ---\n// timestamp_evento: cuándo el backend detectó el abandono (viene en el payload)\n// timestamp_procesado: cuándo n8n procesa el scoring (ahora)\nconst tsEvento = body.timestamp || body.detected_at || new Date().toISOString();\nconst tsProcesado = new Date().toISOString();\n\nreturn [{\n  json: {\n    customer_id:              body.customer_id           || body.customer?.customer_id || 'sin-id',\n    name:                     body.name                  || body.customer?.name        || 'Cliente',\n    email:                    body.email                 || body.customer?.email       || '',\n    phone:                    body.phone                 || body.customer?.phone       || '',\n    telegram_chat_id:         body.telegram_chat_id      || '',\n    cart_value:               cartValue,\n    cart_id:                  body.cart?.cart_id         || body.cart_id               || '',\n    checkout_url:             body.cart?.checkout_url    || body.checkout_url          || '',\n    cart_value:               cartValue,\n    cart_id:                  body.cart?.cart_id         || body.cart_id               || '',\n    checkout_url:             body.cart?.checkout_url    || body.checkout_url          || '',\n    items_resumen:            itemsResumen               || body.producto              || 'productos seleccionados',\n    is_returning:             body.customer?.is_returning_customer || false,\n    // --- campos del scoring ---\n    cart_stage:               cartStage,\n    previous_abandonment_count: abandonos,\n    puntuacion:               puntuacion,\n    prioridad:                prioridad,\n    degradado:                degradado,\n    // --- timestamps ---\n    timestamp_evento:         tsEvento,\n    timestamp_procesado:      tsProcesado\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        2608
+      ],
+      "id": "46bc8eb7-9fa3-4e45-bd7c-11a0b1c2f2f6",
+      "name": "Scoring - Clasificar Lead"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "rule-alta",
+                    "leftValue": "={{ $json.prioridad }}",
+                    "rightValue": "ALTA",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Alta"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "rule-media",
+                    "leftValue": "={{ $json.prioridad }}",
+                    "rightValue": "MEDIA",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Media"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        80,
+        2608
+      ],
+      "id": "27cef133-222e-4dbb-8c0f-68d07c3823d8",
+      "name": "Switch - Prioridad"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "= ={{ $json.customer_id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        544,
+        2208
+      ],
+      "id": "c1beeb7a-153f-4205-aa7e-a8221e60de8a",
+      "name": "Memoria - Alta"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=={{ \"Hola, soy \" + $json.name + \". Dejé productos en mi carrito: \" + $json.items_resumen + \". El valor total es $\" + $json.cart_value + \" ARS.\" }}",
+        "options": {
+          "systemMessage": "=Eres un asistente de ventas de \"TechNova\" que escribe por Telegram. Recuperá el carrito abandonado.\n\nDATOS DE ESTE CLIENTE:\nNombre: {{ $json.name }}\nProductos en el carrito: {{ $json.items_resumen }}\nValor total: ${{ $json.cart_value }} ARS\nEtapa alcanzada: {{ $json.cart_stage }}\nCarritos abandonados antes: {{ $json.previous_abandonment_count }}\nLink de checkout: {{ $json.checkout_url }}\n\nBASE DE CONOCIMIENTOS (única fuente de datos permitida):\n- Envíos: 48hs a todo el país. Gratis en compras superiores a $30.000.\n- Pagos: 3 cuotas sin interés en cualquier compra de la tienda. Hasta 12 cuotas con interés.\n- Garantía: 12 meses oficial.\n- Devoluciones: 30 días sin preguntas.\n- Descuentos: hasta 5% si el cliente lo pide. Nunca superar el 10%.\n\nCÓMO ESCRIBIR EL MENSAJE:\n1. Saludá por su nombre.\n2. Nombrá los productos concretos del carrito y conectalos con un uso real:\n   para qué le van a servir juntos. No los enumeres como una factura.\n3. Elegí UN SOLO beneficio de la base, el que más aplique a ESTE carrito, y explicá\n   en una línea por qué le conviene. No recites la lista completa.\n4. Cerrá invitando a completar la compra con el link.\n5. Preguntale si tiene alguna duda.\n\nREGLAS DURAS:\n- No inventes ningún dato. Si una cifra no está en la base, no la menciones.\n- No afirmes que el envío es gratis salvo que el valor del carrito supere los $30.000.\n- No menciones cuántas veces abandonó antes: usalo solo para ajustar el tono\n  (si abandonó varias veces, sé más directo y menos insistente).\n- Máximo 8 líneas. Tono cálido y cercano, es Telegram.\n- Solo texto plano: nada de markdown, asteriscos ni viñetas con símbolos."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        416,
+        2368
+      ],
+      "id": "29873b1c-576a-42e2-a41b-c7005c541760",
+      "name": "AI Agent - Alta Prioridad"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Scoring - Clasificar Lead').item.json.telegram_chat_id }}",
+        "text": "=={{ $json.output.replace(/\\*\\*/g, '').replace(/\\*/g, '') }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        768,
+        2336
+      ],
+      "id": "a260869a-e420-4467-a45e-cf3e861b888d",
+      "name": "Telegram - Enviar Mensaje",
+      "webhookId": "2b94516f-0207-4287-8eed-718755cdcb55",
+      "credentials": {
+        "telegramApi": {
+          "id": "P105T4TWMe5kN7QE",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "= ={{ $json.customer_id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        560,
+        2816
+      ],
+      "id": "0c9338ec-6b13-4456-a7c0-91f808e1968b",
+      "name": "Memoria - Media"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=={{ \"Hola, soy \" + $json.name + \". Dejé productos en mi carrito: \" + $json.items_resumen + \". El valor total es $\" + $json.cart_value + \" ARS.\" }}",
+        "options": {
+          "systemMessage": "=Eres un asistente de ventas de \"TechNova\". Redactá un email de recuperación de carrito.\n\nDATOS DE ESTE CLIENTE:\nNombre: {{ $json.name }}\nProductos en el carrito: {{ $json.items_resumen }}\nValor total: ${{ $json.cart_value }} ARS\nEtapa alcanzada: {{ $json.cart_stage }}\nCarritos abandonados antes: {{ $json.previous_abandonment_count }}\nLink de checkout: {{ $json.checkout_url }}\n\nBASE DE CONOCIMIENTOS (única fuente de datos permitida):\n- Envíos: 48hs a todo el país. Gratis en compras superiores a $30.000.\n- Pagos: 3 cuotas sin interés en cualquier compra de la tienda. Hasta 12 cuotas con interés.\n- Garantía: 12 meses oficial.\n- Devoluciones: 30 días sin preguntas.\n\nCÓMO ESCRIBIR EL EMAIL:\n1. Asunto corto que mencione el nombre del cliente o un producto concreto del carrito.\n2. Saludá por su nombre.\n3. Nombrá los productos y conectalos con un uso real: qué resuelve esa combinación.\n   No los pegues como lista de precios.\n4. Elegí UN SOLO beneficio de la base, el que más aplique a ESTE carrito, y justificá\n   en una línea por qué le conviene. No enumeres todos.\n5. Cerrá con el link de checkout y una invitación a escribir si tiene dudas.\n\nREGLAS DURAS:\n- No inventes ningún dato. Si una cifra no está en la base, no la menciones.\n- No afirmes que el envío es gratis salvo que el valor del carrito supere los $30.000.\n- No menciones cuántas veces abandonó antes: usalo solo para ajustar el tono.\n- Máximo 12 líneas en total. Profesional pero cercano.\n- Solo texto plano: nada de markdown, asteriscos ni viñetas con símbolos."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        416,
+        2608
+      ],
+      "id": "905aab67-fde8-4e6b-91b3-5a6b7322b725",
+      "name": "AI Agent - Media Prioridad"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Scoring - Clasificar Lead').item.json.email }}",
+        "subject": "¡Tu carrito en TechNova te espera! 🛒",
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        672,
+        2608
+      ],
+      "id": "93f3467d-5521-407f-b492-7acb07dac865",
+      "name": "Gmail - Media Prioridad",
+      "webhookId": "ed5a6d87-528e-4460-bb13-0a8e5ba2a45e",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "v5KEiit9BYHnBRLD",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "= ={{ $json.customer_id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        512,
+        3184
+      ],
+      "id": "938dfc5e-f119-45c0-b67a-3e6f70cc8c15",
+      "name": "Memoria - Baja"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=={{ \"Hola, soy \" + $json.name + \". Dejé productos en mi carrito: \" + $json.items_resumen + \". El valor total es $\" + $json.cart_value + \" ARS.\" }}",
+        "options": {
+          "systemMessage": "=Eres un asistente de ventas de \"TechNova\". Redactá un email breve de recuperación de carrito.\n\nDATOS DE ESTE CLIENTE:\nNombre: {{ $json.name }}\nProductos en el carrito: {{ $json.items_resumen }}\nValor total: ${{ $json.cart_value }} ARS\nCarritos abandonados antes: {{ $json.previous_abandonment_count }}\nLink de checkout: {{ $json.checkout_url }}\n\nBASE DE CONOCIMIENTOS (única fuente de datos permitida):\n- Envíos: 48hs a todo el país. Gratis en compras superiores a $30.000.\n- Pagos: 3 cuotas sin interés en cualquier compra de la tienda.\n- Garantía: 12 meses oficial.\n- Devoluciones: 30 días sin preguntas.\n\nCÓMO ESCRIBIR EL EMAIL:\n1. Asunto corto que mencione un producto concreto del carrito.\n2. Saludá por su nombre y nombrá los productos que dejó.\n3. Agregá UNA razón concreta para volver, tomada de la base, la que más aplique\n   a este carrito.\n4. Cerrá con el link.\n\nREGLAS DURAS:\n- No inventes ningún dato. Si una cifra no está en la base, no la menciones.\n- No afirmes que el envío es gratis salvo que el valor del carrito supere los $30.000.\n- Máximo 6 líneas. Breve y directo, sin relleno.\n- Solo texto plano: nada de markdown, asteriscos ni viñetas con símbolos."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        400,
+        2992
+      ],
+      "id": "d5df5c9d-dd9e-47af-9916-d4471b358930",
+      "name": "AI Agent - Baja Prioridad"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Scoring - Clasificar Lead').item.json.email }}",
+        "subject": "¡No olvides tu carrito en TechNova! 🛒",
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        736,
+        3024
+      ],
+      "id": "d81d9293-8a49-40e2-8838-1435ea30cbfa",
+      "name": "Gmail - Baja Prioridad",
+      "webhookId": "1c92ac83-dd92-4cf2-bbe9-6c9905517141",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "v5KEiit9BYHnBRLD",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1SPlOtghI3z5RRZKn-BVdf0XAgHpI_uO8VULC2qZk8bQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Auditoría",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Timestamp": "={{ $('Scoring - Clasificar Lead').item.json.timestamp_procesado }}",
+            "Customer ID": "={{ $('Scoring - Clasificar Lead').item.json.customer_id }}",
+            "Nombre": "={{ $('Scoring - Clasificar Lead').item.json.name }}",
+            "Email": "={{ $('Scoring - Clasificar Lead').item.json.email }}",
+            "Cart Value": "={{ $('Scoring - Clasificar Lead').item.json.cart_value }}",
+            "Scoring": "={{ $('Scoring - Clasificar Lead').item.json.prioridad }}",
+            "Canal": "={{ $('Scoring - Clasificar Lead').item.json.prioridad === 'ALTA' ? 'Telegram' : 'Email' }}",
+            "Status": "Enviado",
+            "Conversión Proxy": "Pendiente",
+            "Checkout URL": "={{ $('Scoring - Clasificar Lead').item.json.checkout_url }}",
+            "Puntuacion": "={{ $('Scoring - Clasificar Lead').item.json.puntuacion }}",
+            "Cart Stage": "={{ $('Scoring - Clasificar Lead').item.json.cart_stage }}",
+            "Abandonos Previos": "={{ $('Scoring - Clasificar Lead').item.json.previous_abandonment_count }}",
+            "Mensaje IA": "={{ $json.output || $json.text || '' }}",
+            "Latencia (ms)": "={{ Date.now() - new Date($('Scoring - Clasificar Lead').item.json.timestamp_evento).getTime() }}",
+            "Escenario": "={{ $('Webhook - Carrito Abandonado').item.json.body.escenario || 'exec-' + $execution.id }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Timestamp",
+              "displayName": "Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Customer ID",
+              "displayName": "Customer ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Cart Value",
+              "displayName": "Cart Value",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Scoring",
+              "displayName": "Scoring",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Canal",
+              "displayName": "Canal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Conversión Proxy",
+              "displayName": "Conversión Proxy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Checkout URL",
+              "displayName": "Checkout URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Puntuacion",
+              "displayName": "Puntuacion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Cart Stage",
+              "displayName": "Cart Stage",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Abandonos Previos",
+              "displayName": "Abandonos Previos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Mensaje IA",
+              "displayName": "Mensaje IA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Latencia (ms)",
+              "displayName": "Latencia (ms)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Escenario",
+              "displayName": "Escenario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        960,
+        2608
+      ],
+      "id": "2ecd68a7-8b04-48b3-a6be-8d868e75eb4b",
+      "name": "Google Sheets - Auditoría",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GFB2D2qOVgNhHXYq",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "telegram-respuesta",
+        "options": {},
+        "authentication": "headerAuth"
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -640,
+        3504
+      ],
+      "id": "03296d41-5970-4009-95d1-f1f933f342d4",
+      "name": "Webhook - Respuesta Telegram",
+      "webhookId": "bb882c1f-5b48-4c7b-9df2-d7c91a0b3f12",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REEMPLAZAR_POR_EL_ID_DE_LA_CREDENCIAL",
+          "name": "Webhook Token TechNova"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "= ={{ $json.customer_id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -176,
+        3280
+      ],
+      "id": "522586d2-7341-44c8-a8e5-3c4399b3aa10",
+      "name": "Memoria - Objeciones"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=={{ \"Hola, soy \" + $json.name + \". Dejé productos en mi carrito: \" + $json.items_resumen + \". El valor total es $\" + $json.cart_value + \" ARS.\" }}",
+        "options": {
+          "systemMessage": "Eres un asistente de ventas de \"TechNova\" gestionando objeciones por Telegram.\n\nBASE DE CONOCIMIENTOS:\n• Envíos: 48hs a todo el país. Gratis en compras +$30.000.\n• Pagos: 3 cuotas sin interés en compras +$500. Hasta 12 cuotas con interés.\n• Garantía: 12 meses oficial.\n• Devoluciones: 30 días sin preguntas.\n• Descuentos: Hasta 5% si lo pide. Nunca superar el 10%.\n\nRespondé directo y persuasivo. Máximo 3 párrafos. Al final invitá a finalizar la compra.\nRESTRICCIÓN: Solo temas de TechNova.\n\nNo uses markdown, asteriscos ni formato especial. Solo texto plano."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -304,
+        3504
+      ],
+      "id": "f7eaf58e-ddab-4292-923a-eacb1cc756c1",
+      "name": "AI Agent - Manejo de Objeciones"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.body.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -16,
+        3504
+      ],
+      "id": "855a4ede-0ee0-447c-8bfb-c40c437c2b99",
+      "name": "Telegram - Responder Objeción",
+      "webhookId": "6da83619-5170-4e64-83d0-078bc520009e",
+      "credentials": {
+        "telegramApi": {
+          "id": "P105T4TWMe5kN7QE",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "claude-haiku-4-5-20251001",
+          "mode": "list",
+          "cachedResultName": "Claude Haiku 4.5"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        352,
+        3184
+      ],
+      "id": "7eeafb05-0010-45ed-8124-c7e182beefe8",
+      "name": "Anthropic Chat Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "pEaaGpg6WE6OIOa6",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "claude-haiku-4-5-20251001",
+          "mode": "list",
+          "cachedResultName": "Claude Haiku 4.5"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        400,
+        2160
+      ],
+      "id": "57aee375-c620-4ded-a7f8-6fa86ec2f438",
+      "name": "Anthropic Chat Model1",
+      "credentials": {
+        "anthropicApi": {
+          "id": "pEaaGpg6WE6OIOa6",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "claude-haiku-4-5-20251001",
+          "mode": "list",
+          "cachedResultName": "Claude Haiku 4.5"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        400,
+        2784
+      ],
+      "id": "0140432b-8311-47a8-8e18-576e3372a986",
+      "name": "Anthropic Chat Model2",
+      "credentials": {
+        "anthropicApi": {
+          "id": "pEaaGpg6WE6OIOa6",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "claude-haiku-4-5-20251001",
+          "mode": "list",
+          "cachedResultName": "Claude Haiku 4.5"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        -320,
+        3280
+      ],
+      "id": "3426c638-c1af-46de-b8f7-26792a592930",
+      "name": "Anthropic Chat Model3",
+      "credentials": {
+        "anthropicApi": {
+          "id": "pEaaGpg6WE6OIOa6",
+          "name": "Anthropic account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook - Carrito Abandonado": {
+      "main": [
+        [
+          {
+            "node": "Validar Datos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar Datos": {
+      "main": [
+        [
+          {
+            "node": "Scoring - Clasificar Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scoring - Clasificar Lead": {
+      "main": [
+        [
+          {
+            "node": "Switch - Prioridad",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch - Prioridad": {
+      "main": [
+        [
+          {
+            "node": "AI Agent - Alta Prioridad",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent - Media Prioridad",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent - Baja Prioridad",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent - Alta Prioridad": {
+      "main": [
+        [
+          {
+            "node": "Telegram - Enviar Mensaje",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets - Auditoría",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent - Media Prioridad": {
+      "main": [
+        [
+          {
+            "node": "Gmail - Media Prioridad",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets - Auditoría",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent - Baja Prioridad": {
+      "main": [
+        [
+          {
+            "node": "Gmail - Baja Prioridad",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets - Auditoría",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook - Respuesta Telegram": {
+      "main": [
+        [
+          {
+            "node": "AI Agent - Manejo de Objeciones",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent - Manejo de Objeciones": {
+      "main": [
+        [
+          {
+            "node": "Telegram - Responder Objeción",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memoria - Alta": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent - Alta Prioridad",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memoria - Media": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent - Media Prioridad",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memoria - Baja": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent - Baja Prioridad",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memoria - Objeciones": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent - Manejo de Objeciones",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent - Baja Prioridad",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent - Alta Prioridad",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent - Media Prioridad",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent - Manejo de Objeciones",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
+}
