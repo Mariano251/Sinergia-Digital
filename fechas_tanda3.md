@@ -125,3 +125,109 @@ puntual de la API y no una degradación del sistema. El desglose nodo por nodo e
 |---:|---:|---|---:|
 | 187 | 30 | I-01-2 | 19361 |
 | 184 | 27 | I-04-2 | 19254 |
+
+---
+
+## Por qué la ventana es de 26 minutos
+
+La duración total no es una corrida apurada ni una limitación de recursos: **es el mínimo que el diseño
+permite**, y se deduce de dos parámetros del sistema.
+
+La Tanda 3 existe para probar una cosa concreta: que el contador de abandonos lo incremente el backend, como
+en producción, en lugar de fijarse a mano antes de cada escenario. Para eso cada cuenta tiene que abandonar
+varias veces **en secuencia**: la misma cuenta pasa por contador 0, después 1, después 2, y así. Un nivel del
+contador no puede medirse hasta que el anterior se haya notificado y el backend haya sumado uno.
+
+Eso obliga a seis ciclos consecutivos, y el ritmo lo impone el job de detección del backend:
+
+| Parámetro | Valor | Dónde está |
+|---|---|---|
+| Intervalo del job de detección | **5 minutos** | `abandonedCartService.js`, `INTERVAL_MS = 5 * 60 * 1000` |
+| Inactividad exigida para considerar abandono | **2 minutos** | `abandonedCartService.js`, `INTERVAL '2 minutes'` |
+| Ciclos necesarios | **6** | contador 0 a 5, según `plan-tanda3.json` |
+
+Cinco intervalos de cinco minutos entre seis ciclos dan **25 minutos**. La corrida duró 25 min 06 s. Es decir
+que la ventana observada **coincide con el piso teórico del diseño**: no había forma de hacerla más corta, y
+alargarla no habría aportado nada, porque la variable bajo estudio es el contador, no el tiempo transcurrido.
+
+La correspondencia entre ciclo y nivel del contador es exacta:
+
+| Ciclo | Hora de inicio | Separación | Sesiones | Nivel del contador |
+|---:|---|---|---:|---:|
+| 1 | 20:11:45 | — | 10 | 0 |
+| 2 | 20:16:45 | 5,0 min | 10 | 1 |
+| 3 | 20:21:45 | 5,0 min | 10 | 2 |
+| 4 | 20:26:45 | 5,0 min | 10 | 3 |
+| 5 | 20:31:45 | 5,0 min | 10 | 4 |
+| 6 | 20:36:45 | 5,0 min | 5 | 5 |
+
+Cada ciclo contiene **un único nivel de contador**, sin mezcla. El sexto tiene cinco sesiones y no diez porque
+solo las cuentas 1 a 5 llegan al contador 5; las cuentas 6 a 10 abandonan cinco veces y terminan en 4. Las
+separaciones son de 5,0 minutos exactos en los cinco saltos, que es el intervalo del job: **el ritmo lo marcó
+el sistema, no el script**. El script solo montaba los carritos y esperaba.
+
+---
+
+## Qué no queda afectado por la ventana corta
+
+Las tres hipótesis se miden **por sesión**, y ninguna tiene un componente temporal entre sesiones:
+
+| Hipótesis | Qué mide | ¿Depende de cuándo ocurrió la sesión? |
+|---|---|---|
+| **H1** | Latencia desde la detección hasta el registro de auditoría, dentro de cada ejecución | **No.** Cada sesión aporta su propio intervalo, medido de punta a punta |
+| **H2** | Concordancia entre el scoring del algoritmo y la clasificación del experto | **No.** El scoring es función del valor del carrito y del contador |
+| **H3** | Calidad del mensaje según la rúbrica de cinco criterios | **No.** Depende del prompt y del contenido del carrito |
+
+Que las 55 sesiones ocurran en 26 minutos o en 26 días no cambia ninguno de esos tres valores.
+
+---
+
+## Qué sí limita, y conviene declararlo
+
+Hay que ser preciso también con lo que la ventana corta **no** permite afirmar:
+
+1. **No se muestreó variabilidad temporal.** Las 55 sesiones corrieron bajo las mismas condiciones de red, de
+   carga del servidor y de disponibilidad de las APIs externas. Una corrida repartida en días habría
+   capturado franjas horarias y estados de servicio distintos.
+2. **Los valores atípicos lo demuestran.** Las dos ejecuciones de ~19 s cayeron en el **mismo ciclo**, el de
+   las 20:21, porque la API de Telegram tuvo un episodio puntual. En una ventana de 26 minutos, un incidente
+   de la API afecta a un ciclo entero y no se compensa; en una ventana larga, se diluye. Dicho al revés: la
+   medición de latencia es sensible a condiciones externas que esta tanda no muestreó.
+3. **No representa una distribución realista de abandonos.** En producción los abandonos llegan dispersos a
+   lo largo del día. Acá llegan en lotes de diez, cada cinco minutos. Lo que se validó es el pipeline, no el
+   patrón temporal de la demanda.
+
+Nada de esto invalida H1, H2 ni H3. Son limitaciones de validez externa, y se declaran como tales.
+
+---
+
+## Redacción sugerida para la tesis
+
+> *Las 55 sesiones de la tercera tanda se ejecutaron el 11 de septiembre de 2026 entre las 20:11 y las 20:36,
+> en una ventana de 25 minutos. Esa duración responde al diseño y no a una restricción operativa: la tanda
+> evalúa el incremento del contador de abandonos por parte del backend, lo que exige que cada cuenta abandone
+> de forma secuencial, un nivel de contador por ciclo. Con un job de detección que se ejecuta cada cinco
+> minutos, los seis ciclos necesarios para recorrer los niveles 0 a 5 ocupan un mínimo de veinticinco
+> minutos, que es exactamente lo que se observa. Las separaciones entre ciclos fueron de 5,0 minutos en los
+> cinco saltos, marcadas por el propio job y no por el script de ejecución.*
+>
+> *Las tres hipótesis se miden por sesión y carecen de componente temporal entre sesiones, de modo que la
+> compresión de la ventana no afecta sus resultados. Sí constituye una limitación de validez externa: las 55
+> sesiones comparten condiciones de red, carga y disponibilidad de las APIs externas. Los dos valores
+> atípicos de latencia, ambos del mismo ciclo y atribuibles a un episodio puntual de la API de mensajería,
+> ilustran esa sensibilidad. Una replicación distribuida en el tiempo permitiría caracterizar esa
+> variabilidad.*
+
+---
+
+## Verificación
+
+Todo lo afirmado en esta sección es reproducible:
+
+| Afirmación | Cómo verificarla |
+|---|---|
+| Las 55 ejecuciones y sus marcas de tiempo | `execution_entity` de `~/.n8n/database.sqlite`, ids 158 a 212 |
+| Intervalo del job y umbral de inactividad | `technova-backend/src/services/abandonedCartService.js` |
+| Seis ciclos y el nivel de contador de cada uno | `validacion/tanda3-incremental/plan-tanda3.json`, campos `ciclo` y `ab_esperado` |
+| Que el contador lo incrementó el backend | `run_validacion_tanda3.js` escribe el contador una sola vez, en 0; después solo verifica |
+| Registro de la corrida | `validacion/tanda3-incremental/run-tanda3-resultados.json` |
