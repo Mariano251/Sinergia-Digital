@@ -1,0 +1,6 @@
+criterio,n,media,desvio_poblacional,desvio_muestral,minimo,maximo
+Claridad,165,4.76,0.48,0.48,3,5
+Relevancia,165,4.99,0.08,0.08,4,5
+Precision factual,165,4.84,0.62,0.62,2,5
+Uso de contexto,165,4.74,0.44,0.44,4,5
+Persuasion,165,4.81,0.57,0.57,2,5

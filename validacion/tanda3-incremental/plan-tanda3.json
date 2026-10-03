@@ -1,0 +1,1058 @@
+{
+  "semilla": 20260911,
+  "sesiones": [
+    {
+      "id": "I-01-0",
+      "ciclo": 1,
+      "u": 1,
+      "ab_esperado": 0,
+      "cv": 160000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 80.0,
+      "prioridad_esperada": "ALTA"
+    },
+    {
+      "id": "I-02-0",
+      "ciclo": 1,
+      "u": 2,
+      "ab_esperado": 0,
+      "cv": 40000,
+      "items": [
+        [
+          2,
+          2
+        ]
+      ],
+      "puntuacion_esperada": 20.0,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-03-0",
+      "ciclo": 1,
+      "u": 3,
+      "ab_esperado": 0,
+      "cv": 160000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 80.0,
+      "prioridad_esperada": "ALTA"
+    },
+    {
+      "id": "I-04-0",
+      "ciclo": 1,
+      "u": 4,
+      "ab_esperado": 0,
+      "cv": 76000,
+      "items": [
+        [
+          2,
+          3
+        ],
+        [
+          8,
+          4
+        ]
+      ],
+      "puntuacion_esperada": 38.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-05-0",
+      "ciclo": 1,
+      "u": 5,
+      "ab_esperado": 0,
+      "cv": 80000,
+      "items": [
+        [
+          3,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 40.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-06-0",
+      "ciclo": 1,
+      "u": 6,
+      "ab_esperado": 0,
+      "cv": 128000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "puntuacion_esperada": 64.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-07-0",
+      "ciclo": 1,
+      "u": 7,
+      "ab_esperado": 0,
+      "cv": 200000,
+      "items": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 100.0,
+      "prioridad_esperada": "ALTA"
+    },
+    {
+      "id": "I-08-0",
+      "ciclo": 1,
+      "u": 8,
+      "ab_esperado": 0,
+      "cv": 112000,
+      "items": [
+        [
+          6,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          8,
+          3
+        ]
+      ],
+      "puntuacion_esperada": 56.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-09-0",
+      "ciclo": 1,
+      "u": 9,
+      "ab_esperado": 0,
+      "cv": 120000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 60.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-10-0",
+      "ciclo": 1,
+      "u": 10,
+      "ab_esperado": 0,
+      "cv": 55000,
+      "items": [
+        [
+          1,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 27.5,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-01-1",
+      "ciclo": 2,
+      "u": 1,
+      "ab_esperado": 1,
+      "cv": 120000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 60.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-02-1",
+      "ciclo": 2,
+      "u": 2,
+      "ab_esperado": 1,
+      "cv": 160000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 80.0,
+      "prioridad_esperada": "ALTA"
+    },
+    {
+      "id": "I-03-1",
+      "ciclo": 2,
+      "u": 3,
+      "ab_esperado": 1,
+      "cv": 116000,
+      "items": [
+        [
+          6,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          8,
+          4
+        ]
+      ],
+      "puntuacion_esperada": 58.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-04-1",
+      "ciclo": 2,
+      "u": 4,
+      "ab_esperado": 1,
+      "cv": 200000,
+      "items": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 100.0,
+      "prioridad_esperada": "ALTA"
+    },
+    {
+      "id": "I-05-1",
+      "ciclo": 2,
+      "u": 5,
+      "ab_esperado": 1,
+      "cv": 80000,
+      "items": [
+        [
+          3,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 40.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-06-1",
+      "ciclo": 2,
+      "u": 6,
+      "ab_esperado": 1,
+      "cv": 40000,
+      "items": [
+        [
+          2,
+          2
+        ]
+      ],
+      "puntuacion_esperada": 20.0,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-07-1",
+      "ciclo": 2,
+      "u": 7,
+      "ab_esperado": 1,
+      "cv": 80000,
+      "items": [
+        [
+          3,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 40.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-08-1",
+      "ciclo": 2,
+      "u": 8,
+      "ab_esperado": 1,
+      "cv": 40000,
+      "items": [
+        [
+          2,
+          2
+        ]
+      ],
+      "puntuacion_esperada": 20.0,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-09-1",
+      "ciclo": 2,
+      "u": 9,
+      "ab_esperado": 1,
+      "cv": 120000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 60.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-10-1",
+      "ciclo": 2,
+      "u": 10,
+      "ab_esperado": 1,
+      "cv": 150000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 75.0,
+      "prioridad_esperada": "ALTA"
+    },
+    {
+      "id": "I-01-2",
+      "ciclo": 3,
+      "u": 1,
+      "ab_esperado": 2,
+      "cv": 200000,
+      "items": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 100.0,
+      "prioridad_esperada": "ALTA"
+    },
+    {
+      "id": "I-02-2",
+      "ciclo": 3,
+      "u": 2,
+      "ab_esperado": 2,
+      "cv": 72000,
+      "items": [
+        [
+          2,
+          3
+        ],
+        [
+          8,
+          3
+        ]
+      ],
+      "puntuacion_esperada": 36.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-03-2",
+      "ciclo": 3,
+      "u": 3,
+      "ab_esperado": 2,
+      "cv": 59000,
+      "items": [
+        [
+          1,
+          1
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 29.5,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-04-2",
+      "ciclo": 3,
+      "u": 4,
+      "ab_esperado": 2,
+      "cv": 200000,
+      "items": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 100.0,
+      "prioridad_esperada": "ALTA"
+    },
+    {
+      "id": "I-05-2",
+      "ciclo": 3,
+      "u": 5,
+      "ab_esperado": 2,
+      "cv": 80000,
+      "items": [
+        [
+          3,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 40.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-06-2",
+      "ciclo": 3,
+      "u": 6,
+      "ab_esperado": 2,
+      "cv": 130000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 65.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-07-2",
+      "ciclo": 3,
+      "u": 7,
+      "ab_esperado": 2,
+      "cv": 90000,
+      "items": [
+        [
+          3,
+          2
+        ]
+      ],
+      "puntuacion_esperada": 45.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-08-2",
+      "ciclo": 3,
+      "u": 8,
+      "ab_esperado": 2,
+      "cv": 110000,
+      "items": [
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 55.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-09-2",
+      "ciclo": 3,
+      "u": 9,
+      "ab_esperado": 2,
+      "cv": 40000,
+      "items": [
+        [
+          2,
+          2
+        ]
+      ],
+      "puntuacion_esperada": 20.0,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-10-2",
+      "ciclo": 3,
+      "u": 10,
+      "ab_esperado": 2,
+      "cv": 124000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 62.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-01-3",
+      "ciclo": 4,
+      "u": 1,
+      "ab_esperado": 3,
+      "cv": 49000,
+      "items": [
+        [
+          3,
+          1
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 24.5,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-02-3",
+      "ciclo": 4,
+      "u": 2,
+      "ab_esperado": 3,
+      "cv": 160000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 80.0,
+      "prioridad_esperada": "ALTA"
+    },
+    {
+      "id": "I-03-3",
+      "ciclo": 4,
+      "u": 3,
+      "ab_esperado": 3,
+      "cv": 80000,
+      "items": [
+        [
+          3,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 40.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-04-3",
+      "ciclo": 4,
+      "u": 4,
+      "ab_esperado": 3,
+      "cv": 120000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 60.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-05-3",
+      "ciclo": 4,
+      "u": 5,
+      "ab_esperado": 3,
+      "cv": 140000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 70.0,
+      "prioridad_esperada": "ALTA"
+    },
+    {
+      "id": "I-06-3",
+      "ciclo": 4,
+      "u": 6,
+      "ab_esperado": 3,
+      "cv": 120000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 60.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-07-3",
+      "ciclo": 4,
+      "u": 7,
+      "ab_esperado": 3,
+      "cv": 120000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 60.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-08-3",
+      "ciclo": 4,
+      "u": 8,
+      "ab_esperado": 3,
+      "cv": 200000,
+      "items": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 100.0,
+      "prioridad_esperada": "ALTA"
+    },
+    {
+      "id": "I-09-3",
+      "ciclo": 4,
+      "u": 9,
+      "ab_esperado": 3,
+      "cv": 24000,
+      "items": [
+        [
+          2,
+          1
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 12.0,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-10-3",
+      "ciclo": 4,
+      "u": 10,
+      "ab_esperado": 3,
+      "cv": 68000,
+      "items": [
+        [
+          2,
+          3
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "puntuacion_esperada": 34.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-01-4",
+      "ciclo": 5,
+      "u": 1,
+      "ab_esperado": 4,
+      "cv": 120000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 60.0,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-02-4",
+      "ciclo": 5,
+      "u": 2,
+      "ab_esperado": 4,
+      "cv": 105000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 52.5,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-03-4",
+      "ciclo": 5,
+      "u": 3,
+      "ab_esperado": 4,
+      "cv": 200000,
+      "items": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 100.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-04-4",
+      "ciclo": 5,
+      "u": 4,
+      "ab_esperado": 4,
+      "cv": 64000,
+      "items": [
+        [
+          2,
+          3
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 32.0,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-05-4",
+      "ciclo": 5,
+      "u": 5,
+      "ab_esperado": 4,
+      "cv": 40000,
+      "items": [
+        [
+          2,
+          2
+        ]
+      ],
+      "puntuacion_esperada": 20.0,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-06-4",
+      "ciclo": 5,
+      "u": 6,
+      "ab_esperado": 4,
+      "cv": 100000,
+      "items": [
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 50.0,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-07-4",
+      "ciclo": 5,
+      "u": 7,
+      "ab_esperado": 4,
+      "cv": 64000,
+      "items": [
+        [
+          2,
+          3
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 32.0,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-08-4",
+      "ciclo": 5,
+      "u": 8,
+      "ab_esperado": 4,
+      "cv": 160000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 80.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-09-4",
+      "ciclo": 5,
+      "u": 9,
+      "ab_esperado": 4,
+      "cv": 69000,
+      "items": [
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 34.5,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-10-4",
+      "ciclo": 5,
+      "u": 10,
+      "ab_esperado": 4,
+      "cv": 180000,
+      "items": [
+        [
+          4,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 90.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-01-5",
+      "ciclo": 6,
+      "u": 1,
+      "ab_esperado": 5,
+      "cv": 200000,
+      "items": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 100.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-02-5",
+      "ciclo": 6,
+      "u": 2,
+      "ab_esperado": 5,
+      "cv": 40000,
+      "items": [
+        [
+          2,
+          2
+        ]
+      ],
+      "puntuacion_esperada": 20.0,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-03-5",
+      "ciclo": 6,
+      "u": 3,
+      "ab_esperado": 5,
+      "cv": 85000,
+      "items": [
+        [
+          5,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 42.5,
+      "prioridad_esperada": "BAJA"
+    },
+    {
+      "id": "I-04-5",
+      "ciclo": 6,
+      "u": 4,
+      "ab_esperado": 5,
+      "cv": 160000,
+      "items": [
+        [
+          5,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 80.0,
+      "prioridad_esperada": "MEDIA"
+    },
+    {
+      "id": "I-05-5",
+      "ciclo": 6,
+      "u": 5,
+      "ab_esperado": 5,
+      "cv": 80000,
+      "items": [
+        [
+          3,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "puntuacion_esperada": 40.0,
+      "prioridad_esperada": "BAJA"
+    }
+  ]
+}

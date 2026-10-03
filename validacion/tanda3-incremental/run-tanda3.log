@@ -1,0 +1,89 @@
+✅ Conectado a PostgreSQL correctamente (SSL: on)
+chequeos OK — backend, n8n, 10 cuentas, sin carritos pendientes | modo: job
+INICIO 2026-09-11T20:06:49.510Z — contadores de las 10 cuentas en 0
+=== CICLO 1: 10 sesiones, contador esperado 0 ===
+  I-01-0 user= 1 $160000 ab=0 -> ALTA
+  I-02-0 user= 2 $ 40000 ab=0 -> BAJA
+  I-03-0 user= 3 $160000 ab=0 -> ALTA
+  I-04-0 user= 4 $ 76000 ab=0 -> MEDIA
+  I-05-0 user= 5 $ 80000 ab=0 -> MEDIA
+  I-06-0 user= 6 $128000 ab=0 -> MEDIA
+  I-07-0 user= 7 $200000 ab=0 -> ALTA
+  I-08-0 user= 8 $112000 ab=0 -> MEDIA
+  I-09-0 user= 9 $120000 ab=0 -> MEDIA
+  I-10-0 user=10 $ 55000 ab=0 -> BAJA
+  el job notifico los 10 a los 295 s
+  contadores incrementados por el backend: OK (0 -> 1)
+=== CICLO 2: 10 sesiones, contador esperado 1 ===
+  I-01-1 user= 1 $120000 ab=1 -> MEDIA
+  I-02-1 user= 2 $160000 ab=1 -> ALTA
+  I-03-1 user= 3 $116000 ab=1 -> MEDIA
+  I-04-1 user= 4 $200000 ab=1 -> ALTA
+  I-05-1 user= 5 $ 80000 ab=1 -> MEDIA
+  I-06-1 user= 6 $ 40000 ab=1 -> BAJA
+  I-07-1 user= 7 $ 80000 ab=1 -> MEDIA
+  I-08-1 user= 8 $ 40000 ab=1 -> BAJA
+  I-09-1 user= 9 $120000 ab=1 -> MEDIA
+  I-10-1 user=10 $150000 ab=1 -> ALTA
+  el job notifico los 10 a los 295 s
+  contadores incrementados por el backend: OK (1 -> 2)
+=== CICLO 3: 10 sesiones, contador esperado 2 ===
+  I-01-2 user= 1 $200000 ab=2 -> ALTA
+  I-02-2 user= 2 $ 72000 ab=2 -> MEDIA
+  I-03-2 user= 3 $ 59000 ab=2 -> BAJA
+  I-04-2 user= 4 $200000 ab=2 -> ALTA
+  I-05-2 user= 5 $ 80000 ab=2 -> MEDIA
+  I-06-2 user= 6 $130000 ab=2 -> MEDIA
+  I-07-2 user= 7 $ 90000 ab=2 -> MEDIA
+  I-08-2 user= 8 $110000 ab=2 -> MEDIA
+  I-09-2 user= 9 $ 40000 ab=2 -> BAJA
+  I-10-2 user=10 $124000 ab=2 -> MEDIA
+  el job notifico los 10 a los 295 s
+  contadores incrementados por el backend: OK (2 -> 3)
+=== CICLO 4: 10 sesiones, contador esperado 3 ===
+  I-01-3 user= 1 $ 49000 ab=3 -> BAJA
+  I-02-3 user= 2 $160000 ab=3 -> ALTA
+  I-03-3 user= 3 $ 80000 ab=3 -> MEDIA
+  I-04-3 user= 4 $120000 ab=3 -> MEDIA
+  I-05-3 user= 5 $140000 ab=3 -> ALTA
+  I-06-3 user= 6 $120000 ab=3 -> MEDIA
+  I-07-3 user= 7 $120000 ab=3 -> MEDIA
+  I-08-3 user= 8 $200000 ab=3 -> ALTA
+  I-09-3 user= 9 $ 24000 ab=3 -> BAJA
+  I-10-3 user=10 $ 68000 ab=3 -> MEDIA
+  el job notifico los 10 a los 295 s
+  contadores incrementados por el backend: OK (3 -> 4)
+=== CICLO 5: 10 sesiones, contador esperado 4 ===
+  I-01-4 user= 1 $120000 ab=4 -> BAJA
+  I-02-4 user= 2 $105000 ab=4 -> BAJA
+  I-03-4 user= 3 $200000 ab=4 -> MEDIA
+  I-04-4 user= 4 $ 64000 ab=4 -> BAJA
+  I-05-4 user= 5 $ 40000 ab=4 -> BAJA
+  I-06-4 user= 6 $100000 ab=4 -> BAJA
+  I-07-4 user= 7 $ 64000 ab=4 -> BAJA
+  I-08-4 user= 8 $160000 ab=4 -> MEDIA
+  I-09-4 user= 9 $ 69000 ab=4 -> BAJA
+  I-10-4 user=10 $180000 ab=4 -> MEDIA
+  el job notifico los 10 a los 284 s
+  contadores incrementados por el backend: OK (4 -> 5)
+=== CICLO 6: 5 sesiones, contador esperado 5 ===
+  I-01-5 user= 1 $200000 ab=5 -> MEDIA
+  I-02-5 user= 2 $ 40000 ab=5 -> BAJA
+  I-03-5 user= 3 $ 85000 ab=5 -> BAJA
+  I-04-5 user= 4 $160000 ab=5 -> MEDIA
+  I-05-5 user= 5 $ 80000 ab=5 -> BAJA
+  el job notifico los 5 a los 295 s
+  contadores incrementados por el backend: OK (5 -> 6)
+FIN 2026-09-11T20:36:51.271Z — 55/55 sesiones, contadores finales: {
+  '1': 6,
+  '2': 6,
+  '3': 6,
+  '4': 6,
+  '5': 6,
+  '6': 5,
+  '7': 5,
+  '8': 5,
+  '9': 5,
+  '10': 5
+}
+exit=0
