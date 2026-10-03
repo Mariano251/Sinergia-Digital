@@ -30,11 +30,14 @@ El ecosistema se organiza en cinco capas:
 ## Estructura del repositorio
 
 ```
-Sinergia-Digital-/
-├── technova-frontend/     # Interfaz de usuario (React 18)
-├── technova-backend/      # API REST (Node.js + Express)
-├── n8n-workflows/         # Workflow de n8n exportado en JSON
-├── render.yaml            # Configuración de deploy en Render
+Sinergia-Digital/
+├── technova-frontend/            # Interfaz de usuario (React 18)
+├── technova-backend/             # API REST (Node.js + Express)
+├── n8n-workflows/                # Workflows de n8n exportados en JSON
+├── validacion/                   # Datos e instrumentos de validación (ver Licencia)
+├── tests-carritos-abandonados/   # Suite de Jest y reporte de cobertura
+├── render.yaml                   # Configuración de deploy en Render
+├── LICENSE
 └── README.md
 ```
 
@@ -135,4 +138,26 @@ El archivo JSON del workflow está en `n8n-workflows/`. Para importarlo:
 
 ## Repositorio
 
-[github.com/Mariano251/Sinergia-Digital-](https://github.com/Mariano251/Sinergia-Digital)
+[github.com/Mariano251/Sinergia-Digital](https://github.com/Mariano251/Sinergia-Digital)
+
+---
+
+## Licencia
+
+El **código** de este repositorio se publica bajo licencia MIT. El texto completo está en
+[`LICENSE`](LICENSE).
+
+### La carpeta `validacion/` no está cubierta por la licencia MIT
+
+`validacion/` no es código: son registros de sesiones de validación ejecutadas sobre cuentas de personas
+reales, junto con los instrumentos que completaron los expertos y los evaluadores.
+
+**Se publica seudonimizada y únicamente con fines de verificación académica**, para que el trabajo pueda
+auditarse sesión por sesión. No se autoriza su reutilización, redistribución ni explotación con otros fines.
+
+Los nombres, las direcciones de correo y los identificadores de mensajería fueron reemplazados por
+identificadores de la forma `Cliente NN` y `clienteNN@ejemplo.test`, tanto en las columnas de datos como
+dentro del texto de los mensajes generados. Los datos identificables no forman parte del repositorio: viven
+en `validacion/_privado/`, que está excluida por `.gitignore`.
+
+Si vas a citar o reproducir estos datos, hacelo con atribución al trabajo y conservando la seudonimización.
