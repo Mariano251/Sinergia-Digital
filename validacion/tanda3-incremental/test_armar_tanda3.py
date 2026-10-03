@@ -16,8 +16,13 @@ VALIDACION = os.path.dirname(AQUI)
 PLAN = json.load(open(os.path.join(AQUI, "plan-tanda3.json"), encoding="utf-8"))["sesiones"]
 
 
+# Las planillas de la Ronda 2 que se usan como referencia de formato viven en
+# validacion/historico/ desde que se ordenaron las rondas cerradas.
+HISTORICO = os.path.join(VALIDACION, "historico")
+
+
 def _cabecera(nombre):
-    with open(os.path.join(VALIDACION, nombre), encoding="utf-8") as f:
+    with open(os.path.join(HISTORICO, nombre), encoding="utf-8") as f:
         return next(csv.reader(f))
 
 
@@ -105,7 +110,7 @@ def test_productos_con_los_nombres_de_las_planillas_anteriores():
 
 def test_productos_reproducen_la_planilla_del_experto_2():
     from generar_plan import COMPOSICION
-    with open(os.path.join(VALIDACION, "R2-H2-experto2-planilla-ciega.csv"), encoding="utf-8") as f:
+    with open(os.path.join(HISTORICO, "R2-H2-experto2-planilla-ciega.csv"), encoding="utf-8") as f:
         for r in csv.DictReader(f):
             assert productos_de(COMPOSICION[int(r["Valor del carrito (ARS)"])]) == r["Productos en el carrito"]
 

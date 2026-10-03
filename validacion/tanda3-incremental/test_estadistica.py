@@ -13,8 +13,13 @@ CRITERIOS = ["Relevancia (1-5)", "Precision factual (1-5)", "Persuasion (1-5)",
 COL = "PRIORIDAD ASIGNADA (Alta/Media/Baja)"
 
 
+# Todos los archivos que lee esta suite son de la Ronda 2, que vive en
+# validacion/historico/ desde que se ordenaron las rondas cerradas.
+HISTORICO = os.path.join(V, "historico")
+
+
 def leer(nombre):
-    with open(os.path.join(V, nombre), encoding="utf-8") as f:
+    with open(os.path.join(HISTORICO, nombre), encoding="utf-8") as f:
         return list(csv.DictReader(f))
 
 
