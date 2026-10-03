@@ -1,0 +1,497 @@
+[
+  {
+    "n": 1,
+    "escenario": "I-09-0",
+    "cart_value": 120000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 0,
+    "puntuacion": 60.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 2,
+    "escenario": "I-06-0",
+    "cart_value": 128000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 0,
+    "puntuacion": 64.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 3,
+    "escenario": "I-01-0",
+    "cart_value": 160000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 0,
+    "puntuacion": 80.0,
+    "prioridad": "ALTA"
+  },
+  {
+    "n": 4,
+    "escenario": "I-07-0",
+    "cart_value": 200000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 0,
+    "puntuacion": 100.0,
+    "prioridad": "ALTA"
+  },
+  {
+    "n": 5,
+    "escenario": "I-02-0",
+    "cart_value": 40000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 0,
+    "puntuacion": 20.0,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 6,
+    "escenario": "I-10-0",
+    "cart_value": 55000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 0,
+    "puntuacion": 27.5,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 7,
+    "escenario": "I-04-0",
+    "cart_value": 76000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 0,
+    "puntuacion": 38.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 8,
+    "escenario": "I-08-0",
+    "cart_value": 112000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 0,
+    "puntuacion": 56.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 9,
+    "escenario": "I-05-0",
+    "cart_value": 80000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 0,
+    "puntuacion": 40.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 10,
+    "escenario": "I-03-0",
+    "cart_value": 160000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 0,
+    "puntuacion": 80.0,
+    "prioridad": "ALTA"
+  },
+  {
+    "n": 11,
+    "escenario": "I-07-1",
+    "cart_value": 80000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 1,
+    "puntuacion": 40.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 12,
+    "escenario": "I-05-1",
+    "cart_value": 80000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 1,
+    "puntuacion": 40.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 13,
+    "escenario": "I-01-1",
+    "cart_value": 120000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 1,
+    "puntuacion": 60.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 14,
+    "escenario": "I-09-1",
+    "cart_value": 120000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 1,
+    "puntuacion": 60.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 15,
+    "escenario": "I-08-1",
+    "cart_value": 40000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 1,
+    "puntuacion": 20.0,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 16,
+    "escenario": "I-04-1",
+    "cart_value": 200000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 1,
+    "puntuacion": 100.0,
+    "prioridad": "ALTA"
+  },
+  {
+    "n": 17,
+    "escenario": "I-06-1",
+    "cart_value": 40000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 1,
+    "puntuacion": 20.0,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 18,
+    "escenario": "I-03-1",
+    "cart_value": 116000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 1,
+    "puntuacion": 58.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 19,
+    "escenario": "I-10-1",
+    "cart_value": 150000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 1,
+    "puntuacion": 75.0,
+    "prioridad": "ALTA"
+  },
+  {
+    "n": 20,
+    "escenario": "I-02-1",
+    "cart_value": 160000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 1,
+    "puntuacion": 80.0,
+    "prioridad": "ALTA"
+  },
+  {
+    "n": 21,
+    "escenario": "I-02-2",
+    "cart_value": 72000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 2,
+    "puntuacion": 36.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 22,
+    "escenario": "I-08-2",
+    "cart_value": 110000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 2,
+    "puntuacion": 55.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 23,
+    "escenario": "I-10-2",
+    "cart_value": 124000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 2,
+    "puntuacion": 62.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 24,
+    "escenario": "I-07-2",
+    "cart_value": 90000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 2,
+    "puntuacion": 45.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 25,
+    "escenario": "I-03-2",
+    "cart_value": 59000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 2,
+    "puntuacion": 29.5,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 26,
+    "escenario": "I-09-2",
+    "cart_value": 40000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 2,
+    "puntuacion": 20.0,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 27,
+    "escenario": "I-04-2",
+    "cart_value": 200000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 2,
+    "puntuacion": 100.0,
+    "prioridad": "ALTA"
+  },
+  {
+    "n": 28,
+    "escenario": "I-06-2",
+    "cart_value": 130000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 2,
+    "puntuacion": 65.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 29,
+    "escenario": "I-05-2",
+    "cart_value": 80000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 2,
+    "puntuacion": 40.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 30,
+    "escenario": "I-01-2",
+    "cart_value": 200000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 2,
+    "puntuacion": 100.0,
+    "prioridad": "ALTA"
+  },
+  {
+    "n": 31,
+    "escenario": "I-10-3",
+    "cart_value": 68000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 3,
+    "puntuacion": 34.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 32,
+    "escenario": "I-08-3",
+    "cart_value": 200000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 3,
+    "puntuacion": 100.0,
+    "prioridad": "ALTA"
+  },
+  {
+    "n": 33,
+    "escenario": "I-03-3",
+    "cart_value": 80000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 3,
+    "puntuacion": 40.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 34,
+    "escenario": "I-01-3",
+    "cart_value": 49000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 3,
+    "puntuacion": 24.5,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 35,
+    "escenario": "I-07-3",
+    "cart_value": 120000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 3,
+    "puntuacion": 60.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 36,
+    "escenario": "I-05-3",
+    "cart_value": 140000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 3,
+    "puntuacion": 70.0,
+    "prioridad": "ALTA"
+  },
+  {
+    "n": 37,
+    "escenario": "I-04-3",
+    "cart_value": 120000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 3,
+    "puntuacion": 60.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 38,
+    "escenario": "I-06-3",
+    "cart_value": 120000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 3,
+    "puntuacion": 60.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 39,
+    "escenario": "I-02-3",
+    "cart_value": 160000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 3,
+    "puntuacion": 80.0,
+    "prioridad": "ALTA"
+  },
+  {
+    "n": 40,
+    "escenario": "I-09-3",
+    "cart_value": 24000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 3,
+    "puntuacion": 12.0,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 41,
+    "escenario": "I-05-4",
+    "cart_value": 40000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 4,
+    "puntuacion": 20.0,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 42,
+    "escenario": "I-08-4",
+    "cart_value": 160000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 4,
+    "puntuacion": 80.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 43,
+    "escenario": "I-02-4",
+    "cart_value": 105000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 4,
+    "puntuacion": 52.5,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 44,
+    "escenario": "I-03-4",
+    "cart_value": 200000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 4,
+    "puntuacion": 100.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 45,
+    "escenario": "I-01-4",
+    "cart_value": 120000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 4,
+    "puntuacion": 60.0,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 46,
+    "escenario": "I-07-4",
+    "cart_value": 64000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 4,
+    "puntuacion": 32.0,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 47,
+    "escenario": "I-06-4",
+    "cart_value": 100000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 4,
+    "puntuacion": 50.0,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 48,
+    "escenario": "I-10-4",
+    "cart_value": 180000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 4,
+    "puntuacion": 90.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 49,
+    "escenario": "I-09-4",
+    "cart_value": 69000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 4,
+    "puntuacion": 34.5,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 50,
+    "escenario": "I-04-4",
+    "cart_value": 64000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 4,
+    "puntuacion": 32.0,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 51,
+    "escenario": "I-05-5",
+    "cart_value": 80000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 5,
+    "puntuacion": 40.0,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 52,
+    "escenario": "I-03-5",
+    "cart_value": 85000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 5,
+    "puntuacion": 42.5,
+    "prioridad": "BAJA"
+  },
+  {
+    "n": 53,
+    "escenario": "I-01-5",
+    "cart_value": 200000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 5,
+    "puntuacion": 100.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 54,
+    "escenario": "I-04-5",
+    "cart_value": 160000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 5,
+    "puntuacion": 80.0,
+    "prioridad": "MEDIA"
+  },
+  {
+    "n": 55,
+    "escenario": "I-02-5",
+    "cart_value": 40000,
+    "cart_stage": "cart",
+    "previous_abandonment_count": 5,
+    "puntuacion": 20.0,
+    "prioridad": "BAJA"
+  }
+]
