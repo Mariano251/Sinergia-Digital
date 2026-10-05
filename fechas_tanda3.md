@@ -10,8 +10,15 @@ Ejecuciones **158 a 212** de n8n, que son las 55 sesiones de la Tanda 3.
 | `Escenario` | `validacion/_privado/tanda3-IDENTIFICABLE (2).csv`, columna `Escenario` |
 | `N` de sesión | `validacion/T3-ANEXO-E-55-sesiones.csv`, orden cronológico de detección |
 
-Los valores de `startedAt` y `stoppedAt` se transcriben **tal cual los guarda n8n**, en la hora local del
-servidor donde corrió. La columna de duración es la resta de esas dos marcas.
+Los valores de `startedAt` y `stoppedAt` se transcriben **tal cual los guarda n8n**. La columna de duración es
+la resta de esas dos marcas.
+
+> **Zona horaria: UTC.** Se verificó comparando `startedAt` con dos sellos que son UTC por construcción, porque
+> se generan con `new Date().toISOString()` y llevan sufijo `Z`: `detected_at`, que manda el backend, y
+> `timestamp_procesado`, que escribe el nodo de scoring. En las cuatro ejecuciones de control (158, 160, 187 y
+> 212) la diferencia entre `startedAt` y `timestamp_procesado` es de 10 a 91 milisegundos, de modo que
+> `startedAt` está en la misma escala. **Las 20:11 a 20:36 son UTC**, equivalentes a las **17:11 a 17:36 en
+> hora de Argentina** (UTC−3).
 
 Se verificó que los 55 escenarios del archivo identificable coincidan exactamente con los del anexo: el
 cruce es completo y unívoco, sin faltantes ni duplicados.

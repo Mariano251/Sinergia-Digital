@@ -1,0 +1,3253 @@
+{
+ "descripcion": "Ejecuciones 158 a 212 de n8n, Tanda 3, anonimizadas",
+ "zona_horaria": "UTC",
+ "fecha": "2026-09-11",
+ "total": 55,
+ "ejecuciones": [
+  {
+   "id": 158,
+   "startedAt_utc": "2026-09-11 20:11:45.866",
+   "stoppedAt_utc": "2026-09-11 20:11:53.623",
+   "duracion_ms": 7757,
+   "status": "success",
+   "N_sesion": 1,
+   "escenario": "I-09-0",
+   "cliente": "U09",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 16
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 46
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 65,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 71,
+     "duracion_ms": 3525
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 133,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 835,
+     "duracion_ms": 2755
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 3596,
+     "duracion_ms": 1120
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 4717,
+     "duracion_ms": 3001
+    }
+   ]
+  },
+  {
+   "id": 159,
+   "startedAt_utc": "2026-09-11 20:11:46.801",
+   "stoppedAt_utc": "2026-09-11 20:11:53.489",
+   "duracion_ms": 6688,
+   "status": "success",
+   "N_sesion": 2,
+   "escenario": "I-06-0",
+   "cliente": "U06",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 3
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 5,
+     "duracion_ms": 18
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 25,
+     "duracion_ms": 4
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 30,
+     "duracion_ms": 2814
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 78,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 85,
+     "duracion_ms": 2756
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2844,
+     "duracion_ms": 882
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 3726,
+     "duracion_ms": 2941
+    }
+   ]
+  },
+  {
+   "id": 160,
+   "startedAt_utc": "2026-09-11 20:11:47.410",
+   "stoppedAt_utc": "2026-09-11 20:11:53.446",
+   "duracion_ms": 6036,
+   "status": "success",
+   "N_sesion": 3,
+   "escenario": "I-01-0",
+   "cliente": "U01",
+   "canal": "Telegram",
+   "prioridad": "ALTA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 4,
+     "duracion_ms": 9
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 13,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "AI Agent - Alta Prioridad",
+     "inicio_relativo_ms": 14,
+     "duracion_ms": 2649
+    },
+    {
+     "nodo": "Memoria - Alta",
+     "inicio_relativo_ms": 44,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model1",
+     "inicio_relativo_ms": 51,
+     "duracion_ms": 2610
+    },
+    {
+     "nodo": "Telegram - Enviar Mensaje",
+     "inicio_relativo_ms": 2663,
+     "duracion_ms": 989
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 3653,
+     "duracion_ms": 2374
+    }
+   ]
+  },
+  {
+   "id": 161,
+   "startedAt_utc": "2026-09-11 20:11:48.036",
+   "stoppedAt_utc": "2026-09-11 20:11:53.641",
+   "duracion_ms": 5605,
+   "status": "success",
+   "N_sesion": 4,
+   "escenario": "I-07-0",
+   "cliente": "U07",
+   "canal": "Telegram",
+   "prioridad": "ALTA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Alta Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 2434
+    },
+    {
+     "nodo": "Memoria - Alta",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model1",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 2424
+    },
+    {
+     "nodo": "Telegram - Enviar Mensaje",
+     "inicio_relativo_ms": 2445,
+     "duracion_ms": 835
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 3280,
+     "duracion_ms": 2317
+    }
+   ]
+  },
+  {
+   "id": 162,
+   "startedAt_utc": "2026-09-11 20:11:48.632",
+   "stoppedAt_utc": "2026-09-11 20:11:54.487",
+   "duracion_ms": 5855,
+   "status": "success",
+   "N_sesion": 5,
+   "escenario": "I-02-0",
+   "cliente": "U02",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 3
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 4,
+     "duracion_ms": 8
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 12,
+     "duracion_ms": 3
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 2321
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 42,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 47,
+     "duracion_ms": 2287
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2336,
+     "duracion_ms": 3066
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 5403,
+     "duracion_ms": 444
+    }
+   ]
+  },
+  {
+   "id": 163,
+   "startedAt_utc": "2026-09-11 20:11:49.227",
+   "stoppedAt_utc": "2026-09-11 20:11:56.752",
+   "duracion_ms": 7525,
+   "status": "success",
+   "N_sesion": 6,
+   "escenario": "I-10-0",
+   "cliente": "U10",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 8
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 13,
+     "duracion_ms": 5697
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 20,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 24,
+     "duracion_ms": 5684
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 5710,
+     "duracion_ms": 1393
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 7103,
+     "duracion_ms": 416
+    }
+   ]
+  },
+  {
+   "id": 164,
+   "startedAt_utc": "2026-09-11 20:11:49.889",
+   "stoppedAt_utc": "2026-09-11 20:11:54.659",
+   "duracion_ms": 4770,
+   "status": "success",
+   "N_sesion": 7,
+   "escenario": "I-04-0",
+   "cliente": "U04",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 14
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 17,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 2548
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 25,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 29,
+     "duracion_ms": 2536
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2568,
+     "duracion_ms": 391
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2959,
+     "duracion_ms": 1802
+    }
+   ]
+  },
+  {
+   "id": 165,
+   "startedAt_utc": "2026-09-11 20:11:50.490",
+   "stoppedAt_utc": "2026-09-11 20:11:55.081",
+   "duracion_ms": 4591,
+   "status": "success",
+   "N_sesion": 8,
+   "escenario": "I-08-0",
+   "cliente": "U08",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 8
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 13,
+     "duracion_ms": 2697
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 17,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 20,
+     "duracion_ms": 2687
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2710,
+     "duracion_ms": 440
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 3150,
+     "duracion_ms": 1423
+    }
+   ]
+  },
+  {
+   "id": 166,
+   "startedAt_utc": "2026-09-11 20:11:51.093",
+   "stoppedAt_utc": "2026-09-11 20:11:55.616",
+   "duracion_ms": 4523,
+   "status": "success",
+   "N_sesion": 9,
+   "escenario": "I-05-0",
+   "cliente": "U05",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 14
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 17,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 2641
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 25,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 29,
+     "duracion_ms": 2629
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2661,
+     "duracion_ms": 423
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 3084,
+     "duracion_ms": 1419
+    }
+   ]
+  },
+  {
+   "id": 167,
+   "startedAt_utc": "2026-09-11 20:11:51.702",
+   "stoppedAt_utc": "2026-09-11 20:11:56.398",
+   "duracion_ms": 4696,
+   "status": "success",
+   "N_sesion": 10,
+   "escenario": "I-03-0",
+   "cliente": "U03",
+   "canal": "Telegram",
+   "prioridad": "ALTA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 9
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 12,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "AI Agent - Alta Prioridad",
+     "inicio_relativo_ms": 13,
+     "duracion_ms": 2265
+    },
+    {
+     "nodo": "Memoria - Alta",
+     "inicio_relativo_ms": 18,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model1",
+     "inicio_relativo_ms": 22,
+     "duracion_ms": 2253
+    },
+    {
+     "nodo": "Telegram - Enviar Mensaje",
+     "inicio_relativo_ms": 2279,
+     "duracion_ms": 904
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 3183,
+     "duracion_ms": 1505
+    }
+   ]
+  },
+  {
+   "id": 168,
+   "startedAt_utc": "2026-09-11 20:16:45.814",
+   "stoppedAt_utc": "2026-09-11 20:16:51.440",
+   "duracion_ms": 5626,
+   "status": "success",
+   "N_sesion": 11,
+   "escenario": "I-07-1",
+   "cliente": "U07",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 4,
+     "duracion_ms": 7
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 13,
+     "duracion_ms": 2510
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 20,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 34,
+     "duracion_ms": 2487
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2523,
+     "duracion_ms": 440
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2963,
+     "duracion_ms": 2651
+    }
+   ]
+  },
+  {
+   "id": 169,
+   "startedAt_utc": "2026-09-11 20:16:46.416",
+   "stoppedAt_utc": "2026-09-11 20:16:51.608",
+   "duracion_ms": 5192,
+   "status": "success",
+   "N_sesion": 12,
+   "escenario": "I-05-1",
+   "cliente": "U05",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 7
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 1881
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 23,
+     "duracion_ms": 1864
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 1892,
+     "duracion_ms": 547
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2439,
+     "duracion_ms": 2745
+    }
+   ]
+  },
+  {
+   "id": 170,
+   "startedAt_utc": "2026-09-11 20:16:47.018",
+   "stoppedAt_utc": "2026-09-11 20:16:52.056",
+   "duracion_ms": 5038,
+   "status": "success",
+   "N_sesion": 13,
+   "escenario": "I-01-1",
+   "cliente": "U01",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 7
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 12,
+     "duracion_ms": 2507
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 16,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 21,
+     "duracion_ms": 2496
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2520,
+     "duracion_ms": 609
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 3129,
+     "duracion_ms": 1896
+    }
+   ]
+  },
+  {
+   "id": 171,
+   "startedAt_utc": "2026-09-11 20:16:47.618",
+   "stoppedAt_utc": "2026-09-11 20:16:51.852",
+   "duracion_ms": 4234,
+   "status": "success",
+   "N_sesion": 14,
+   "escenario": "I-09-1",
+   "cliente": "U09",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 3
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 12,
+     "duracion_ms": 1830
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 16,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 20,
+     "duracion_ms": 1820
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 1842,
+     "duracion_ms": 603
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2446,
+     "duracion_ms": 1781
+    }
+   ]
+  },
+  {
+   "id": 172,
+   "startedAt_utc": "2026-09-11 20:16:48.225",
+   "stoppedAt_utc": "2026-09-11 20:16:52.573",
+   "duracion_ms": 4348,
+   "status": "success",
+   "N_sesion": 15,
+   "escenario": "I-08-1",
+   "cliente": "U08",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 2066
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 18,
+     "duracion_ms": 2057
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2077,
+     "duracion_ms": 1865
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 3942,
+     "duracion_ms": 397
+    }
+   ]
+  },
+  {
+   "id": 173,
+   "startedAt_utc": "2026-09-11 20:16:48.823",
+   "stoppedAt_utc": "2026-09-11 20:16:53.480",
+   "duracion_ms": 4657,
+   "status": "success",
+   "N_sesion": 16,
+   "escenario": "I-04-1",
+   "cliente": "U04",
+   "canal": "Telegram",
+   "prioridad": "ALTA",
+   "nodos": [
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "AI Agent - Alta Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 2294
+    },
+    {
+     "nodo": "Memoria - Alta",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Anthropic Chat Model1",
+     "inicio_relativo_ms": 25,
+     "duracion_ms": 2278
+    },
+    {
+     "nodo": "Telegram - Enviar Mensaje",
+     "inicio_relativo_ms": 2305,
+     "duracion_ms": 911
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 3217,
+     "duracion_ms": 1431
+    }
+   ]
+  },
+  {
+   "id": 174,
+   "startedAt_utc": "2026-09-11 20:16:49.423",
+   "stoppedAt_utc": "2026-09-11 20:16:53.280",
+   "duracion_ms": 3857,
+   "status": "success",
+   "N_sesion": 17,
+   "escenario": "I-06-1",
+   "cliente": "U06",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 4,
+     "duracion_ms": 7
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 3
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 14,
+     "duracion_ms": 1905
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 22,
+     "duracion_ms": 1895
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1919,
+     "duracion_ms": 1541
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 3460,
+     "duracion_ms": 388
+    }
+   ]
+  },
+  {
+   "id": 175,
+   "startedAt_utc": "2026-09-11 20:16:50.016",
+   "stoppedAt_utc": "2026-09-11 20:16:54.265",
+   "duracion_ms": 4249,
+   "status": "success",
+   "N_sesion": 18,
+   "escenario": "I-03-1",
+   "cliente": "U03",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 7
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 2349
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 2339
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2360,
+     "duracion_ms": 437
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2797,
+     "duracion_ms": 1445
+    }
+   ]
+  },
+  {
+   "id": 176,
+   "startedAt_utc": "2026-09-11 20:16:50.602",
+   "stoppedAt_utc": "2026-09-11 20:16:54.644",
+   "duracion_ms": 4042,
+   "status": "success",
+   "N_sesion": 19,
+   "escenario": "I-10-1",
+   "cliente": "U10",
+   "canal": "Telegram",
+   "prioridad": "ALTA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Alta Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 1827
+    },
+    {
+     "nodo": "Memoria - Alta",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model1",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 1817
+    },
+    {
+     "nodo": "Telegram - Enviar Mensaje",
+     "inicio_relativo_ms": 1839,
+     "duracion_ms": 844
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2684,
+     "duracion_ms": 1352
+    }
+   ]
+  },
+  {
+   "id": 177,
+   "startedAt_utc": "2026-09-11 20:16:51.198",
+   "stoppedAt_utc": "2026-09-11 20:16:55.567",
+   "duracion_ms": 4369,
+   "status": "success",
+   "N_sesion": 20,
+   "escenario": "I-02-1",
+   "cliente": "U02",
+   "canal": "Telegram",
+   "prioridad": "ALTA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 7
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "AI Agent - Alta Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 2047
+    },
+    {
+     "nodo": "Memoria - Alta",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model1",
+     "inicio_relativo_ms": 18,
+     "duracion_ms": 2037
+    },
+    {
+     "nodo": "Telegram - Enviar Mensaje",
+     "inicio_relativo_ms": 2058,
+     "duracion_ms": 880
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2938,
+     "duracion_ms": 1424
+    }
+   ]
+  },
+  {
+   "id": 178,
+   "startedAt_utc": "2026-09-11 20:21:45.817",
+   "stoppedAt_utc": "2026-09-11 20:21:50.510",
+   "duracion_ms": 4693,
+   "status": "success",
+   "N_sesion": 21,
+   "escenario": "I-02-2",
+   "cliente": "U02",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 12,
+     "duracion_ms": 2434
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 16,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 21,
+     "duracion_ms": 2423
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2446,
+     "duracion_ms": 477
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2923,
+     "duracion_ms": 1762
+    }
+   ]
+  },
+  {
+   "id": 179,
+   "startedAt_utc": "2026-09-11 20:21:46.407",
+   "stoppedAt_utc": "2026-09-11 20:21:50.488",
+   "duracion_ms": 4081,
+   "status": "success",
+   "N_sesion": 22,
+   "escenario": "I-08-2",
+   "cliente": "U08",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 1956
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 1947
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 1968,
+     "duracion_ms": 444
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2412,
+     "duracion_ms": 1661
+    }
+   ]
+  },
+  {
+   "id": 180,
+   "startedAt_utc": "2026-09-11 20:21:46.999",
+   "stoppedAt_utc": "2026-09-11 20:21:51.493",
+   "duracion_ms": 4494,
+   "status": "success",
+   "N_sesion": 23,
+   "escenario": "I-10-2",
+   "cliente": "U10",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 2265
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 2255
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2277,
+     "duracion_ms": 392
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2669,
+     "duracion_ms": 1818
+    }
+   ]
+  },
+  {
+   "id": 181,
+   "startedAt_utc": "2026-09-11 20:21:47.588",
+   "stoppedAt_utc": "2026-09-11 20:21:51.650",
+   "duracion_ms": 4062,
+   "status": "success",
+   "N_sesion": 24,
+   "escenario": "I-07-2",
+   "cliente": "U07",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 2102
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 20,
+     "duracion_ms": 2090
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2113,
+     "duracion_ms": 397
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2510,
+     "duracion_ms": 1545
+    }
+   ]
+  },
+  {
+   "id": 182,
+   "startedAt_utc": "2026-09-11 20:21:48.179",
+   "stoppedAt_utc": "2026-09-11 20:21:52.632",
+   "duracion_ms": 4453,
+   "status": "success",
+   "N_sesion": 25,
+   "escenario": "I-03-2",
+   "cliente": "U03",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 2410
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 17,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 21,
+     "duracion_ms": 2398
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2421,
+     "duracion_ms": 1637
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 4059,
+     "duracion_ms": 387
+    }
+   ]
+  },
+  {
+   "id": 183,
+   "startedAt_utc": "2026-09-11 20:21:48.782",
+   "stoppedAt_utc": "2026-09-11 20:21:52.338",
+   "duracion_ms": 3556,
+   "status": "success",
+   "N_sesion": 26,
+   "escenario": "I-09-2",
+   "cliente": "U09",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 8
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 12,
+     "duracion_ms": 1670
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 16,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 20,
+     "duracion_ms": 1660
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1683,
+     "duracion_ms": 1472
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 3155,
+     "duracion_ms": 393
+    }
+   ]
+  },
+  {
+   "id": 184,
+   "startedAt_utc": "2026-09-11 20:21:49.376",
+   "stoppedAt_utc": "2026-09-11 20:22:08.630",
+   "duracion_ms": 19254,
+   "status": "success",
+   "N_sesion": 27,
+   "escenario": "I-04-2",
+   "cliente": "U04",
+   "canal": "Telegram",
+   "prioridad": "ALTA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 8
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Alta Prioridad",
+     "inicio_relativo_ms": 12,
+     "duracion_ms": 1918
+    },
+    {
+     "nodo": "Memoria - Alta",
+     "inicio_relativo_ms": 16,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model1",
+     "inicio_relativo_ms": 21,
+     "duracion_ms": 1907
+    },
+    {
+     "nodo": "Telegram - Enviar Mensaje",
+     "inicio_relativo_ms": 1930,
+     "duracion_ms": 15908
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 17839,
+     "duracion_ms": 1409
+    }
+   ]
+  },
+  {
+   "id": 185,
+   "startedAt_utc": "2026-09-11 20:21:49.962",
+   "stoppedAt_utc": "2026-09-11 20:21:54.377",
+   "duracion_ms": 4415,
+   "status": "success",
+   "N_sesion": 28,
+   "escenario": "I-06-2",
+   "cliente": "U06",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 2350
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 18,
+     "duracion_ms": 2341
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2361,
+     "duracion_ms": 465
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2826,
+     "duracion_ms": 1583
+    }
+   ]
+  },
+  {
+   "id": 186,
+   "startedAt_utc": "2026-09-11 20:21:50.553",
+   "stoppedAt_utc": "2026-09-11 20:21:53.996",
+   "duracion_ms": 3443,
+   "status": "success",
+   "N_sesion": 29,
+   "escenario": "I-05-2",
+   "cliente": "U05",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 1400
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 14,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 18,
+     "duracion_ms": 1390
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 1411,
+     "duracion_ms": 464
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1875,
+     "duracion_ms": 1558
+    }
+   ]
+  },
+  {
+   "id": 187,
+   "startedAt_utc": "2026-09-11 20:21:51.148",
+   "stoppedAt_utc": "2026-09-11 20:22:10.509",
+   "duracion_ms": 19361,
+   "status": "success",
+   "N_sesion": 30,
+   "escenario": "I-01-2",
+   "cliente": "U01",
+   "canal": "Telegram",
+   "prioridad": "ALTA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 5
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "AI Agent - Alta Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 1969
+    },
+    {
+     "nodo": "Memoria - Alta",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model1",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 1958
+    },
+    {
+     "nodo": "Telegram - Enviar Mensaje",
+     "inicio_relativo_ms": 1979,
+     "duracion_ms": 15901
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 17881,
+     "duracion_ms": 1470
+    }
+   ]
+  },
+  {
+   "id": 188,
+   "startedAt_utc": "2026-09-11 20:26:45.789",
+   "stoppedAt_utc": "2026-09-11 20:26:49.839",
+   "duracion_ms": 4050,
+   "status": "success",
+   "N_sesion": 31,
+   "escenario": "I-10-3",
+   "cliente": "U10",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 4,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 3
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 13,
+     "duracion_ms": 1845
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 17,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 23,
+     "duracion_ms": 1833
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 1858,
+     "duracion_ms": 458
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2316,
+     "duracion_ms": 1727
+    }
+   ]
+  },
+  {
+   "id": 189,
+   "startedAt_utc": "2026-09-11 20:26:46.378",
+   "stoppedAt_utc": "2026-09-11 20:26:51.140",
+   "duracion_ms": 4762,
+   "status": "success",
+   "N_sesion": 32,
+   "escenario": "I-08-3",
+   "cliente": "U08",
+   "canal": "Telegram",
+   "prioridad": "ALTA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Alta Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 2429
+    },
+    {
+     "nodo": "Memoria - Alta",
+     "inicio_relativo_ms": 14,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model1",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 2419
+    },
+    {
+     "nodo": "Telegram - Enviar Mensaje",
+     "inicio_relativo_ms": 2440,
+     "duracion_ms": 902
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 3343,
+     "duracion_ms": 1412
+    }
+   ]
+  },
+  {
+   "id": 190,
+   "startedAt_utc": "2026-09-11 20:26:46.970",
+   "stoppedAt_utc": "2026-09-11 20:26:51.043",
+   "duracion_ms": 4073,
+   "status": "success",
+   "N_sesion": 33,
+   "escenario": "I-03-3",
+   "cliente": "U03",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 5
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 1938
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 13,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 18,
+     "duracion_ms": 1928
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 1948,
+     "duracion_ms": 468
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2416,
+     "duracion_ms": 1651
+    }
+   ]
+  },
+  {
+   "id": 191,
+   "startedAt_utc": "2026-09-11 20:26:47.561",
+   "stoppedAt_utc": "2026-09-11 20:26:51.542",
+   "duracion_ms": 3981,
+   "status": "success",
+   "N_sesion": 34,
+   "escenario": "I-01-3",
+   "cliente": "U01",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 3
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 4,
+     "duracion_ms": 7
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 12,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 13,
+     "duracion_ms": 1940
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 17,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 21,
+     "duracion_ms": 1930
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1953,
+     "duracion_ms": 1578
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 3531,
+     "duracion_ms": 444
+    }
+   ]
+  },
+  {
+   "id": 192,
+   "startedAt_utc": "2026-09-11 20:26:48.154",
+   "stoppedAt_utc": "2026-09-11 20:26:52.317",
+   "duracion_ms": 4163,
+   "status": "success",
+   "N_sesion": 35,
+   "escenario": "I-07-3",
+   "cliente": "U07",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 2130
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 14,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 2118
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2140,
+     "duracion_ms": 411
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2551,
+     "duracion_ms": 1605
+    }
+   ]
+  },
+  {
+   "id": 193,
+   "startedAt_utc": "2026-09-11 20:26:48.744",
+   "stoppedAt_utc": "2026-09-11 20:26:53.290",
+   "duracion_ms": 4546,
+   "status": "success",
+   "N_sesion": 36,
+   "escenario": "I-05-3",
+   "cliente": "U05",
+   "canal": "Telegram",
+   "prioridad": "ALTA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 8
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Alta Prioridad",
+     "inicio_relativo_ms": 12,
+     "duracion_ms": 2299
+    },
+    {
+     "nodo": "Memoria - Alta",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Anthropic Chat Model1",
+     "inicio_relativo_ms": 22,
+     "duracion_ms": 2286
+    },
+    {
+     "nodo": "Telegram - Enviar Mensaje",
+     "inicio_relativo_ms": 2311,
+     "duracion_ms": 830
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 3142,
+     "duracion_ms": 1395
+    }
+   ]
+  },
+  {
+   "id": 194,
+   "startedAt_utc": "2026-09-11 20:26:49.332",
+   "stoppedAt_utc": "2026-09-11 20:26:53.061",
+   "duracion_ms": 3729,
+   "status": "success",
+   "N_sesion": 37,
+   "escenario": "I-04-3",
+   "cliente": "U04",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 11
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 16,
+     "duracion_ms": 1950
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 24,
+     "duracion_ms": 1938
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 1966,
+     "duracion_ms": 403
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2369,
+     "duracion_ms": 1352
+    }
+   ]
+  },
+  {
+   "id": 195,
+   "startedAt_utc": "2026-09-11 20:26:49.922",
+   "stoppedAt_utc": "2026-09-11 20:26:53.954",
+   "duracion_ms": 4032,
+   "status": "success",
+   "N_sesion": 38,
+   "escenario": "I-06-3",
+   "cliente": "U06",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 8
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 3
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 14,
+     "duracion_ms": 2120
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 23,
+     "duracion_ms": 2109
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2134,
+     "duracion_ms": 502
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2636,
+     "duracion_ms": 1389
+    }
+   ]
+  },
+  {
+   "id": 196,
+   "startedAt_utc": "2026-09-11 20:26:50.514",
+   "stoppedAt_utc": "2026-09-11 20:26:54.783",
+   "duracion_ms": 4269,
+   "status": "success",
+   "N_sesion": 39,
+   "escenario": "I-02-3",
+   "cliente": "U02",
+   "canal": "Telegram",
+   "prioridad": "ALTA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "AI Agent - Alta Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 2022
+    },
+    {
+     "nodo": "Memoria - Alta",
+     "inicio_relativo_ms": 12,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model1",
+     "inicio_relativo_ms": 16,
+     "duracion_ms": 2013
+    },
+    {
+     "nodo": "Telegram - Enviar Mensaje",
+     "inicio_relativo_ms": 2031,
+     "duracion_ms": 810
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2841,
+     "duracion_ms": 1421
+    }
+   ]
+  },
+  {
+   "id": 197,
+   "startedAt_utc": "2026-09-11 20:26:51.110",
+   "stoppedAt_utc": "2026-09-11 20:26:54.854",
+   "duracion_ms": 3744,
+   "status": "success",
+   "N_sesion": 40,
+   "escenario": "I-09-3",
+   "cliente": "U09",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 1863
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 14,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 18,
+     "duracion_ms": 1854
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1874,
+     "duracion_ms": 1418
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 3292,
+     "duracion_ms": 445
+    }
+   ]
+  },
+  {
+   "id": 198,
+   "startedAt_utc": "2026-09-11 20:31:45.826",
+   "stoppedAt_utc": "2026-09-11 20:31:50.389",
+   "duracion_ms": 4563,
+   "status": "success",
+   "N_sesion": 41,
+   "escenario": "I-05-4",
+   "cliente": "U05",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 5
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 1667
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 16,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 22,
+     "duracion_ms": 1652
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1677,
+     "duracion_ms": 2416
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 4093,
+     "duracion_ms": 461
+    }
+   ]
+  },
+  {
+   "id": 199,
+   "startedAt_utc": "2026-09-11 20:31:46.430",
+   "stoppedAt_utc": "2026-09-11 20:31:51.040",
+   "duracion_ms": 4610,
+   "status": "success",
+   "N_sesion": 42,
+   "escenario": "I-08-4",
+   "cliente": "U08",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 9
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 3
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 14,
+     "duracion_ms": 1903
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 18,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 25,
+     "duracion_ms": 1890
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 1917,
+     "duracion_ms": 472
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2389,
+     "duracion_ms": 2212
+    }
+   ]
+  },
+  {
+   "id": 200,
+   "startedAt_utc": "2026-09-11 20:31:47.024",
+   "stoppedAt_utc": "2026-09-11 20:31:51.809",
+   "duracion_ms": 4785,
+   "status": "success",
+   "N_sesion": 43,
+   "escenario": "I-02-4",
+   "cliente": "U02",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 7
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 1842
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 14,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 1832
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1853,
+     "duracion_ms": 2245
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 4098,
+     "duracion_ms": 680
+    }
+   ]
+  },
+  {
+   "id": 201,
+   "startedAt_utc": "2026-09-11 20:31:47.623",
+   "stoppedAt_utc": "2026-09-11 20:31:51.736",
+   "duracion_ms": 4113,
+   "status": "success",
+   "N_sesion": 44,
+   "escenario": "I-03-4",
+   "cliente": "U03",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 5
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 2066
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 14,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 18,
+     "duracion_ms": 2055
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2076,
+     "duracion_ms": 613
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2690,
+     "duracion_ms": 1417
+    }
+   ]
+  },
+  {
+   "id": 202,
+   "startedAt_utc": "2026-09-11 20:31:48.221",
+   "stoppedAt_utc": "2026-09-11 20:31:51.707",
+   "duracion_ms": 3486,
+   "status": "success",
+   "N_sesion": 45,
+   "escenario": "I-01-4",
+   "cliente": "U01",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 1436
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 1425
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1446,
+     "duracion_ms": 1462
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 2908,
+     "duracion_ms": 571
+    }
+   ]
+  },
+  {
+   "id": 203,
+   "startedAt_utc": "2026-09-11 20:31:48.829",
+   "stoppedAt_utc": "2026-09-11 20:31:52.565",
+   "duracion_ms": 3736,
+   "status": "success",
+   "N_sesion": 46,
+   "escenario": "I-07-4",
+   "cliente": "U07",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 1731
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 17,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 22,
+     "duracion_ms": 1718
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1742,
+     "duracion_ms": 1451
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 3193,
+     "duracion_ms": 532
+    }
+   ]
+  },
+  {
+   "id": 204,
+   "startedAt_utc": "2026-09-11 20:31:49.421",
+   "stoppedAt_utc": "2026-09-11 20:31:52.700",
+   "duracion_ms": 3279,
+   "status": "success",
+   "N_sesion": 47,
+   "escenario": "I-06-4",
+   "cliente": "U06",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 5
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 1312
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 14,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 18,
+     "duracion_ms": 1302
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1322,
+     "duracion_ms": 1555
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 2877,
+     "duracion_ms": 396
+    }
+   ]
+  },
+  {
+   "id": 205,
+   "startedAt_utc": "2026-09-11 20:31:50.014",
+   "stoppedAt_utc": "2026-09-11 20:31:53.943",
+   "duracion_ms": 3929,
+   "status": "success",
+   "N_sesion": 48,
+   "escenario": "I-10-4",
+   "cliente": "U10",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 5
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 7,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 1758
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 12,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 16,
+     "duracion_ms": 1749
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 1767,
+     "duracion_ms": 573
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2340,
+     "duracion_ms": 1578
+    }
+   ]
+  },
+  {
+   "id": 206,
+   "startedAt_utc": "2026-09-11 20:31:50.609",
+   "stoppedAt_utc": "2026-09-11 20:31:54.275",
+   "duracion_ms": 3666,
+   "status": "success",
+   "N_sesion": 49,
+   "escenario": "I-09-4",
+   "cliente": "U09",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 12,
+     "duracion_ms": 1626
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 16,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 20,
+     "duracion_ms": 1616
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1638,
+     "duracion_ms": 1529
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 3167,
+     "duracion_ms": 490
+    }
+   ]
+  },
+  {
+   "id": 207,
+   "startedAt_utc": "2026-09-11 20:31:51.196",
+   "stoppedAt_utc": "2026-09-11 20:31:55.213",
+   "duracion_ms": 4017,
+   "status": "success",
+   "N_sesion": 50,
+   "escenario": "I-04-4",
+   "cliente": "U04",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 11
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 14,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 16,
+     "duracion_ms": 1889
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 23,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 31,
+     "duracion_ms": 1872
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1905,
+     "duracion_ms": 1551
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 3456,
+     "duracion_ms": 554
+    }
+   ]
+  },
+  {
+   "id": 208,
+   "startedAt_utc": "2026-09-11 20:36:45.830",
+   "stoppedAt_utc": "2026-09-11 20:36:49.267",
+   "duracion_ms": 3437,
+   "status": "success",
+   "N_sesion": 51,
+   "escenario": "I-05-5",
+   "cliente": "U05",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 8,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 1332
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 14,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 20,
+     "duracion_ms": 1319
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1343,
+     "duracion_ms": 1610
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 2953,
+     "duracion_ms": 476
+    }
+   ]
+  },
+  {
+   "id": 209,
+   "startedAt_utc": "2026-09-11 20:36:46.452",
+   "stoppedAt_utc": "2026-09-11 20:36:49.820",
+   "duracion_ms": 3368,
+   "status": "success",
+   "N_sesion": 52,
+   "escenario": "I-03-5",
+   "cliente": "U03",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 1536
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 20,
+     "duracion_ms": 1525
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1547,
+     "duracion_ms": 1418
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 2965,
+     "duracion_ms": 395
+    }
+   ]
+  },
+  {
+   "id": 210,
+   "startedAt_utc": "2026-09-11 20:36:47.044",
+   "stoppedAt_utc": "2026-09-11 20:36:51.064",
+   "duracion_ms": 4019,
+   "status": "success",
+   "N_sesion": 53,
+   "escenario": "I-01-5",
+   "cliente": "U01",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 6
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 10,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 1853
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 15,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 20,
+     "duracion_ms": 1842
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 1865,
+     "duracion_ms": 439
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2304,
+     "duracion_ms": 1710
+    }
+   ]
+  },
+  {
+   "id": 211,
+   "startedAt_utc": "2026-09-11 20:36:47.639",
+   "stoppedAt_utc": "2026-09-11 20:36:51.650",
+   "duracion_ms": 4011,
+   "status": "success",
+   "N_sesion": 54,
+   "escenario": "I-04-5",
+   "cliente": "U04",
+   "canal": "Email",
+   "prioridad": "MEDIA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 3,
+     "duracion_ms": 4
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 7,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Media Prioridad",
+     "inicio_relativo_ms": 9,
+     "duracion_ms": 2072
+    },
+    {
+     "nodo": "Memoria - Media",
+     "inicio_relativo_ms": 12,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Anthropic Chat Model2",
+     "inicio_relativo_ms": 18,
+     "duracion_ms": 2060
+    },
+    {
+     "nodo": "Gmail - Media Prioridad",
+     "inicio_relativo_ms": 2081,
+     "duracion_ms": 403
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 2484,
+     "duracion_ms": 1520
+    }
+   ]
+  },
+  {
+   "id": 212,
+   "startedAt_utc": "2026-09-11 20:36:48.227",
+   "stoppedAt_utc": "2026-09-11 20:36:51.730",
+   "duracion_ms": 3503,
+   "status": "success",
+   "N_sesion": 55,
+   "escenario": "I-02-5",
+   "cliente": "U02",
+   "canal": "Email",
+   "prioridad": "BAJA",
+   "nodos": [
+    {
+     "nodo": "Webhook - Carrito Abandonado",
+     "inicio_relativo_ms": 0,
+     "duracion_ms": 0
+    },
+    {
+     "nodo": "Validar Datos",
+     "inicio_relativo_ms": 1,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Scoring - Clasificar Lead",
+     "inicio_relativo_ms": 2,
+     "duracion_ms": 9
+    },
+    {
+     "nodo": "Switch - Prioridad",
+     "inicio_relativo_ms": 11,
+     "duracion_ms": 2
+    },
+    {
+     "nodo": "AI Agent - Baja Prioridad",
+     "inicio_relativo_ms": 13,
+     "duracion_ms": 1615
+    },
+    {
+     "nodo": "Memoria - Baja",
+     "inicio_relativo_ms": 19,
+     "duracion_ms": 1
+    },
+    {
+     "nodo": "Anthropic Chat Model",
+     "inicio_relativo_ms": 25,
+     "duracion_ms": 1601
+    },
+    {
+     "nodo": "Google Sheets - Auditoría",
+     "inicio_relativo_ms": 1628,
+     "duracion_ms": 1477
+    },
+    {
+     "nodo": "Gmail - Baja Prioridad",
+     "inicio_relativo_ms": 3105,
+     "duracion_ms": 391
+    }
+   ]
+  }
+ ]
+}
