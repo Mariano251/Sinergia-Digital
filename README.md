@@ -57,13 +57,25 @@ Sinergia-Digital/
 
 ## Algoritmo de scoring (Anexo A de la tesis)
 
-```
-Puntuación = (cart_value × 50%) + (abandonment_count × 30%) + (cart_stage × 20%)
+Puntuación por tramos de valor, con castigo por abandono recurrente:
 
-≥ 70 pts → Alta Prioridad → Telegram
-40–69 pts → Media Prioridad → Email
-< 40 pts  → Baja Prioridad → Email
 ```
+puntuación = 100 × min(cart_value / 200.000, 1)
+
+≥ 70 pts  → Alta Prioridad   → Telegram     (equivale a $140.000)
+≥ 30 pts  → Media Prioridad  → Email        (equivale a  $60.000)
+< 30 pts  → Baja Prioridad   → Email
+
+si previous_abandonment_count ≥ 4 → baja un nivel
+```
+
+`cart_stage` no participa del cálculo: se conserva únicamente en el registro de auditoría.
+
+Es la regla vigente desde la segunda ronda de validación, implementada en el nodo
+`Scoring - Clasificar Lead` del workflow de n8n. Reemplazó a una fórmula anterior de tres componentes
+ponderados (50 % valor, 30 % abandono, 20 % etapa), que se descartó porque dejaba una zona en la que la
+prioridad Alta era inalcanzable con cualquier carrito y porque `cart_stage` aportaba una constante que no
+discriminaba, dado que el backend siempre envía `cart`.
 
 ---
 
@@ -101,9 +113,14 @@ Variables de entorno requeridas:
 DATABASE_URL=
 JWT_SECRET=
 N8N_WEBHOOK_URL=
+WEBHOOK_TOKEN=
 FRONTEND_URL=
 PORT=3001
 ```
+
+`WEBHOOK_TOKEN` es el token compartido que protege `POST /api/webhook/cart-abandoned` y viaja en la cabecera
+`X-Webhook-Token`. El mismo valor debe cargarse en n8n como credencial de tipo *Header Auth*. Sin esa
+variable el endpoint responde 500 y no procesa nada.
 
 ### Frontend
 
@@ -126,13 +143,22 @@ El archivo JSON del workflow está en `n8n-workflows/`. Para importarlo:
 
 ---
 
-## Resultados de validación (N=35 sesiones)
+## Resultados de validación (Tanda 3 — 55 sesiones, 11/09/2026)
 
 | Hipótesis | Métrica | Resultado | Umbral | Estado |
 |---|---|---|---|---|
-| H1 — Latencia | Notificaciones < 5 min | 91.4% | ≥ 90% | ✅ Superado |
-| H2 — Scoring | Concordancia con experto | 91.4% (κ = 0.87) | ≥ 85% | ✅ Superado |
-| H3 — Calidad IA | Rúbrica 5 criterios | 4.4 / 5.0 (CCI = 0.82) | ≥ 4.0 | ✅ Superado |
+| H1 — Latencia | Detección → registro de la notificación | Mediana 3,39 s; 55/55 por debajo de 300 s | 100 % < 300 s | Cumplida |
+| H2 — Scoring | Concordancia con la clasificación experta | 72,7 % (κ 0,603) y 76,4 % (κ 0,636) frente a dos expertos | ≥ 85 % | **No cumplida** |
+| H3 — Calidad IA | Rúbrica de 5 criterios, 3 evaluadores | 4,83 / 5,00; CCI(2,k) 0,931 | ≥ 4,0 | Cumplida |
+
+Los dos expertos de H2 coinciden entre sí en el 81,8 % de los casos (κ 0,732), de modo que el incumplimiento
+no se explica por un criterio atípico de uno de ellos. Las discordancias se concentran en carritos de
+$112.000 a $130.000 que el algoritmo clasifica como Media y ambos expertos consideran Alta, lo que sugiere
+que el umbral de Alta, fijado en $140.000, está alto.
+
+Los datos primarios, los instrumentos ciegos, las planillas completadas y los scripts de análisis están en
+**[`validacion/`](validacion/)**. Las rondas anteriores, cerradas, están en
+[`validacion/historico/`](validacion/historico/).
 
 ---
 

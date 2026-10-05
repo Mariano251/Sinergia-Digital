@@ -151,8 +151,8 @@ de ejecución y es reproducible:
    mismo cliente se repite entre ciclos, de modo que el mensaje de usuario es **idéntico** al de la sesión
    anterior. El contador de abandonos, que es lo único que varía, no entra en ese mensaje.
 3. Con el intercambio anterior en el contexto y un mensaje de usuario idéntico, el modelo devuelve su propia
-   respuesta previa. Es el comportamiento esperable de un modelo con temperatura baja ante un contexto que ya
-   contiene la respuesta a esa misma pregunta.
+   respuesta previa. Es el comportamiento esperable de un modelo que recibe en contexto la respuesta a esa
+   misma pregunta.
 
 No hace falta recurrir a ninguna otra explicación: no hay indicios de fallo de la API, de reintento ni de
 duplicación en el registro de auditoría. Las seis ejecuciones terminaron con estado `success` y cada una
